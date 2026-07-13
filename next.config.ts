@@ -10,6 +10,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const projectRoot = process.cwd();
 
 const nextConfig: NextConfig = {
+  // Self-contained server bundle for Docker / container deploys.
+  output: "standalone",
   // Pin the workspace root so other lockfiles on the machine don't cause
   // Next to infer the wrong root.
   turbopack: { root: projectRoot },

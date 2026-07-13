@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env
+.env*
+ipo.db
+ipo.db-*
+public/media
+*.bundle
+npm-debug.log*
