@@ -1,0 +1,381 @@
+{
+  "site": {
+    "office": "Investment Project Office",
+    "ministry": "Ministry of Digital Technologies of the Republic of Uzbekistan",
+    "ministryShort": "Ministry of Digital Technologies",
+    "under": "A structural unit of the Ministry of Digital Technologies of the Republic of Uzbekistan"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "cta": "Become a partner",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "Helping the world invest in Uzbekistan's digital future.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "rights": "Investment Project Office. All rights reserved.",
+    "address": "Muminov 4/1, Tashkent, Uzbekistan"
+  },
+  "home": {
+    "hero": {
+      "titleLead": "Your gateway to",
+      "titleHighlight": "Uzbekistan's digital economy.",
+      "subtitle": "We open Uzbekistan's digital economy to the world — guiding international companies and investors from first meeting to fully operational.",
+      "watch": "Watch the film",
+      "stats": [
+        { "value": "$1B+", "label": "IT service exports, 2025" },
+        { "value": "2,990+", "label": "IT Park companies" },
+        { "value": "90", "label": "Export destinations" }
+      ]
+    },
+    "why": {
+      "label": "Why Uzbekistan",
+      "title": "The opportunity is here. So is the timing.",
+      "photoAlt": "Tashkent City business district",
+      "paragraphs": [
+        "Uzbekistan's digital economy is already in motion. IT service exports crossed $1 billion in 2025. Nearly 3,000 companies operate inside the national IT Park. The Digital Uzbekistan 2030 strategy is a national priority, backed at the highest level of government with the institutions and incentives required to deliver it.",
+        "For technology companies, the fiscal environment is exceptionally competitive. IT Park residents are exempt from corporate tax, VAT, and social tax. Personal income is subject to a flat rate of 7.5 percent. Market entry is structured to be fast and fully supported, with streamlined registration and a dedicated team guiding every step.",
+        "The talent pipeline is substantial. A population of 37 million, majority under thirty, produces tens of thousands of IT graduates annually. The workforce operates across Uzbek, Russian and English, and a national program is currently training one million new specialists in digital skills.",
+        "Investors who establish early in emerging digital markets define the conditions for those who follow. Uzbekistan is at that inflection point."
+      ],
+      "presentation": {
+        "intro": "Download our investment overview to share with your team.",
+        "title": "Investment Presentation",
+        "desc": "An overview of opportunities, sectors, and how to enter.",
+        "button": "View Presentation"
+      }
+    },
+    "track": {
+      "label": "Track record",
+      "title": "The numbers behind the momentum.",
+      "stats": [
+        { "value": 1, "prefix": "$", "suffix": "B+", "decimals": 0, "label": "IT service exports in 2025", "source": "Ministry of Digital Technologies" },
+        { "value": 2990, "suffix": "+", "decimals": 0, "label": "IT Park member companies", "source": "IT Park Uzbekistan" },
+        { "value": 44000, "suffix": "+", "decimals": 0, "label": "Technology jobs created", "source": "IT Park Uzbekistan" },
+        { "value": 90, "decimals": 0, "label": "Export destination countries", "source": "IT Park Uzbekistan" }
+      ]
+    },
+    "timeline": {
+      "label": "Our story",
+      "title": "From a new office to a national platform.",
+      "items": [
+        { "year": "2023", "title": "The office is established", "desc": "Founded as a structural unit of the Ministry of Digital Technologies to attract investment into the digital sector." },
+        { "year": "2024", "title": "Record investment", "desc": "Foreign direct investment reaches $11.9 billion, up more than 50 percent year on year." },
+        { "year": "2025", "title": "A billion in exports", "desc": "IT service exports cross $1 billion for the first time; the IT Park approaches 3,000 companies." },
+        { "year": "2026", "title": "Landmark deals", "desc": "A $3.5B AI computing centre and a 300 MW national data centre advance with foreign investors." },
+        { "year": "2030", "title": "The target", "desc": "A national goal of $5 billion in annual digital exports under Digital Uzbekistan 2030." }
+      ]
+    },
+    "sectors": {
+      "label": "Priority sectors",
+      "title": "Where investment is going.",
+      "intro": "The office channels capital, grants and partnerships into the areas driving Uzbekistan's digital economy.",
+      "cta": "Explore projects",
+      "items": [
+        { "name": "AI & Computing", "desc": "Intelligent computing centres and applied artificial intelligence.", "img": "/sector-ai.jpg" },
+        { "name": "Digital Infrastructure", "desc": "Data centres and the backbone of the digital economy.", "img": "/sector-infra.jpg" },
+        { "name": "IT Outsourcing & BPO", "desc": "Export-oriented delivery centres serving global clients.", "img": "/sector-outsourcing.jpg" },
+        { "name": "Creative & Gaming", "desc": "Animation, game development and digital media.", "img": "/sector-gaming.jpg" },
+        { "name": "Fintech & Startups", "desc": "High-growth digital startups and financial technology.", "img": "/sector-fintech.jpg" },
+        { "name": "Digital Education", "desc": "Talent pipelines and skills for the technology sector.", "img": "/sector-education.jpg" }
+      ]
+    },
+    "services": {
+      "eyebrow": "How we help",
+      "title": "We de-risk your market entry.",
+      "intro": "One office, from your first question to your first local hire. We carry the administrative complexity so you can focus on building.",
+      "cta": "See all services",
+      "items": [
+        {
+          "icon": "registration",
+          "title": "Company registration",
+          "desc": "Fast, guided incorporation of your legal entity in Uzbekistan, with the right structure for your business."
+        },
+        {
+          "icon": "legal",
+          "title": "Legal & administrative guidance",
+          "desc": "Clear answers on regulation, licensing and compliance for the technology sector."
+        },
+        {
+          "icon": "tax",
+          "title": "Residence & tax procedures",
+          "desc": "Support with tax setup, residence and the IT-Visa for you and your team."
+        },
+        {
+          "icon": "partners",
+          "title": "Local partnerships",
+          "desc": "Warm introductions to vetted local service providers, partners and talent."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Opportunities",
+      "title": "Investment projects in the digital sector.",
+      "intro": "A portfolio of high-potential projects — from scalable startups to export-oriented delivery centres — designed to strengthen the national technology landscape.",
+      "cta": "View all projects",
+      "items": [
+        {
+          "sector": "AI & Computing",
+          "status": "FDI · $3.5B",
+          "title": "Modular Intelligent Computing Centre",
+          "desc": "A landmark foreign direct investment with Shanghai Linkwise in Karakalpakstan — AI and intelligent computing capacity, planned for commissioning in 2027."
+        },
+        {
+          "sector": "Digital Infrastructure",
+          "status": "Phase 1 · 2026",
+          "title": "300 MW National Data Centre",
+          "desc": "Large-scale IT capacity — up to 300 MW — to power AI, big data and next-generation digital services across the region."
+        },
+        {
+          "sector": "Creative & Gaming",
+          "status": "Grant-backed",
+          "title": "Animation & GameDev talent",
+          "desc": "Japan-backed animation training with ELF-IN and a gaming sector that grew exports 21× in three years — an export-ready creative industry."
+        }
+      ]
+    },
+    "news": {
+      "eyebrow": "Newsroom",
+      "title": "Latest from the office.",
+      "intro": "Signals of momentum from Uzbekistan's digital economy.",
+      "cta": "Read all news",
+      "items": [
+        {
+          "tag": "AI & Data",
+          "date": "2026",
+          "title": "China's Linkwise to build $3.5B AI computing centre",
+          "excerpt": "A modular intelligent computing centre in Karakalpakstan, delivered as foreign direct investment and planned for commissioning in 2027."
+        },
+        {
+          "tag": "Infrastructure",
+          "date": "2026",
+          "title": "300 MW data centre to anchor Central Asia's digital hub",
+          "excerpt": "Up to 300 MW of IT capacity for AI and big data, with the first phase beginning in 2026."
+        },
+        {
+          "tag": "Ecosystem",
+          "date": "2025",
+          "title": "Uzbek developers on GitHub grew 10× in five years",
+          "excerpt": "From 25K to 275K developers between 2020 and 2025 — and an 8-place climb in the 2025 Government AI Readiness Index."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Let's build your Uzbekistan story.",
+      "subtitle": "Tell us what you're planning. We'll map the fastest, lowest-risk path to market — and stay with you long after you land.",
+      "primary": "Book an introduction",
+      "secondary": "Email invest@digital.uz"
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About the office",
+      "title": "The gateway to Uzbekistan's digital economy.",
+      "subtitle": "Established in 2023 as a structural unit of the Ministry of Digital Technologies, the Investment Project Office advances the nation's digital transformation in line with the Digital Uzbekistan 2030 Strategy — and helps the world take part in it."
+    },
+    "mission": {
+      "eyebrow": "Our mission",
+      "title": "Driving digital growth through strategic IT investment.",
+      "body": [
+        "The Investment Project Office is a structural unit under the Ministry of Digital Technologies of the Republic of Uzbekistan. Its main task is to attract new investments, grants and sponsorship funds in the field of digital technologies, and to support foreign investors in entering and expanding within Uzbekistan's IT sector.",
+        "The Office provides comprehensive market-entry assistance and full business support — including company registration, legal and administrative guidance, facilitation of residence and tax procedures, and connections with local service providers."
+      ]
+    },
+    "stats": {
+      "title": "A digital economy with momentum.",
+      "intro": "The macro picture behind every conversation we have with investors."
+    },
+    "focus": {
+      "eyebrow": "What we do",
+      "title": "Five areas of focus.",
+      "items": [
+        { "icon": "cost", "title": "Digital investment facilitation", "desc": "Attracting and structuring investment, grants and sponsorship into the digital sector." },
+        { "icon": "registration", "title": "IT project design & PPPs", "desc": "Designing high-potential projects and public–private partnerships in technology." },
+        { "icon": "partners", "title": "Support for local companies & startups", "desc": "Helping Uzbek technology companies and startups scale and reach global markets." },
+        { "icon": "talent", "title": "Human capital & education reform", "desc": "Expanding the specialist workforce through education reform and skills initiatives." },
+        { "icon": "export", "title": "Foreign companies & global integration", "desc": "Bringing international IT companies into Uzbekistan and integrating the sector globally." }
+      ]
+    },
+    "initiatives": {
+      "eyebrow": "National initiatives",
+      "title": "Programs we help drive.",
+      "items": [
+        { "title": "1 Million Programmers", "desc": "A national drive to cultivate a vast pool of programming talent." },
+        { "title": "AI & digital literacy", "desc": "Empowering women and youth with essential digital and AI skills." },
+        { "title": "Smart City & GovTech", "desc": "Modernising urban living and government operations with advanced technology." },
+        { "title": "IT curricula & certification", "desc": "Updating educational frameworks to meet international industry standards." }
+      ]
+    },
+    "team": {
+      "eyebrow": "Leadership",
+      "title": "The people you'll work with.",
+      "intro": "Investment decisions are built on relationships. Our team leads bilateral delegations and works directly with investors from first contact onward.",
+      "leaders": [
+        { "name": "Akbarkhuja Akramkhujaev", "role": "Head of Department, Investment Project Office" },
+        { "name": "Rustam Karimjonov", "role": "Deputy Minister, Ministry of Digital Technologies" },
+        { "name": "Jamshidbek Gayratjonov", "role": "Investment & Grants Officer" },
+        { "name": "Diyora Inomjonova", "role": "Senior Officer" },
+        { "name": "Samandar Khakkiev", "role": "Project Manager" },
+        { "name": "Khasan Khamrakulov", "role": "Ministry of Digital Technologies" }
+      ]
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Services",
+      "title": "We de-risk your entry into Uzbekistan.",
+      "subtitle": "One office, from your first question to your first local hire — and long after. We carry the administrative complexity so you can focus on building your business."
+    },
+    "list": {
+      "eyebrow": "What we handle",
+      "title": "Full-service market entry.",
+      "items": [
+        { "icon": "registration", "title": "Company registration", "desc": "Fast, guided incorporation of your legal entity, with the right structure for your business and sector." },
+        { "icon": "legal", "title": "Legal & administrative guidance", "desc": "Clear answers on regulation, licensing and compliance for the technology sector." },
+        { "icon": "tax", "title": "Residence & tax procedures", "desc": "Support with tax setup, residence and the IT-Visa for you and your team." },
+        { "icon": "partners", "title": "Local partnerships & matchmaking", "desc": "Warm introductions to vetted local service providers, partners and talent." },
+        { "icon": "cost", "title": "Grants & investment facilitation", "desc": "Guidance on available grants, incentives and co-investment mechanisms in the digital sector." },
+        { "icon": "visa", "title": "Ongoing business support", "desc": "Aftercare that stays with you — hiring, scaling and connecting into the wider ecosystem." }
+      ]
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "title": "From first call to fully operational.",
+      "steps": [
+        { "title": "Discover", "desc": "We learn your goals and map the fastest, lowest-risk path to the Uzbek market." },
+        { "title": "Structure", "desc": "We advise on the right legal, tax and visa structure for your business." },
+        { "title": "Establish", "desc": "We handle registration, licensing and residence so you're operational quickly." },
+        { "title": "Grow", "desc": "We connect you to talent, partners and incentives — and stay with you as you scale." }
+      ]
+    },
+    "programs": {
+      "eyebrow": "Government programs",
+      "title": "Purpose-built to bring you in.",
+      "intro": "Uzbekistan has built a suite of programs specifically to lower the barrier for foreign technology companies entering the market.",
+      "items": [
+        { "name": "IT Park Zero Risk", "desc": "Residents pay no corporate, VAT or social tax, and a flat 7.5% personal income tax. Companies can be fully registered and operational within weeks of arrival." },
+        { "name": "IT-Visa", "desc": "Streamlined residence for IT founders, investors and specialists, valid for up to three years." },
+        { "name": "Soft-Landing", "desc": "Practical, hands-on help to get your team on the ground and operational quickly." },
+        { "name": "Digital Startups", "desc": "Support pathways and funding routes for scalable digital startups and IT Park residents." }
+      ]
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "eyebrow": "Opportunities",
+      "title": "Investment projects in Uzbekistan's digital sector.",
+      "subtitle": "From landmark AI infrastructure to export-oriented delivery and creative industries — a portfolio designed to strengthen the national technology landscape and deliver returns."
+    },
+    "portfolio": {
+      "label": "Investment portfolio",
+      "title": "The deals shaping Uzbekistan's digital decade.",
+      "intro": "A record of the investments, partnerships and national programs delivered with the Ministry of Digital Technologies. Select a year to explore, and open any project to read the detail.",
+      "hint": "Select a project to read more",
+      "years": [
+        {
+          "year": "2026",
+          "deals": [
+            { "sector": "AI & Computing", "title": "Shanghai Linkwise AI Computing Centre", "img": "/deal-linkwise.jpg", "desc": "A $3.5 billion foreign direct investment to build a Modular Intelligent Computing Centre in the Republic of Karakalpakstan, planned for commissioning in 2027 — among the largest technology FDI commitments in the country's history." },
+            { "sector": "Digital Infrastructure", "title": "DataVolt Green Data Centres", "img": "/deal-datavolt.jpg", "desc": "Saudi Arabia's DataVolt is developing green data centres in Uzbekistan under a foreign-investment program worth up to $5 billion by 2030. Its first facility, the 12 MW TAS-1 in Tashkent, is fully foreign-financed with $150 million backing from DEG, the EBRD, the OPEC Fund and Proparco." },
+            { "sector": "Human Capital", "title": "Five Million AI Leaders", "img": "/deal-ai-leaders.jpg", "desc": "A national program launched with the United Arab Emirates to train five million citizens in artificial intelligence by 2030 — 4.75 million students, 150,000 teachers and 100,000 civil servants. More than one million people have already completed basic training." },
+            { "sector": "AI & Computing", "title": "Nvidia Supercomputer Cluster", "img": "/sector-ai.jpg", "desc": "A major national supercomputer cluster being launched in partnership with Nvidia to power domestic AI development, alongside a National Transfer Office opening in Silicon Valley to connect Uzbek founders with global investors." }
+          ]
+        },
+        {
+          "year": "2025",
+          "deals": [
+            { "sector": "Milestone", "title": "$1 Billion in IT Service Exports", "img": "/deal-itpark.jpg", "desc": "IT service exports crossed $1 billion for the first time in the country's history, on the path to a national target of $5 billion in annual digital exports by 2030." },
+            { "sector": "Creative & Gaming", "title": "Japan Animation Talent Initiative", "img": "/sector-gaming.jpg", "desc": "A partnership with Japan's ELF-IN, backed by a grant exceeding $700,000, to train a new generation of animation and computer-graphics professionals and build an export-ready creative industry." },
+            { "sector": "Ecosystem", "title": "ICT Week Investment Forum", "img": "/sector-outsourcing.jpg", "desc": "Tashkent hosted the IT Investment Forum during ICT Week 2025, convening government leaders, global companies and international investors around Uzbekistan's digital opportunity." }
+          ]
+        },
+        {
+          "year": "2024",
+          "deals": [
+            { "sector": "Investment Climate", "title": "Record Foreign Direct Investment", "img": "/sector-infra.jpg", "desc": "Foreign direct investment reached $11.9 billion, up more than 50% year on year and equal to 10.3% of GDP — a clear signal of rising international confidence in Uzbekistan." },
+            { "sector": "Digital Infrastructure", "title": "DataVolt Green Data Centre Agreement", "img": "/deal-datavolt.jpg", "desc": "Uzbekistan signed with Saudi Arabia's DataVolt to develop a network of green data centres, laying the groundwork for a multi-billion-dollar build-out of the country's digital infrastructure." }
+          ]
+        }
+      ]
+    }
+  },
+  "newsPage": {
+    "hero": {
+      "eyebrow": "Newsroom",
+      "title": "News from the office.",
+      "subtitle": "Investment, partnerships and momentum from Uzbekistan's digital economy."
+    },
+    "items": [
+      { "tag": "AI & Data", "date": "2026", "title": "China's Linkwise to build $3.5B AI computing centre", "excerpt": "A Modular Intelligent Computing Centre in Karakalpakstan, delivered as foreign direct investment and planned for commissioning in 2027 — one of the largest tech FDI commitments in the country's history." },
+      { "tag": "Infrastructure", "date": "2026", "title": "300 MW data centre to anchor Central Asia's digital hub", "excerpt": "Up to 300 MW of IT capacity for AI and big data, with the first phase beginning in 2026 — more than infrastructure, an innovation ecosystem." },
+      { "tag": "Japan", "date": "2026", "title": "Uzbekistan and Japan launch Animation Talent Initiative", "excerpt": "A partnership with ELF-IN Co., backed by a grant exceeding $700K, to build a new generation of animation and CG professionals and export Uzbek content globally." },
+      { "tag": "Talent", "date": "2026", "title": "Ucell powers the next generation of IT talent", "excerpt": "A five-year MOU to accelerate digital education, develop skilled IT professionals and equip young people with future-ready competencies." },
+      { "tag": "China", "date": "2026", "title": "Expanding cooperation with Shanghai's Lingang Technopark", "excerpt": "Talks to attract leading Chinese tech companies to Uzbekistan and launch joint startup hubs with top universities." },
+      { "tag": "Delegation", "date": "2026", "title": "Working visit to Japan: METI, MIC and JICA", "excerpt": "Meetings across Japanese government and industry on AI adoption, IT outsourcing and talent — plus cooperation agreements for IT education and animation." },
+      { "tag": "Ecosystem", "date": "2025", "title": "Uzbek developers on GitHub grew 10× in five years", "excerpt": "From 25K to 275K developers (2020–2025), with an 8-place climb in the 2025 Government AI Readiness Index." },
+      { "tag": "Forum", "date": "2025", "title": "ICT Week 2025: IT Investment Forum in Tashkent", "excerpt": "Government leaders, international investors and global companies convened on the future of IT investment in Uzbekistan." }
+    ]
+  },
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Where the Silk Road meets the digital age.",
+      "subtitle": "For centuries, Uzbekistan connected the world's markets. Today it does so in code. Tell us what you're planning, and we'll map the path to market."
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Work email",
+      "company": "Company",
+      "country": "Country",
+      "interest": "How can we help?",
+      "interestOptions": ["Entering the Uzbek market", "Investment opportunity", "Grant or sponsorship", "Partnership", "Other"],
+      "message": "Message",
+      "submit": "Send message",
+      "note": "This form is a front-end placeholder — wiring to email/CRM comes with the CMS step."
+    },
+    "details": {
+      "title": "Office",
+      "address": "Muminov 4/1, Tashkent, Uzbekistan",
+      "phone": "+998 71 238-41-76",
+      "email": "invest@digital.uz",
+      "portal": "invest.digital.uz"
+    },
+    "channels": {
+      "title": "Direct channels",
+      "intro": "We work with investors across China, Japan, Korea and beyond — reach us where you already are.",
+      "items": [
+        { "name": "WhatsApp", "value": "+998 97 769 22 44" },
+        { "name": "WeChat", "value": "AA_Akbarkhuja" },
+        { "name": "KakaoTalk", "value": "+998 90 903 35 25" },
+        { "name": "LinkedIn", "value": "Investment Project Office" }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: July 2026",
+    "body": [
+      "This is a placeholder privacy policy for the Investment Project Office website. Final legal text will be provided before launch.",
+      "We collect only the information you choose to share with us — such as your name, email and message when you contact the office. We use it solely to respond to your enquiry and to support your engagement with Uzbekistan's digital sector.",
+      "We do not sell your data. Aggregated, anonymised analytics may be used to improve the website. You may request access to, or deletion of, your data by contacting invest@digital.uz."
+    ]
+  },
+  "styleguide": {
+    "title": "Design System",
+    "subtitle": "Visual language for the Investment Project Office — colour, type, and components.",
+    "colors": "Colour",
+    "typography": "Typography",
+    "buttons": "Buttons",
+    "stats": "Statistics",
+    "cards": "Cards",
+    "badges": "Badges"
+  }
+}

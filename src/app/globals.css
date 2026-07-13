@@ -1,26 +1,200 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================================================================
+   Investment Project Office — Design System
+   Tone: governmental credibility, investor-grade polish. Azure-teal drawn
+   from the Uzbek flag, deep navy for authority, warm gold for action.
+   ========================================================================= */
+
+@theme {
+  /* ---- Brand: azure-teal (from the Uzbek flag turquoise) ---- */
+  --color-azure-50: #ecfafe;
+  --color-azure-100: #d0f1fb;
+  --color-azure-200: #a6e4f5;
+  --color-azure-300: #6fd0ec;
+  --color-azure-400: #34b6dc;
+  --color-azure-500: #109cc4;
+  --color-azure-600: #0b7ca0;
+  --color-azure-700: #0e6483;
+  --color-azure-800: #12506a;
+  --color-azure-900: #123f53;
+
+  /* ---- Authority: deep navy / ink ---- */
+  --color-ink: #071e2f;
+  --color-navy-900: #0a2440;
+  --color-navy-800: #0e3054;
+  --color-navy-700: #14406e;
+
+  /* ---- Action: warm gold ---- */
+  --color-gold-300: #f7cd7d;
+  --color-gold-400: #f2b44c;
+  --color-gold-500: #e89a2c;
+  --color-gold-600: #c97e1a;
+
+  /* ---- Neutrals ---- */
+  --color-paper: #ffffff;
+  --color-mist: #f4f7f9;
+  --color-cloud: #e9eef2;
+  --color-line: #dce4ea;
+  --color-slate: #5a6b7a;
+  --color-steel: #35485a;
+
+  /* ---- Semantic aliases ---- */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+
+  /* ---- Typography ---- */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Radius & shadow ---- */
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  --shadow-card: 0 1px 2px rgba(7, 30, 47, 0.04),
+    0 8px 24px -12px rgba(7, 30, 47, 0.12);
+  --shadow-lift: 0 2px 4px rgba(7, 30, 47, 0.05),
+    0 20px 44px -20px rgba(7, 30, 47, 0.22);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ---- Hero motion: slow drifting aurora + rotating orbit (video-like) ---- */
+@keyframes drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8%, -6%, 0) scale(1.18); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.12); }
+  50% { transform: translate3d(-7%, 6%, 0) scale(1); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(5%, 5%, 0) scale(1.1); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.anim-drift-a { animation: drift-a 22s ease-in-out infinite; }
+.anim-drift-b { animation: drift-b 28s ease-in-out infinite; }
+.anim-drift-c { animation: drift-c 19s ease-in-out infinite; }
+.anim-spin-slow { animation: spin-slow 90s linear infinite; }
+.anim-pulse-soft { animation: pulse-soft 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-drift-a, .anim-drift-b, .anim-drift-c,
+  .anim-spin-slow, .anim-pulse-soft {
+    animation: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-azure-200);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-azure-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Page gutter container, capped for readable line lengths. */
+  .container-edge {
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-edge {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Rich-text article body (CMS news). */
+  .prose-news {
+    color: var(--color-steel);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose-news > * + * {
+    margin-top: 1.15rem;
+  }
+  .prose-news h2 {
+    font-size: 1.6rem;
+    margin-top: 2.2rem;
+  }
+  .prose-news h3 {
+    font-size: 1.25rem;
+    margin-top: 1.8rem;
+  }
+  .prose-news a {
+    color: var(--color-azure-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-news ul,
+  .prose-news ol {
+    padding-left: 1.4rem;
+  }
+  .prose-news ul {
+    list-style: disc;
+  }
+  .prose-news ol {
+    list-style: decimal;
+  }
+  .prose-news li + li {
+    margin-top: 0.4rem;
+  }
+  .prose-news blockquote {
+    border-left: 3px solid var(--color-azure-400);
+    padding-left: 1rem;
+    color: var(--color-slate);
+    font-style: italic;
+  }
+  .prose-news img {
+    border-radius: 0.75rem;
+  }
+
+  /* Section label — clean sentence case, no shouty caps. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-azure-700);
+  }
 }

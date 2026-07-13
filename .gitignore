@@ -33,6 +33,11 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Payload CMS: local SQLite database and uploaded media
+/ipo.db
+/ipo.db-*
+/public/media
+
 # vercel
 .vercel
 
