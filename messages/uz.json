@@ -50,7 +50,8 @@
         "intro": "Download our investment overview to share with your team.",
         "title": "Investment Presentation",
         "desc": "An overview of opportunities, sectors, and how to enter.",
-        "button": "View Presentation"
+        "button": "Download PDF",
+        "meta": "PDF · 25 MB"
       }
     },
     "track": {
@@ -283,7 +284,7 @@
         {
           "year": "2026",
           "deals": [
-            { "sector": "AI & Computing", "title": "Shanghai Linkwise AI Computing Centre", "img": "/deal-linkwise.jpg", "desc": "A $3.5 billion foreign direct investment to build a Modular Intelligent Computing Centre in the Republic of Karakalpakstan, planned for commissioning in 2027 — among the largest technology FDI commitments in the country's history." },
+            { "sector": "AI & Computing", "title": "Shanghai Linkwise Modular Computing Centre", "img": "/deal-linkwise.jpg", "desc": "A $3.5 billion foreign direct investment to build a Modular Intelligent Computing Centre in the Republic of Karakalpakstan, planned for commissioning in 2027 — among the largest technology FDI commitments in the country's history." },
             { "sector": "Digital Infrastructure", "title": "DataVolt Green Data Centres", "img": "/deal-datavolt.jpg", "desc": "Saudi Arabia's DataVolt is developing green data centres in Uzbekistan under a foreign-investment program worth up to $5 billion by 2030. Its first facility, the 12 MW TAS-1 in Tashkent, is fully foreign-financed with $150 million backing from DEG, the EBRD, the OPEC Fund and Proparco." },
             { "sector": "Human Capital", "title": "Five Million AI Leaders", "img": "/deal-ai-leaders.jpg", "desc": "A national program launched with the United Arab Emirates to train five million citizens in artificial intelligence by 2030 — 4.75 million students, 150,000 teachers and 100,000 civil servants. More than one million people have already completed basic training." },
             { "sector": "AI & Computing", "title": "Nvidia Supercomputer Cluster", "img": "/sector-ai.jpg", "desc": "A major national supercomputer cluster being launched in partnership with Nvidia to power domestic AI development, alongside a National Transfer Office opening in Silicon Valley to connect Uzbek founders with global investors." }
@@ -300,7 +301,7 @@
         {
           "year": "2024",
           "deals": [
-            { "sector": "Investment Climate", "title": "Record Foreign Direct Investment", "img": "/sector-infra.jpg", "desc": "Foreign direct investment reached $11.9 billion, up more than 50% year on year and equal to 10.3% of GDP — a clear signal of rising international confidence in Uzbekistan." },
+            { "sector": "Investment Climate", "title": "Record FDI Inflows", "img": "/sector-infra.jpg", "desc": "Foreign direct investment reached $11.9 billion, up more than 50% year on year and equal to 10.3% of GDP — a clear signal of rising international confidence in Uzbekistan." },
             { "sector": "Digital Infrastructure", "title": "DataVolt Green Data Centre Agreement", "img": "/deal-datavolt.jpg", "desc": "Uzbekistan signed with Saudi Arabia's DataVolt to develop a network of green data centres, laying the groundwork for a multi-billion-dollar build-out of the country's digital infrastructure." }
           ]
         }
@@ -339,7 +340,11 @@
       "interestOptions": ["Entering the Uzbek market", "Investment opportunity", "Grant or sponsorship", "Partnership", "Other"],
       "message": "Message",
       "submit": "Send message",
-      "note": "This form is a front-end placeholder — wiring to email/CRM comes with the CMS step."
+      "submitting": "Sending…",
+      "successTitle": "Thank you.",
+      "successBody": "Your message has been received. Our team will get back to you at the email you provided.",
+      "error": "Something went wrong. Please try again, or email us directly at invest@digital.uz.",
+      "note": "We typically reply within a few business days."
     },
     "details": {
       "title": "Office",

@@ -2,8 +2,7 @@ import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/section";
 import { Presentation } from "@/components/home/presentation";
 
-const PRESENTATION_PREVIEW =
-  "https://drive.google.com/file/d/1GA44feH0NOa4yvzquvBm6WZMZjrZZjGF/preview";
+const PRESENTATION_FILE = "/investment-presentation.pdf";
 
 export function WhyUzbekistan() {
   const t = useTranslations("home.why");
@@ -44,7 +43,8 @@ export function WhyUzbekistan() {
           title={t("presentation.title")}
           desc={t("presentation.desc")}
           button={t("presentation.button")}
-          previewSrc={PRESENTATION_PREVIEW}
+          file={PRESENTATION_FILE}
+          meta={t("presentation.meta")}
         />
       </div>
     </Section>

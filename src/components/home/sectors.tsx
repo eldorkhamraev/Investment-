@@ -38,7 +38,7 @@ export function Sectors() {
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Bottom scrim + label */}
-            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/35 to-transparent p-6">
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/80 via-ink/25 to-transparent p-6">
               <h3 className="text-lg text-white transition-transform duration-200 group-hover:-translate-y-0.5">
                 {s.name}
               </h3>

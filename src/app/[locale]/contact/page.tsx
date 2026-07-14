@@ -87,18 +87,18 @@ function ContactContent() {
                 ))}
               </ul>
             </div>
-
-            {/* Real Google map */}
-            <div className="h-56 overflow-hidden rounded-2xl border border-line">
-              <iframe
-                title="Office location"
-                src="https://www.google.com/maps?q=Ministry%20of%20Digital%20Technologies%2C%20Muminov%20street%2C%20Tashkent%2C%20Uzbekistan&z=15&output=embed"
-                className="h-full w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
           </aside>
+        </div>
+
+        {/* Real Google map — full width */}
+        <div className="mt-12 h-72 overflow-hidden rounded-2xl border border-line md:mt-16 md:h-96">
+          <iframe
+            title="Office location"
+            src="https://www.google.com/maps?q=Ministry%20of%20Digital%20Technologies%2C%20Muminov%20street%2C%20Tashkent%2C%20Uzbekistan&z=15&output=embed"
+            className="h-full w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </Section>
     </>

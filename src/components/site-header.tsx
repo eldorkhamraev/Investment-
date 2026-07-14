@@ -26,32 +26,34 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-white/85 backdrop-blur-md">
-      <div className="container-edge flex h-20 items-center justify-between gap-4 py-3">
-        <Link href="/" aria-label="Investment Project Office — home">
+      <div className="container-edge flex h-20 items-center justify-between gap-6 py-3">
+        <Link href="/" aria-label="Investment Office — home">
           <Wordmark />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
-                isActive(item.href)
-                  ? "bg-azure-50 text-azure-700"
-                  : "text-steel hover:bg-cloud hover:text-ink"
-              }`}
-            >
-              {t(item.key)}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden items-center gap-5 lg:flex">
+          <nav className="flex items-center gap-0.5">
+            {NAV.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? "bg-azure-50 text-azure-700"
+                    : "text-steel hover:bg-cloud hover:text-ink"
+                }`}
+              >
+                {t(item.key)}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <LocaleSwitcher />
-          <ButtonLink href="/contact" size="sm" variant="secondary">
-            {t("cta")}
-          </ButtonLink>
+          <div className="flex items-center gap-3 border-l border-line/70 pl-5">
+            <LocaleSwitcher />
+            <ButtonLink href="/contact" size="sm" variant="secondary">
+              {t("cta")}
+            </ButtonLink>
+          </div>
         </div>
 
         <button

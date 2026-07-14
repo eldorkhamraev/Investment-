@@ -23,7 +23,7 @@ export function HeroAtmosphere({
         <>
           <div className="absolute inset-0">{media}</div>
           {/* Overall brand scrim so the footage sits in the palette */}
-          <div className="absolute inset-0 bg-ink/35" />
+          <div className="absolute inset-0 bg-ink/20" />
         </>
       ) : null}
 
@@ -93,7 +93,7 @@ export function HeroAtmosphere({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, var(--color-ink) 8%, rgba(7,30,47,0.72) 42%, rgba(7,30,47,0.15) 100%)",
+            "linear-gradient(90deg, var(--color-ink) 6%, rgba(7,30,47,0.58) 42%, rgba(7,30,47,0.05) 100%)",
         }}
       />
       {/* Bottom fade into page */}

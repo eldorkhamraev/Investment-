@@ -32,8 +32,8 @@ export function TrackRecord() {
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-ink/[0.72]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/55" />
+      <div className="absolute inset-0 bg-ink/[0.5]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent" />
 
       <div className="container-edge relative py-16 md:py-24">

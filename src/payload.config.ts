@@ -9,6 +9,7 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { News } from "./collections/News";
 import { Projects } from "./collections/Projects";
+import { Inquiries } from "./collections/Inquiries";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -19,7 +20,7 @@ export default buildConfig({
       titleSuffix: "· Investment Project Office",
     },
   },
-  collections: [News, Projects, Media, Users],
+  collections: [News, Projects, Inquiries, Media, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

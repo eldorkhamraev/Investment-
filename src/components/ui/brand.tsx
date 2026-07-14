@@ -6,7 +6,7 @@ export function EmblemMark({ className = "" }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/ministry-emblem.png"
+      src="/ministry-emblem-full.png"
       alt=""
       aria-hidden="true"
       className={`object-contain ${className}`}
@@ -42,15 +42,15 @@ export function Wordmark({
 }) {
   const dark = tone === "dark";
   return (
-    <span className="flex items-center gap-3">
-      <EmblemMark className="h-12 w-12 shrink-0" />
+    <span className="flex items-center gap-2.5">
+      <EmblemMark className="h-11 w-11 shrink-0" />
       <span className="flex flex-col leading-none">
         <span
           className={`font-display text-lg font-extrabold tracking-tight ${
             dark ? "text-white" : "text-ink"
           }`}
         >
-          Investment Project Office
+          Investment Office
         </span>
         <span
           className={`mt-1 text-[0.72rem] font-medium tracking-wide ${
