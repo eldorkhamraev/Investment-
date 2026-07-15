@@ -10,6 +10,7 @@ async function client() {
 
 export type NewsItem = {
   id?: number;
+  slug?: string;
   tag: string;
   date: string;
   title: string;

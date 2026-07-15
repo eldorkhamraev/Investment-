@@ -84,7 +84,7 @@ function NewsCard({ item }: { item: NewsItem }) {
         <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-slate">
           {item.excerpt}
         </p>
-        {item.id ? (
+        {item.id || item.slug ? (
           <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-700 transition-transform group-hover:gap-2.5">
             Read the article <Icons.arrow className="h-4 w-4" />
           </span>
@@ -96,10 +96,11 @@ function NewsCard({ item }: { item: NewsItem }) {
   const shell =
     "group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-200";
 
-  // CMS items link to their article page; fallback items have no detail page.
-  return item.id ? (
+  // CMS items link by numeric id; static fallback items link by slug.
+  const href = item.id ? `/news/${item.id}` : item.slug ? `/news/${item.slug}` : null;
+  return href ? (
     <Link
-      href={`/news/${item.id}`}
+      href={href}
       className={`${shell} hover:-translate-y-0.5 hover:border-azure-200 hover:shadow-lift`}
     >
       {inner}

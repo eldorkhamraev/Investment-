@@ -231,21 +231,24 @@
           "date": "2026",
           "title": "China's Linkwise to build $3.5B AI computing centre",
           "excerpt": "A modular intelligent computing centre in Karakalpakstan, delivered as foreign direct investment and planned for commissioning in 2027.",
-          "image": "/news/news-linkwise.png"
+          "image": "/news/news-linkwise.png",
+          "slug": "linkwise-ai-computing-centre"
         },
         {
           "tag": "Infrastructure",
           "date": "2026",
           "title": "300 MW data centre to anchor Central Asia's digital hub",
           "excerpt": "Up to 300 MW of IT capacity for AI and big data, with the first phase beginning in 2026.",
-          "image": "/news/news-datacentre.jpg"
+          "image": "/news/news-datacentre.jpg",
+          "slug": "data-centre-central-asia"
         },
         {
           "tag": "Ecosystem",
           "date": "2025",
           "title": "Uzbek developers on GitHub grew 10× in five years",
           "excerpt": "From 25K to 275K developers between 2020 and 2025 — and an 8-place climb in the 2025 Government AI Readiness Index.",
-          "image": "/news/news-github.jpg"
+          "image": "/news/news-github.jpg",
+          "slug": "github-developers-10x"
         }
       ]
     },
@@ -543,56 +546,64 @@
         "date": "2026",
         "title": "China's Linkwise to build $3.5B AI computing centre",
         "excerpt": "A Modular Intelligent Computing Centre in Karakalpakstan, delivered as foreign direct investment and planned for commissioning in 2027 — one of the largest tech FDI commitments in the country's history.",
-        "image": "/news/news-linkwise.png"
+        "image": "/news/news-linkwise.png",
+        "slug": "linkwise-ai-computing-centre"
       },
       {
         "tag": "Infrastructure",
         "date": "2026",
         "title": "300 MW data centre to anchor Central Asia's digital hub",
         "excerpt": "Up to 300 MW of IT capacity for AI and big data, with the first phase beginning in 2026 — more than infrastructure, an innovation ecosystem.",
-        "image": "/news/news-datacentre.jpg"
+        "image": "/news/news-datacentre.jpg",
+        "slug": "data-centre-central-asia"
       },
       {
         "tag": "Japan",
         "date": "2026",
         "title": "Uzbekistan and Japan launch Animation Talent Initiative",
         "excerpt": "A partnership with ELF-IN Co., backed by a grant exceeding $700K, to build a new generation of animation and CG professionals and export Uzbek content globally.",
-        "image": "/news/news-japan-animation.png"
+        "image": "/news/news-japan-animation.png",
+        "slug": "japan-animation-talent"
       },
       {
         "tag": "Talent",
         "date": "2026",
         "title": "Ucell powers the next generation of IT talent",
         "excerpt": "A five-year MOU to accelerate digital education, develop skilled IT professionals and equip young people with future-ready competencies.",
-        "image": "/news/news-ucell.png"
+        "image": "/news/news-ucell.png",
+        "slug": "ucell-it-talent"
       },
       {
         "tag": "China",
         "date": "2026",
         "title": "Expanding cooperation with Shanghai's Lingang Technopark",
         "excerpt": "Talks to attract leading Chinese tech companies to Uzbekistan and launch joint startup hubs with top universities.",
-        "image": "/news/news-lingang.png"
+        "image": "/news/news-lingang.png",
+        "slug": "lingang-technopark"
       },
       {
         "tag": "Delegation",
         "date": "2026",
         "title": "Working visit to Japan: METI, MIC and JICA",
         "excerpt": "Meetings across Japanese government and industry on AI adoption, IT outsourcing and talent — plus cooperation agreements for IT education and animation.",
-        "image": "/news/news-japan-visit.png"
+        "image": "/news/news-japan-visit.png",
+        "slug": "japan-visit-meti"
       },
       {
         "tag": "Ecosystem",
         "date": "2025",
         "title": "Uzbek developers on GitHub grew 10× in five years",
         "excerpt": "From 25K to 275K developers (2020–2025), with an 8-place climb in the 2025 Government AI Readiness Index.",
-        "image": "/news/news-github.jpg"
+        "image": "/news/news-github.jpg",
+        "slug": "github-developers-10x"
       },
       {
         "tag": "Forum",
         "date": "2025",
         "title": "ICT Week 2025: IT Investment Forum in Tashkent",
         "excerpt": "Government leaders, international investors and global companies convened on the future of IT investment in Uzbekistan.",
-        "image": "/news/news-ictweek.webp"
+        "image": "/news/news-ictweek.webp",
+        "slug": "ict-week-2025"
       }
     ]
   },

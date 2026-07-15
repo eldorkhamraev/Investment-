@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { Link } from "@/i18n/navigation";
@@ -8,17 +8,64 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/ui/icons";
 import { ContactCta } from "@/components/home/contact-cta";
-import { getNewsById } from "@/lib/cms";
+import { getNewsById, type NewsDetail } from "@/lib/cms";
+import { NEWS_BODIES } from "@/content/news-bodies";
 
 export const dynamic = "force-dynamic";
+
+// Resolved article for rendering: either a CMS record (Lexical body) or a
+// built-in static story (plain paragraphs).
+type Article = Omit<NewsDetail, "id" | "body"> & {
+  body: SerializedEditorState | null;
+  paragraphs?: string[];
+};
+
+/** Built-in story matching a slug, assembled from messages + NEWS_BODIES. */
+async function getStaticArticle(
+  locale: string,
+  slug: string,
+): Promise<Article | null> {
+  const paragraphs = NEWS_BODIES[slug];
+  if (!paragraphs) return null;
+  const t = await getTranslations({ locale, namespace: "newsPage" });
+  const items = t.raw("items") as {
+    slug?: string;
+    tag: string;
+    date: string;
+    title: string;
+    excerpt: string;
+    image?: string | null;
+  }[];
+  const meta = items.find((n) => n.slug === slug);
+  if (!meta) return null;
+  return {
+    tag: meta.tag,
+    date: meta.date,
+    title: meta.title,
+    excerpt: meta.excerpt,
+    image: meta.image ?? null,
+    body: null,
+    paragraphs,
+  };
+}
+
+/** CMS article first (numeric id); otherwise the built-in story by slug. */
+async function resolveArticle(
+  locale: string,
+  id: string,
+): Promise<Article | null> {
+  const cms = await getNewsById(id);
+  if (cms) return { ...cms, body: cms.body as SerializedEditorState | null };
+  return getStaticArticle(locale, id);
+}
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string; id: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const item = await getNewsById(id);
+  const { locale, id } = await params;
+  const item = await resolveArticle(locale, id);
   if (!item) return { title: "News" };
   return { title: item.title, description: item.excerpt };
 }
@@ -31,13 +78,11 @@ export default async function NewsArticle({
   const { locale, id } = await params;
   setRequestLocale(locale);
 
-  const item = await getNewsById(id);
+  const item = await resolveArticle(locale, id);
   if (!item) notFound();
 
-  const hasBody =
-    item.body &&
-    typeof item.body === "object" &&
-    "root" in (item.body as Record<string, unknown>);
+  const hasLexical =
+    !!item.body && typeof item.body === "object" && "root" in item.body;
 
   return (
     <>
@@ -72,12 +117,16 @@ export default async function NewsArticle({
 
         <Section tone="paper" className="!pt-0">
           <div className="prose-news mx-auto max-w-3xl">
-            {hasBody ? (
+            {hasLexical ? (
               <RichText data={item.body as SerializedEditorState} />
+            ) : item.paragraphs ? (
+              item.paragraphs.map((p, i) => (
+                <p key={i} className="text-lg leading-relaxed text-steel">
+                  {p}
+                </p>
+              ))
             ) : (
-              <p className="text-lg leading-relaxed text-steel">
-                {item.excerpt}
-              </p>
+              <p className="text-lg leading-relaxed text-steel">{item.excerpt}</p>
             )}
           </div>
         </Section>

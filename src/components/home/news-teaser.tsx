@@ -34,8 +34,8 @@ export async function NewsTeaser() {
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {items.map((n, i) => (
           <Link
-            key={n.id ?? `${n.title}-${i}`}
-            href={n.id ? `/news/${n.id}` : "/news"}
+            key={n.id ?? n.slug ?? `${n.title}-${i}`}
+            href={n.id ? `/news/${n.id}` : n.slug ? `/news/${n.slug}` : "/news"}
             className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-azure-200 hover:shadow-lift"
           >
             {n.image ? (
