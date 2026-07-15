@@ -34,9 +34,9 @@ export default async function NewsPage({
 
   // CMS-first; fall back to the built-in stories until items are published.
   const cms = await getNews();
-  const fallback = (t.raw("items") as Omit<NewsItem, "image">[]).map((n) => ({
+  const fallback = (t.raw("items") as NewsItem[]).map((n) => ({
     ...n,
-    image: null as string | null,
+    image: n.image ?? null,
   }));
   const items: NewsItem[] = cms.length ? cms : fallback;
 
