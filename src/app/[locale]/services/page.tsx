@@ -65,6 +65,7 @@ function ServicesContent() {
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
+        image="/services-hero.jpg"
       />
 
       {/* Service list */}

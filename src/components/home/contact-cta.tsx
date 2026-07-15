@@ -9,6 +9,14 @@ export function ContactCta() {
     <section className="bg-paper py-16 md:py-24">
       <div className="container-edge">
         <div className="relative overflow-hidden rounded-3xl bg-azure-700 px-6 py-14 md:px-16 md:py-20">
+          {/* Background photo */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/lets-do-it-together.webp"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+          />
           {/* Decorative glow */}
           <div
             className="pointer-events-none absolute inset-0 opacity-80"
