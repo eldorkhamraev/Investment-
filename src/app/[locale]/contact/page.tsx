@@ -15,7 +15,7 @@ export async function generateMetadata({
   return { title: "Contact", description: t("subtitle") };
 }
 
-type Channel = { name: string; value: string };
+type Channel = { name: string; value: string; href?: string };
 
 export default async function ContactPage({
   params,
@@ -82,7 +82,22 @@ function ContactContent() {
                     className="flex items-center justify-between gap-4 border-b border-line pb-2.5 text-sm last:border-0 last:pb-0"
                   >
                     <span className="font-semibold text-steel">{c.name}</span>
-                    <span className="text-slate">{c.value}</span>
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        target={c.href.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          c.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="text-azure-700 hover:underline"
+                      >
+                        {c.value}
+                      </a>
+                    ) : (
+                      <span className="text-slate">{c.value}</span>
+                    )}
                   </li>
                 ))}
               </ul>

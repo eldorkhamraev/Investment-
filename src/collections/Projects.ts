@@ -12,10 +12,24 @@ export const Projects: CollectionConfig = {
   fields: [
     { name: "title", type: "text", required: true },
     {
+      name: "slug",
+      type: "text",
+      unique: true,
+      admin: {
+        position: "sidebar",
+        description: "URL slug for /projects/[slug]. Auto-suggested from title if empty.",
+      },
+    },
+    {
       name: "published",
       type: "checkbox",
       defaultValue: true,
       admin: { position: "sidebar", description: "Show this on the website." },
+    },
+    {
+      name: "year",
+      type: "text",
+      admin: { position: "sidebar", description: "e.g. 2026" },
     },
     {
       name: "sector",
@@ -27,6 +41,10 @@ export const Projects: CollectionConfig = {
         "Creative & Gaming",
         "Fintech & Startups",
         "Digital Education",
+        "Human Capital",
+        "Ecosystem",
+        "Milestone",
+        "Investment Climate",
       ],
     },
     {

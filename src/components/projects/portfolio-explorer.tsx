@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { Link } from "@/i18n/navigation";
 
 export type Deal = {
   sector: string;
   title: string;
   img: string;
   desc: string;
+  slug?: string;
 };
 export type YearGroup = { year: string; deals: Deal[] };
 
@@ -63,7 +65,7 @@ export function PortfolioExplorer({
       <div>
         <div className="grid gap-6 sm:grid-cols-2">
           {group?.deals.map((d) => (
-            <DealCard key={d.title} deal={d} />
+            <DealCard key={d.slug ?? d.title} deal={d} />
           ))}
         </div>
         <p className="mt-6 text-sm text-slate/70">{hint}</p>
@@ -74,14 +76,10 @@ export function PortfolioExplorer({
 
 function DealCard({ deal }: { deal: Deal }) {
   const [open, setOpen] = useState(false);
-  return (
-    <button
-      type="button"
-      onClick={() => setOpen((o) => !o)}
-      aria-expanded={open}
-      className="group relative block aspect-[5/6] w-full overflow-hidden rounded-2xl border border-line text-left shadow-card"
-    >
-      {/* Photo layer */}
+  const href = deal.slug ? `/projects/${deal.slug}` : undefined;
+
+  const media = (
+    <>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={deal.img}
@@ -97,7 +95,6 @@ function DealCard({ deal }: { deal: Deal }) {
         </h3>
       </div>
 
-      {/* White reveal panel (hover on desktop, tap on mobile) */}
       <div
         className={`absolute inset-0 z-[5] flex flex-col bg-white p-7 transition-opacity duration-300 group-hover:opacity-100 md:p-8 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
@@ -113,8 +110,35 @@ function DealCard({ deal }: { deal: Deal }) {
         <p className="mt-4 text-[0.95rem] font-medium leading-relaxed text-steel">
           {deal.desc}
         </p>
+        {href ? (
+          <span className="mt-auto pt-4 text-sm font-semibold text-azure-700">
+            View project →
+          </span>
+        ) : null}
         <DealLines />
       </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="group relative block aspect-[5/6] w-full overflow-hidden rounded-2xl border border-line text-left shadow-card"
+      >
+        {media}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen((o) => !o)}
+      aria-expanded={open}
+      className="group relative block aspect-[5/6] w-full overflow-hidden rounded-2xl border border-line text-left shadow-card"
+    >
+      {media}
     </button>
   );
 }

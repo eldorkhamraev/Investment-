@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/section";
 import { Presentation } from "@/components/home/presentation";
+import { ButtonLink } from "@/components/ui/button";
+import { Icons } from "@/components/ui/icons";
 
 const PRESENTATION_FILE = "/investment-presentation.pdf";
 
@@ -23,6 +25,10 @@ export function WhyUzbekistan() {
               </p>
             ))}
           </div>
+          <ButtonLink href="/why" variant="outline" className="mt-8">
+            Explore why Uzbekistan
+            <Icons.arrow className="h-4 w-4" />
+          </ButtonLink>
         </div>
 
         {/* Right: tall Tashkent City photo */}

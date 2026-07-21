@@ -6,6 +6,8 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { ContactCta } from "@/components/home/contact-cta";
 import { Icons, type IconName } from "@/components/ui/icons";
+import { Link } from "@/i18n/navigation";
+import { PROGRAMS } from "@/content/programs";
 
 export async function generateMetadata({
   params,
@@ -19,7 +21,6 @@ export async function generateMetadata({
 
 type Service = { icon: IconName; title: string; desc: string };
 type Step = { title: string; desc: string };
-type Program = { name: string; desc: string };
 
 // Subtle flowing-line detail in the corner of each program card.
 function ProgramCardLines() {
@@ -57,7 +58,6 @@ function ServicesContent() {
   const t = useTranslations("services");
   const items = t.raw("list.items") as Service[];
   const steps = t.raw("process.steps") as Step[];
-  const programs = t.raw("programs.items") as Program[];
 
   return (
     <>
@@ -118,17 +118,21 @@ function ServicesContent() {
 
           <div className="lg:col-span-2">
             <div className="grid gap-6 sm:grid-cols-2">
-              {programs.map((p) => (
-                <div
-                  key={p.name}
-                  className="relative min-h-52 overflow-hidden rounded-2xl border border-line bg-white p-8"
+              {PROGRAMS.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/programs/${p.slug}`}
+                  className="relative min-h-52 overflow-hidden rounded-2xl border border-line bg-white p-8 transition-all hover:-translate-y-0.5 hover:border-azure-200 hover:shadow-lift"
                 >
                   <h3 className="text-xl text-azure-700">{p.name}</h3>
                   <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate">
-                    {p.desc}
+                    {p.summary}
                   </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-700">
+                    Learn more <Icons.arrow className="h-4 w-4" />
+                  </span>
                   <ProgramCardLines />
-                </div>
+                </Link>
               ))}
             </div>
           </div>

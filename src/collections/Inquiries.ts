@@ -35,7 +35,14 @@ export const Inquiries: CollectionConfig = {
     { name: "email", type: "email", required: true },
     { name: "company", type: "text" },
     { name: "country", type: "text" },
-    { name: "interest", type: "text" },
+    {
+      name: "interest",
+      type: "text",
+      admin: {
+        description:
+          "e.g. FDI project, IT Park / Zero Risk, IT-Visa, Soft-landing, Event, Press",
+      },
+    },
     { name: "message", type: "textarea", required: true },
   ],
 };

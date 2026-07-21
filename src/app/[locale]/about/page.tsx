@@ -5,7 +5,6 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card, IconTile } from "@/components/ui/card";
 import { Stat } from "@/components/ui/stat";
-import { Badge } from "@/components/ui/badge";
 import { ContactCta } from "@/components/home/contact-cta";
 import { Icons, type IconName } from "@/components/ui/icons";
 
@@ -20,7 +19,8 @@ export async function generateMetadata({
 }
 
 type Focus = { icon: IconName; title: string; desc: string };
-type Leader = { name: string; role: string };
+type Leader = { name: string; role: string; photo?: string };
+type Initiative = { title: string; desc: string };
 
 export default async function AboutPage({
   params,
@@ -36,6 +36,7 @@ function AboutContent() {
   const t = useTranslations("about");
   const focus = t.raw("focus.items") as Focus[];
   const leaders = t.raw("team.leaders") as Leader[];
+  const initiatives = t.raw("initiatives.items") as Initiative[];
   const mission = t.raw("mission.body") as string[];
 
   return (
@@ -107,6 +108,24 @@ function AboutContent() {
         </div>
       </Section>
 
+      {/* National initiatives */}
+      <Section>
+        <SectionHeading
+          eyebrow={t("initiatives.eyebrow")}
+          title={t("initiatives.title")}
+        />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {initiatives.map((item) => (
+            <Card key={item.title}>
+              <h3 className="text-lg">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                {item.desc}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
       {/* Leadership */}
       <Section tone="mist">
         <SectionHeading
@@ -118,15 +137,24 @@ function AboutContent() {
           {leaders.map((l, i) => (
             <Card key={l.name}>
               <div className="flex items-center gap-4">
-                <span
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-lg font-bold text-white"
-                  style={{
-                    background: `linear-gradient(135deg, var(--color-azure-${i % 2 ? "600" : "700"}), var(--color-navy-800))`,
-                  }}
-                  aria-hidden="true"
-                >
-                  {initials(l.name)}
-                </span>
+                {l.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={l.photo}
+                    alt={l.name}
+                    className="h-14 w-14 shrink-0 rounded-full object-cover"
+                  />
+                ) : (
+                  <span
+                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-lg font-bold text-white"
+                    style={{
+                      background: `linear-gradient(135deg, var(--color-azure-${i % 2 ? "600" : "700"}), var(--color-navy-800))`,
+                    }}
+                    aria-hidden="true"
+                  >
+                    {initials(l.name)}
+                  </span>
+                )}
                 <div>
                   <h3 className="text-base leading-tight">{l.name}</h3>
                   <p className="mt-1 text-sm leading-snug text-slate">{l.role}</p>
@@ -135,10 +163,6 @@ function AboutContent() {
             </Card>
           ))}
         </div>
-        <p className="mt-6 flex items-center gap-2 text-sm text-slate">
-          <Badge tone="neutral">Note</Badge>
-          Portraits to be added when photography is supplied.
-        </p>
       </Section>
 
       <ContactCta />

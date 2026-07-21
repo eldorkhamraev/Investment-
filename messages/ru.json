@@ -7,11 +7,29 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "why": "Why Uzbekistan",
+    "whyOverview": "Overview",
+    "whyTalent": "Talent",
+    "whyIncentives": "Incentives & IT Park",
+    "whyStrategy": "Digital Uzbekistan 2030",
+    "whyEcosystem": "Ecosystem",
+    "whyLiving": "Living in Uzbekistan",
+    "investors": "For investors",
+    "howToInvest": "How to invest",
     "services": "Services",
+    "programs": "Programs",
+    "faq": "FAQ",
+    "resources": "Resources",
+    "opportunities": "Opportunities",
     "projects": "Projects",
+    "sectors": "Sectors",
+    "stories": "Success stories",
     "news": "News",
+    "events": "Events",
+    "about": "About",
+    "aboutOffice": "The office",
     "contact": "Contact",
+    "search": "Search",
     "cta": "Become a partner",
     "menu": "Menu"
   },
@@ -21,6 +39,8 @@
     "connect": "Connect",
     "legal": "Legal",
     "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "sitemap": "Sitemap",
     "rights": "Investment Project Office. All rights reserved.",
     "address": "Muminov 4/1, Tashkent, Uzbekistan"
   },
@@ -132,7 +152,7 @@
       "label": "Priority sectors",
       "title": "Where investment is going.",
       "intro": "The office channels capital, grants and partnerships into the areas driving Uzbekistan's digital economy.",
-      "cta": "Explore projects",
+      "cta": "Explore sectors",
       "items": [
         {
           "name": "AI & Computing",
@@ -621,9 +641,15 @@
       "interest": "How can we help?",
       "interestOptions": [
         "Entering the Uzbek market",
-        "Investment opportunity",
+        "FDI / investment project",
+        "IT Park / Zero Risk",
+        "IT-Visa",
+        "Soft-landing support",
+        "Startup / Digital Startups programme",
         "Grant or sponsorship",
-        "Partnership",
+        "Partnership / matchmaking",
+        "Event or briefing",
+        "Press / media",
         "Other"
       ],
       "message": "Message",
@@ -647,7 +673,8 @@
       "items": [
         {
           "name": "WhatsApp",
-          "value": "+998 97 769 22 44"
+          "value": "+998 97 769 22 44",
+          "href": "https://wa.me/998977692244"
         },
         {
           "name": "WeChat",
@@ -655,11 +682,13 @@
         },
         {
           "name": "KakaoTalk",
-          "value": "+998 90 903 35 25"
+          "value": "+998 90 903 35 25",
+          "href": "tel:+998909033525"
         },
         {
           "name": "LinkedIn",
-          "value": "Investment Project Office"
+          "value": "Investment Project Office",
+          "href": "https://www.linkedin.com/company/investment-project-office/"
         }
       ]
     }
@@ -668,9 +697,18 @@
     "title": "Privacy Policy",
     "updated": "Last updated: July 2026",
     "body": [
-      "This is a placeholder privacy policy for the Investment Project Office website. Final legal text will be provided before launch.",
-      "We collect only the information you choose to share with us — such as your name, email and message when you contact the office. We use it solely to respond to your enquiry and to support your engagement with Uzbekistan's digital sector.",
-      "We do not sell your data. Aggregated, anonymised analytics may be used to improve the website. You may request access to, or deletion of, your data by contacting invest@digital.uz."
+      "This Privacy Policy describes how the Investment Project Office of the Ministry of Digital Technologies of the Republic of Uzbekistan (\"we\", \"us\") collects, uses and protects personal information when you visit invest.digital.uz (the \"Site\") or contact us through the Site.",
+      "Who we are. The Investment Project Office is a structural unit of the Ministry of Digital Technologies. Our role is to attract investment, grants and partnerships into Uzbekistan's digital sector and to support foreign technology companies entering and expanding in the market. Contact: invest@digital.uz · Muminov 4/1, Tashkent, Uzbekistan · +998 71 238 41 76.",
+      "Information we collect. We collect information you voluntarily provide — typically your name, organisation, email address, phone number, country, sector interest and message when you submit the contact form or email us. We may also receive technical data automatically, such as IP address, browser type, device type, pages visited and approximate location, via server logs and analytics tools.",
+      "How we use information. We use personal data to respond to enquiries; arrange discovery calls and follow-up; provide market-entry information and introductions relevant to your request; improve the Site and our services; and comply with applicable legal obligations. We do not sell personal data.",
+      "Legal basis and sharing. We process contact and engagement data based on your request to communicate with us and our legitimate interest in fulfilling our public mandate. We share information only with authorised staff and, where necessary to fulfil your request, with relevant government counterparts or vetted service providers under appropriate confidentiality. We do not disclose personal data for unrelated marketing by third parties.",
+      "Retention. Enquiry records are kept for as long as needed to manage the relationship and for a reasonable period thereafter for accountability and follow-up, unless a longer period is required by law. Analytics data is retained in aggregated or anonymised form where practicable.",
+      "Security and international transfers. We apply organisational and technical measures appropriate to the sensitivity of the data. If information is processed or stored outside Uzbekistan (for example by a hosting or email provider), we take steps to ensure an adequate level of protection consistent with applicable requirements.",
+      "Your rights. Subject to applicable law, you may request access to, correction of, or deletion of personal data we hold about you, or object to certain processing. To exercise these rights, email invest@digital.uz with sufficient detail for us to verify and respond to your request.",
+      "Cookies. The Site may use essential and analytics cookies. See our Cookie Policy for details and how to manage browser settings.",
+      "Children. The Site is intended for professional and business users. We do not knowingly collect personal data from children.",
+      "Changes. We may update this Privacy Policy from time to time. The \"Last updated\" date at the top of this page reflects the latest revision. Continued use of the Site after changes constitutes notice of the updated policy where permitted by law.",
+      "Contact. For privacy questions or requests, write to invest@digital.uz."
     ]
   },
   "styleguide": {

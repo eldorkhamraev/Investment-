@@ -4,10 +4,8 @@ import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
 import { ContactCta } from "@/components/home/contact-cta";
-import {
-  PortfolioExplorer,
-  type YearGroup,
-} from "@/components/projects/portfolio-explorer";
+import { PortfolioExplorer } from "@/components/projects/portfolio-explorer";
+import { projectsByYear } from "@/content/projects";
 
 export async function generateMetadata({
   params,
@@ -31,7 +29,16 @@ export default async function ProjectsPage({
 
 function ProjectsContent() {
   const t = useTranslations("projectsPage");
-  const years = t.raw("portfolio.years") as YearGroup[];
+  const years = projectsByYear().map((y) => ({
+    year: y.year,
+    deals: y.deals.map((d) => ({
+      sector: d.sector,
+      title: d.title,
+      img: d.img,
+      desc: d.desc,
+      slug: d.slug,
+    })),
+  }));
 
   return (
     <>

@@ -87,6 +87,12 @@ export const Icons = {
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   ),
+  search: (p: IconProps) => (
+    <svg {...base} {...p}>
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="M16.5 16.5L21 21" />
+    </svg>
+  ),
 } as const;
 
 export type IconName = keyof typeof Icons;

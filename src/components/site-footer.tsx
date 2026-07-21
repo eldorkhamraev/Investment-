@@ -1,14 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { MinistryLockup } from "@/components/ui/brand";
-
-const EXPLORE = [
-  { key: "about", href: "/about" },
-  { key: "services", href: "/services" },
-  { key: "projects", href: "/projects" },
-  { key: "news", href: "/news" },
-  { key: "contact", href: "/contact" },
-] as const;
+import { FOOTER_EXPLORE } from "@/config/navigation";
 
 export function SiteFooter() {
   const t = useTranslations();
@@ -40,7 +33,7 @@ export function SiteFooter() {
               {t("footer.explore")}
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {EXPLORE.map((item) => (
+              {FOOTER_EXPLORE.map((item) => (
                 <li key={item.key}>
                   <Link
                     href={item.href}
@@ -94,9 +87,17 @@ export function SiteFooter() {
           <p>
             © {year} {t("footer.rights")}
           </p>
-          <Link href="/privacy" className="hover:text-white">
-            {t("footer.privacy")}
-          </Link>
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <Link href="/privacy" className="hover:text-white">
+              {t("footer.privacy")}
+            </Link>
+            <Link href="/cookies" className="hover:text-white">
+              {t("footer.cookies")}
+            </Link>
+            <Link href="/sitemap" className="hover:text-white">
+              {t("footer.sitemap")}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
