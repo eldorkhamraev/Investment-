@@ -1,38 +1,34 @@
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/section";
-import { Presentation } from "@/components/home/presentation";
 import { ButtonLink } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
-
-const PRESENTATION_FILE = "/investment-presentation.pdf";
 
 export function WhyUzbekistan() {
   const t = useTranslations("home.why");
   const paragraphs = t.raw("paragraphs") as string[];
 
   return (
-    <Section tone="paper" className="!py-20 md:!py-28">
-      {/* Editorial two-column */}
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        {/* Left: text */}
+    <Section tone="paper" className="!py-14 md:!py-20">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <span className="eyebrow">{t("label")}</span>
-          <h2 className="mt-3 text-3xl md:text-4xl">{t("title")}</h2>
-          <div className="mt-6 space-y-5">
+          <h2 className="mt-2 text-2xl md:text-3xl lg:text-[2rem] lg:leading-tight">
+            {t("title")}
+          </h2>
+          <div className="mt-4 space-y-3">
             {paragraphs.map((p, i) => (
-              <p key={i} className="text-lg leading-relaxed text-steel">
+              <p key={i} className="text-base leading-relaxed text-steel md:text-[1.05rem]">
                 {p}
               </p>
             ))}
           </div>
-          <ButtonLink href="/why" variant="outline" className="mt-8">
-            Explore why Uzbekistan
+          <ButtonLink href="/why" variant="outline" className="mt-6" size="sm">
+            {t("explore")}
             <Icons.arrow className="h-4 w-4" />
           </ButtonLink>
         </div>
 
-        {/* Right: tall Tashkent City photo */}
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lift">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lift lg:aspect-[5/4]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/tashkent-city.webp"
@@ -40,18 +36,6 @@ export function WhyUzbekistan() {
             className="h-full w-full object-cover"
           />
         </div>
-      </div>
-
-      {/* Investment presentation */}
-      <div className="mt-20 border-t border-line pt-16 md:mt-28 md:pt-20">
-        <Presentation
-          intro={t("presentation.intro")}
-          title={t("presentation.title")}
-          desc={t("presentation.desc")}
-          button={t("presentation.button")}
-          file={PRESENTATION_FILE}
-          meta={t("presentation.meta")}
-        />
       </div>
     </Section>
   );

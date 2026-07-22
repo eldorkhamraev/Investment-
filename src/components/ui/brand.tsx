@@ -42,19 +42,20 @@ export function Wordmark({
 }) {
   const dark = tone === "dark";
   return (
-    <span className="flex items-center gap-2">
-      <EmblemMark className="h-8 w-8 shrink-0" />
-      <span className="flex flex-col leading-none">
+    <span className="flex items-center gap-2.5 sm:gap-3">
+      <EmblemMark className="h-10 w-10 shrink-0 sm:h-11 sm:w-11" />
+      <span className="flex min-w-0 flex-col">
         <span
-          className={`font-display text-[0.95rem] font-bold tracking-tight ${
+          className={`font-display text-[0.95rem] font-bold leading-none tracking-tight sm:text-[1.05rem] sm:whitespace-nowrap ${
             dark ? "text-white" : "text-ink"
           }`}
         >
-          Investment Office
+          <span className="block sm:inline">Investment Project </span>
+          <span className="block sm:inline">Office</span>
         </span>
         <span
-          className={`mt-0.5 text-[0.65rem] font-medium tracking-wide ${
-            dark ? "text-azure-100/70" : "text-slate"
+          className={`mt-1 text-[0.65rem] font-medium leading-snug tracking-wide sm:mt-1.5 sm:text-[0.7rem] sm:whitespace-nowrap ${
+            dark ? "text-azure-100/75" : "text-slate"
           }`}
         >
           Ministry of Digital Technologies · Uzbekistan

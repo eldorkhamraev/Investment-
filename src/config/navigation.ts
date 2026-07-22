@@ -51,12 +51,26 @@ export const NAV: readonly NavItem[] = [
     href: "/about",
     children: [
       { key: "aboutOffice", href: "/about" },
-      { key: "contact", href: "/contact" },
+      { key: "aboutStructure", href: "/about/structure" },
+      { key: "aboutTeam", href: "/about/team" },
     ],
   },
 ] as const;
 
-/** Flattened footer explore links. */
+/** Compact primary footer links (horizontal strip). */
+export const FOOTER_NAV = [
+  { key: "why", href: "/why" },
+  { key: "howToInvest", href: "/how-to-invest" },
+  { key: "projects", href: "/projects" },
+  { key: "sectors", href: "/sectors" },
+  { key: "stories", href: "/stories" },
+  { key: "regions", href: "/regions" },
+  { key: "news", href: "/news" },
+  { key: "about", href: "/about" },
+  { key: "contact", href: "/contact" },
+] as const;
+
+/** Full explore list for the sitemap page. */
 export const FOOTER_EXPLORE = [
   { key: "why", href: "/why" },
   { key: "howToInvest", href: "/how-to-invest" },

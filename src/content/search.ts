@@ -64,7 +64,19 @@ export function buildSearchIndex(): SearchHit[] {
       title: "About the office",
       href: "/about",
       type: "Page",
-      excerpt: "Mandate, focus areas, initiatives and leadership.",
+      excerpt: "Mandate, ministry affiliation and how the office supports market entry.",
+    },
+    {
+      title: "Office structure",
+      href: "/about/structure",
+      type: "Page",
+      excerpt: "Organisational hierarchy of the Investment Project Office.",
+    },
+    {
+      title: "Office team",
+      href: "/about/team",
+      type: "Page",
+      excerpt: "Leadership and officers of the Investment Project Office.",
     },
     {
       title: "News",

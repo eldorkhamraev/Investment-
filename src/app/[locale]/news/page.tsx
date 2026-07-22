@@ -14,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "newsPage.hero" });
-  return { title: "News", description: t("subtitle") };
+  return { title: t("title"), description: t("subtitle") };
 }
 
 export default async function NewsPage({
@@ -42,7 +42,7 @@ export default async function NewsPage({
         subtitle={t("hero.subtitle")}
         image="/itpark.jpg"
       />
-      <Section>
+      <Section tone="paper" className="!py-10 md:!py-14">
         <NewsGrid items={items} />
       </Section>
     </>

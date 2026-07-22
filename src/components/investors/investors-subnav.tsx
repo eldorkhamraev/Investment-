@@ -3,7 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { INVESTOR_SECTIONS } from "@/content/investors";
 
 /**
- * Full-width section nav under the For Investors hero.
+ * Quiet section nav under the For Investors hero —
+ * matches Why Uzbekistan: text links, hairlines, underline active.
  */
 export async function InvestorsSubnav({
   current,
@@ -26,27 +27,34 @@ export async function InvestorsSubnav({
   ];
 
   return (
-    <div className="border-b border-line bg-navy-900">
+    <div className="border-b border-line bg-paper">
       <div className="container-edge">
         <nav
-          className="-mx-1 flex gap-1 overflow-x-auto py-2 scrollbar-none"
+          className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 py-1"
           aria-label={t("subnavLabel")}
         >
-          {items.map((item) => {
+          {items.map((item, index) => {
             const active =
               item.slug === undefined ? !current : current === item.slug;
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`shrink-0 rounded-lg px-3.5 py-2.5 text-sm font-medium whitespace-nowrap transition-colors ${
-                  active
-                    ? "bg-azure-600 text-white"
-                    : "text-white/75 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
+              <span key={item.href} className="flex items-center">
+                {index > 0 ? (
+                  <span
+                    className="mx-1 h-3 w-px shrink-0 bg-line md:mx-2"
+                    aria-hidden
+                  />
+                ) : null}
+                <Link
+                  href={item.href}
+                  className={`relative px-2.5 py-3 text-[13px] tracking-tight transition-colors md:px-3 md:text-sm ${
+                    active
+                      ? "font-semibold text-ink after:absolute after:inset-x-2.5 after:bottom-0 after:h-0.5 after:rounded-full after:bg-azure-600 md:after:inset-x-3"
+                      : "font-medium text-steel hover:text-ink"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </span>
             );
           })}
         </nav>

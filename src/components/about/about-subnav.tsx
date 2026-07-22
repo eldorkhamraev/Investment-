@@ -1,37 +1,26 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { WHY_PAGES } from "@/content/why";
 
-/**
- * Quiet section nav under the Why Uzbekistan hero —
- * text links with an underline active state, not button chips.
- */
-export async function WhySubnav({ current }: { current?: string }) {
-  const t = await getTranslations("whyPage");
+export type AboutSection = "office" | "structure" | "team";
 
-  const items = [
-    {
-      href: "/why" as const,
-      label: t("overview"),
-      slug: undefined as string | undefined,
-    },
-    ...WHY_PAGES.map((page) => ({
-      href: `/why/${page.slug}` as const,
-      label: page.eyebrow,
-      slug: page.slug as string | undefined,
-    })),
-  ];
+const ITEMS: { section: AboutSection; href: "/about" | "/about/structure" | "/about/team" }[] = [
+  { section: "office", href: "/about" },
+  { section: "structure", href: "/about/structure" },
+  { section: "team", href: "/about/team" },
+];
+
+export async function AboutSubnav({ current }: { current: AboutSection }) {
+  const t = await getTranslations("about.sidebar");
 
   return (
     <div className="border-b border-line bg-paper">
       <div className="container-edge">
         <nav
           className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 py-1"
-          aria-label={t("sidebarLabel")}
+          aria-label={t("navLabel")}
         >
-          {items.map((item, index) => {
-            const active =
-              item.slug === undefined ? !current : current === item.slug;
+          {ITEMS.map((item, index) => {
+            const active = current === item.section;
             return (
               <span key={item.href} className="flex items-center">
                 {index > 0 ? (
@@ -48,7 +37,7 @@ export async function WhySubnav({ current }: { current?: string }) {
                       : "font-medium text-steel hover:text-ink"
                   }`}
                 >
-                  {item.label}
+                  {t(item.section)}
                 </Link>
               </span>
             );

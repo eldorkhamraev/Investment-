@@ -32,11 +32,13 @@
     "stories": "Success stories",
     "news": "News",
     "events": "Events",
-    "about": "About",
-    "aboutOffice": "The office",
-    "contact": "Contact",
+    "about": "Biz haqimizda",
+    "aboutOffice": "Ofis",
+    "aboutStructure": "Tuzilma",
+    "aboutTeam": "Jamoa",
+    "contact": "Aloqa",
     "search": "Search",
-    "cta": "Become a partner",
+    "cta": "Contact",
     "menu": "Menu",
     "regions": "Viloyatlar"
   },
@@ -76,11 +78,10 @@
       "label": "Why Uzbekistan",
       "title": "The opportunity is here. So is the timing.",
       "photoAlt": "Tashkent City business district",
+      "explore": "Nima uchun O‘zbekiston",
       "paragraphs": [
-        "Uzbekistan's digital economy is already in motion. IT service exports crossed $1 billion in 2025. Nearly 3,000 companies operate inside the national IT Park. The Digital Uzbekistan 2030 strategy is a national priority, backed at the highest level of government with the institutions and incentives required to deliver it.",
-        "For technology companies, the fiscal environment is exceptionally competitive. IT Park residents are exempt from corporate tax, VAT, and social tax. Personal income is subject to a flat rate of 7.5 percent. Market entry is structured to be fast and fully supported, with streamlined registration and a dedicated team guiding every step.",
-        "The talent pipeline is substantial. A population of 37 million, majority under thirty, produces tens of thousands of IT graduates annually. The workforce operates across Uzbek, Russian and English, and a national program is currently training one million new specialists in digital skills.",
-        "Investors who establish early in emerging digital markets define the conditions for those who follow. Uzbekistan is at that inflection point."
+        "2025-yilda IT xizmatlari eksporti $1 mlrd dan oshdi; milliy IT Parkda deyarli 3 000 kompaniya ishlaydi. Digital Uzbekistan 2030 — milliy ustuvorlik, institutlar va rag‘batlar bilan mustahkamlangan.",
+        "IT Park rezidentlari: 0% korporativ soliq va QQS, 7,5% yagona daromad solig‘i. Yosh, ko‘p tilli kadrlar va bozorga kirishni qo‘llab-quvvatlash erta joylashishni amaliy qiladi."
       ],
       "presentation": {
         "intro": "Download our investment overview to share with your team.",
@@ -92,35 +93,34 @@
     },
     "track": {
       "label": "Track record",
-      "title": "The numbers behind the momentum.",
-      "stats": [
+      "title": "O‘zbekiston raqamlarda",
+      "cta": "Nima uchun O‘zbekiston",
+      "prev": "Oldingi ko‘rsatkichlar",
+      "next": "Keyingi ko‘rsatkichlar",
+      "figures": [
         {
-          "value": 1,
-          "prefix": "$",
-          "suffix": "B+",
-          "decimals": 0,
-          "label": "IT service exports in 2025",
-          "source": "Ministry of Digital Technologies"
+          "value": "7.7%",
+          "label": "YaIM o‘sishi (2025)"
         },
         {
-          "value": 2990,
-          "suffix": "+",
-          "decimals": 0,
-          "label": "IT Park member companies",
-          "source": "IT Park Uzbekistan"
+          "value": "$43.1 bln",
+          "label": "Jalb qilingan xorijiy investitsiyalar (2025)"
         },
         {
-          "value": 44000,
-          "suffix": "+",
-          "decimals": 0,
-          "label": "Technology jobs created",
-          "source": "IT Park Uzbekistan"
+          "value": "$1B+",
+          "label": "IT xizmatlari ekspori (2025)"
         },
         {
-          "value": 90,
-          "decimals": 0,
-          "label": "Export destination countries",
-          "source": "IT Park Uzbekistan"
+          "value": "2,990+",
+          "label": "IT Park a’zo kompaniyalari"
+        },
+        {
+          "value": "90",
+          "label": "Eksport mamlakatlari"
+        },
+        {
+          "value": "38.2M",
+          "label": "Aholi"
         }
       ]
     },
@@ -156,40 +156,41 @@
       ]
     },
     "sectors": {
-      "label": "Priority sectors",
-      "title": "Where investment is going.",
-      "intro": "The office channels capital, grants and partnerships into the areas driving Uzbekistan's digital economy.",
-      "cta": "Explore sectors",
+      "label": "Ustuvor yo‘nalishlar",
+      "title": "Investitsiyalar qayerga yo‘naltirilmoqda.",
+      "intro": "Ofis kapital, grantlar va hamkorliklarni O‘zbekiston raqamli iqtisodiyotini rivojlantiruvchi yo‘nalishlarga yo‘naltiradi.",
+      "cta": "Yo‘nalishlarni o‘rganish",
+      "viewField": "Yo‘nalishni ochish",
       "items": [
         {
-          "name": "AI & Computing",
-          "desc": "Intelligent computing centres and applied artificial intelligence.",
-          "img": "/sector-ai.jpg"
+          "slug": "ai-computing",
+          "name": "AI va hisoblash",
+          "desc": "Intellektual hisoblash markazlari va amaliy sun’iy intellekt."
         },
         {
-          "name": "Digital Infrastructure",
-          "desc": "Data centres and the backbone of the digital economy.",
-          "img": "/sector-infra.jpg"
+          "slug": "digital-infrastructure",
+          "name": "Raqamli infratuzilma",
+          "desc": "Ma’lumotlar markazlari va raqamli iqtisodiyotning asosi."
         },
         {
-          "name": "IT Outsourcing & BPO",
-          "desc": "Export-oriented delivery centres serving global clients.",
-          "img": "/sector-outsourcing.jpg"
+          "slug": "it-outsourcing-bpo",
+          "name": "IT-autsorsing va BPO",
+          "desc": "Global mijozlarga xizmat ko‘rsatuvchi eksportga yo‘naltirilgan markazlar."
         },
         {
-          "name": "Creative & Gaming",
-          "desc": "Animation, game development and digital media.",
-          "img": "/sector-gaming.jpg"
+          "slug": "creative-gaming",
+          "name": "Kreativ va geyming",
+          "desc": "Animatsiya, o‘yin ishlab chiqish va raqamli media."
         },
         {
-          "name": "Fintech & Startups",
-          "desc": "High-growth digital startups and financial technology.",
-          "img": "/sector-fintech.jpg"
+          "slug": "fintech-startups",
+          "name": "Fintex va startaplar",
+          "desc": "Tez o‘sayotgan raqamli startaplar va moliyaviy texnologiyalar."
         },
         {
-          "name": "Digital Education",
-          "desc": "Talent pipelines and skills for the technology sector.",
-          "img": "/sector-education.jpg"
+          "slug": "digital-education",
+          "name": "Raqamli ta’lim",
+          "desc": "Texnologiya sohasi uchun kadrlar va ko‘nikmalar."
         }
       ]
     },
@@ -247,6 +248,14 @@
         }
       ]
     },
+    "stories": {
+      "eyebrow": "Muvaffaqiyat hikoyalari",
+      "title": "Raqamli sektordan dalillar.",
+      "intro": "Xorijiy kapital, talent hamkorliklari va eksport yutuqlari — investorlar birinchi so‘raydigan holatlar.",
+      "cta": "Barcha hikoyalar",
+      "readStory": "Hikoyani o‘qish",
+      "more": "Boshqa holatlar"
+    },
     "news": {
       "eyebrow": "Newsroom",
       "title": "Latest from the office.",
@@ -280,9 +289,9 @@
       ]
     },
     "contact": {
-      "title": "Let's build your Uzbekistan story.",
-      "subtitle": "Tell us what you're planning. We'll map the fastest, lowest-risk path to market — and stay with you long after you land.",
-      "primary": "Book an introduction",
+      "title": "Ofis bilan suhbatni boshlang.",
+      "subtitle": "Rejalaringiz haqida ayting. Biz O‘zbekiston raqamli iqtisodiyotiga kirish yo‘lini aniq belgilab beramiz.",
+      "primary": "Ofis bilan bog‘lanish",
       "secondary": "Email invest@digital.uz"
     },
     "guides": {
@@ -306,6 +315,10 @@
         }
       ]
     },
+    "investmentMap": {
+      "title": "O‘zbekiston investitsiya xaritasi",
+      "intro": "Hududni tanlang — asosiy ko‘rsatkichlar va PDF brif."
+    },
     "regionsTeaser": {
       "eyebrow": "Investitsiya xaritasi",
       "title": "Raqamli imkoniyatlarni viloyatlar bo‘yicha o‘rganing.",
@@ -320,106 +333,145 @@
     }
   },
   "about": {
+    "metaTitle": "Biz haqimizda",
+    "metaDescription": "O‘zbekiston Raqamli texnologiyalar vazirligi huzuridagi Investitsiya loyihalari ofisi: vazifalar, tuzilma va jamoa.",
     "hero": {
-      "eyebrow": "About the office",
-      "title": "The gateway to Uzbekistan's digital economy.",
-      "subtitle": "Established in 2023 as a structural unit of the Ministry of Digital Technologies, the Investment Project Office advances the nation's digital transformation in line with the Digital Uzbekistan 2030 Strategy — and helps the world take part in it."
+      "eyebrow": "Ofis haqida",
+      "title": "Investitsiya loyihalari ofisi.",
+      "subtitle": "O‘zbekiston Respublikasi Raqamli texnologiyalar vazirligining tarkibiy bo‘linmasi. Biz raqamli investitsiyalarni jalb qilamiz va xalqaro kompaniyalarni birinchi aloqadan ishga tushirishgacha kuzatib boramiz."
     },
-    "mission": {
-      "eyebrow": "Our mission",
-      "title": "Driving digital growth through strategic IT investment.",
-      "body": [
-        "The Investment Project Office is a structural unit under the Ministry of Digital Technologies of the Republic of Uzbekistan. Its main task is to attract new investments, grants and sponsorship funds in the field of digital technologies, and to support foreign investors in entering and expanding within Uzbekistan's IT sector.",
-        "The Office provides comprehensive market-entry assistance and full business support — including company registration, legal and administrative guidance, facilitation of residence and tax procedures, and connections with local service providers."
-      ]
+    "sidebar": {
+      "navLabel": "Bo‘limlar",
+      "office": "Ofis",
+      "structure": "Tuzilma",
+      "team": "Jamoa"
     },
-    "stats": {
-      "title": "A digital economy with momentum.",
-      "intro": "The macro picture behind every conversation we have with investors."
-    },
-    "focus": {
-      "eyebrow": "What we do",
-      "title": "Five areas of focus.",
-      "items": [
+    "office": {
+      "metaTitle": "Ofis",
+      "metaDescription": "Raqamli texnologiyalar vazirligi huzuridagi Investitsiya loyihalari ofisi: vazifalar, mansublik va bozorga chiqishni qo‘llab-quvvatlash.",
+      "eyebrow": "Ofis",
+      "title": "Biz kimiz va nima qilamiz.",
+      "belongs": "Investitsiya loyihalari ofisi O‘zbekiston Respublikasi Raqamli texnologiyalar vazirligi tarkibiga kiradi. U 2023-yilda «Raqamli O‘zbekiston — 2030» strategiyasini amalga oshirish va milliy IT-sektorga investitsiya yo‘laklarini ochish uchun tashkil etilgan.",
+      "mandate": "Bizning vazifamiz — raqamli texnologiyalar sohasiga investitsiya, grant va homiylik mablag‘larini jalb etish hamda O‘zbekiston IT-bozoriga kirayotgan yoki kengayayotgan xorijiy investorlarni qo‘llab-quvvatlash.",
+      "support": "Bozorga chiqishni bosqichma-bosqich kuzatamiz: kompaniyani ro‘yxatdan o‘tkazish, huquqiy va ma’muriy maslahat, yashash va soliq tartiblari, IT Park rezidentligi hamda mahalliy hamkorlar va xizmat ko‘rsatuvchilar bilan tanishtirish.",
+      "facts": [
         {
-          "icon": "cost",
-          "title": "Digital investment facilitation",
-          "desc": "Attracting and structuring investment, grants and sponsorship into the digital sector."
+          "label": "Idoraviy mansublik",
+          "value": "Raqamli texnologiyalar vazirligi"
         },
         {
-          "icon": "registration",
-          "title": "IT project design & PPPs",
-          "desc": "Designing high-potential projects and public–private partnerships in technology."
+          "label": "Tashkil etilgan yil",
+          "value": "2023"
         },
         {
-          "icon": "partners",
-          "title": "Support for local companies & startups",
-          "desc": "Helping Uzbek technology companies and startups scale and reach global markets."
-        },
-        {
-          "icon": "talent",
-          "title": "Human capital & education reform",
-          "desc": "Expanding the specialist workforce through education reform and skills initiatives."
-        },
-        {
-          "icon": "export",
-          "title": "Foreign companies & global integration",
-          "desc": "Bringing international IT companies into Uzbekistan and integrating the sector globally."
+          "label": "Strategiya",
+          "value": "Raqamli O‘zbekiston — 2030"
         }
-      ]
+      ],
+      "buildingAlt": "Raqamli texnologiyalar vazirligi, Toshkent"
     },
-    "initiatives": {
-      "eyebrow": "National initiatives",
-      "title": "Programs we help drive.",
-      "items": [
-        {
-          "title": "1 Million Programmers",
-          "desc": "A national drive to cultivate a vast pool of programming talent."
-        },
-        {
-          "title": "AI & digital literacy",
-          "desc": "Empowering women and youth with essential digital and AI skills."
-        },
-        {
-          "title": "Smart City & GovTech",
-          "desc": "Modernising urban living and government operations with advanced technology."
-        },
-        {
-          "title": "IT curricula & certification",
-          "desc": "Updating educational frameworks to meet international industry standards."
-        }
-      ]
+    "structure": {
+      "metaTitle": "Tuzilma",
+      "metaDescription": "Investitsiya loyihalari ofisining Raqamli texnologiyalar vazirligidagi tashkiliy tuzilmasi.",
+      "eyebrow": "Tuzilma",
+      "title": "Ofis vazirlik tuzilmasida qayerda turadi.",
+      "intro": "Mas’ul shaxs, lavozim va aloqa ma’lumotlarini ko‘rish uchun lavozimni tanlang.",
+      "clickHint": "Batafsil uchun lavozimni bosing",
+      "close": "Yopish",
+      "phone": "Telefon",
+      "email": "Elektron pochta",
+      "website": "Veb-sayt",
+      "reception": "Qabul soatlari",
+      "nodes": {
+        "ministry": "Raqamli texnologiyalar vazirligi",
+        "minister": "Vazir",
+        "deputyMinister": "Vazir o‘rinbosari",
+        "ipo": "Investitsiya loyihalari ofisi",
+        "head": "Boshqarma boshlig‘i",
+        "officerGrants": "Investitsiya va grantlar",
+        "officerSenior": "Katta mutaxassis",
+        "officerProjects": "Loyiha menejeri",
+        "officerMinistry": "Vazirlik bilan aloqa"
+      }
     },
     "team": {
-      "eyebrow": "Leadership",
-      "title": "The people you'll work with.",
-      "intro": "Investment decisions are built on relationships. Our team leads bilateral delegations and works directly with investors from first contact onward.",
-      "leaders": [
-        {
-          "name": "Akbarkhuja Akramkhujaev",
-          "role": "Head of Department, Investment Project Office"
-        },
-        {
-          "name": "Rustam Karimjonov",
-          "role": "Deputy Minister, Ministry of Digital Technologies"
-        },
-        {
-          "name": "Jamshidbek Gayratjonov",
-          "role": "Investment & Grants Officer"
-        },
-        {
-          "name": "Diyora Inomjonova",
-          "role": "Senior Officer"
-        },
-        {
-          "name": "Samandar Khakkiev",
-          "role": "Project Manager"
-        },
-        {
-          "name": "Khasan Khamrakulov",
-          "role": "Ministry of Digital Technologies"
-        }
-      ]
+      "metaTitle": "Jamoa",
+      "metaDescription": "Investitsiya loyihalari ofisi rahbariyati va mutaxassislari.",
+      "eyebrow": "Jamoa",
+      "title": "Siz bilan ishlaydigan mutaxassislar.",
+      "intro": "Jamoamiz investorlar bilan muzokaralar, ikki tomonlama tashriflar va bozorga chiqishni kundalik qo‘llab-quvvatlashni olib boradi.",
+      "contactLabel": "Aloqa",
+      "viewInStructure": "Tuzilmada ko‘rish"
+    },
+    "people": {
+      "shermatov": {
+        "name": "Sherzod Shermatov",
+        "role": "Raqamli texnologiyalar vaziri",
+        "unit": "Vazir",
+        "bio": "O‘zbekiston Respublikasi Raqamli texnologiyalar vaziri va Milliy axborot texnologiyalari direktori (CIO).",
+        "email": "info@digital.uz",
+        "website": "https://digital.uz",
+        "reception": "Har oyning birinchi va oxirgi payshanbasi, 10:00–12:00"
+      },
+      "karimjonov": {
+        "name": "Karimjonov Rustam Olimjonovich",
+        "role": "Raqamli texnologiyalar vaziri o‘rinbosari",
+        "unit": "Vazir o‘rinbosari",
+        "bio": "Investitsiyaga oid raqamli dasturlar va Investitsiya loyihalari ofisi bilan muvofiqlashtirishni nazorat qiluvchi vazir o‘rinbosari.",
+        "phone": "+998 71 238 43 00",
+        "email": "info@digital.uz",
+        "website": "https://digital.uz",
+        "reception": "Payshanba 16:00–18:00"
+      },
+      "maxsudov": {
+        "name": "Maxsudov Jamol Tilloyevich",
+        "role": "Vazir o‘rinbosari",
+        "unit": "Vazir o‘rinbosari",
+        "bio": "O‘zbekiston Respublikasi Raqamli texnologiyalar vaziri o‘rinbosari.",
+        "phone": "+998 71 238 43 10",
+        "email": "info@digital.uz",
+        "reception": "Seshanba 16:00–18:00"
+      },
+      "akramkhujaev": {
+        "name": "Akbarkhuja Akramkhujaev",
+        "role": "Boshqarma boshlig‘i, Investitsiya loyihalari ofisi",
+        "unit": "Investitsiya loyihalari ofisi",
+        "bio": "Investitsiya loyihalari ofisini boshqaradi. Xalqaro kompaniyalar va investorlar uchun birinchi uchrashuvdan ishga tushirishgacha asosiy suhbatdosh.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "gayratjonov": {
+        "name": "Jamshidbek Gayratjonov",
+        "role": "Investitsiya va grantlar bo‘yicha mutaxassis",
+        "unit": "Investitsiya loyihalari ofisi",
+        "bio": "Raqamli sektorda investitsiya tuzilmasi, grant yo‘llari va homiylik imkoniyatlarini qo‘llab-quvvatlaydi.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "inomjonova": {
+        "name": "Diyora Inomjonova",
+        "role": "Katta mutaxassis",
+        "unit": "Investitsiya loyihalari ofisi",
+        "bio": "Investor hujjatlari, rasmiy yozishmalar va vazirlik bo‘linmalari bilan ishlashni muvofiqlashtiradi.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "khakkiev": {
+        "name": "Samandar Khakkiev",
+        "role": "Loyiha menejeri",
+        "unit": "Investitsiya loyihalari ofisi",
+        "bio": "Loyiha portfeli, maydonchalarga tashriflar va bozorga chiqish bosqichlarini boshqaradi.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "khamrakulov": {
+        "name": "Khasan Khamrakulov",
+        "role": "Raqamli texnologiyalar vazirligi",
+        "unit": "Investitsiya loyihalari ofisi",
+        "bio": "Investitsiya loyihalari ofisi va vazirlik bo‘linmalari o‘rtasida tartibga solish va ma’muriy masalalar bo‘yicha aloqani ta’minlaydi.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      }
     }
   },
   "services": {
@@ -599,6 +651,18 @@
       "eyebrow": "Newsroom",
       "title": "News from the office.",
       "subtitle": "Investment, partnerships and momentum from Uzbekistan's digital economy."
+    },
+    "filterAll": "Barchasi",
+    "filterLabel": "Mavzu bo‘yicha filtr",
+    "readArticle": "O‘qish",
+    "backToNews": "Barcha yangiliklar",
+    "empty": "Bu mavzuda hali maqolalar yo‘q.",
+    "featuredLabel": "Asosiy",
+    "sidebar": {
+      "contactTitle": "Aloqa",
+      "emailLabel": "Email",
+      "phoneLabel": "Telefon",
+      "addressLabel": "Ofis"
     },
     "items": [
       {
@@ -887,12 +951,19 @@
     "eyebrow": "Opportunities",
     "title": "Uzbekistan's Digital Economy — Region by Region",
     "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
-    "mapHint": "Click a region to open its brief.",
+    "mapHint": "Xaritadan yoki ro‘yxatdan hududni tanlang.",
     "mapAria": "Interactive map of Uzbekistan regions",
     "keyFacts": "Key facts",
-    "downloadBrief": "Download regional brief",
+    "downloadBrief": "PDF brif",
     "bookIntro": "Book an introduction",
     "close": "Close",
+    "statLabels": {
+      "population": "Aholi",
+      "projects": "Investitsiya loyihalari",
+      "fdi": "Xorijiy investitsiyalar va kreditlar",
+      "trade": "Tashqi savdo",
+      "area": "Kv/km"
+    },
     "panelEmptyEyebrow": "Select a region",
     "panelEmptyTitle": "Click the map to explore.",
     "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",

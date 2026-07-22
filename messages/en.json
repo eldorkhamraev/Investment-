@@ -34,10 +34,12 @@
     "news": "News",
     "events": "Events",
     "about": "About",
-    "aboutOffice": "The office",
+    "aboutOffice": "Office",
+    "aboutStructure": "Structure",
+    "aboutTeam": "Team",
     "contact": "Contact",
     "search": "Search",
-    "cta": "Become a partner",
+    "cta": "Contact",
     "menu": "Menu"
   },
   "footer": {
@@ -76,11 +78,10 @@
       "label": "Why Uzbekistan",
       "title": "The opportunity is here. So is the timing.",
       "photoAlt": "Tashkent City business district",
+      "explore": "Explore why Uzbekistan",
       "paragraphs": [
-        "Uzbekistan's digital economy is already in motion. IT service exports crossed $1 billion in 2025. Nearly 3,000 companies operate inside the national IT Park. The Digital Uzbekistan 2030 strategy is a national priority, backed at the highest level of government with the institutions and incentives required to deliver it.",
-        "For technology companies, the fiscal environment is exceptionally competitive. IT Park residents are exempt from corporate tax, VAT, and social tax. Personal income is subject to a flat rate of 7.5 percent. Market entry is structured to be fast and fully supported, with streamlined registration and a dedicated team guiding every step.",
-        "The talent pipeline is substantial. A population of 37 million, majority under thirty, produces tens of thousands of IT graduates annually. The workforce operates across Uzbek, Russian and English, and a national program is currently training one million new specialists in digital skills.",
-        "Investors who establish early in emerging digital markets define the conditions for those who follow. Uzbekistan is at that inflection point."
+        "IT service exports crossed $1 billion in 2025, with nearly 3,000 companies in the national IT Park. Digital Uzbekistan 2030 is a national priority, backed by the institutions and incentives needed to deliver it.",
+        "IT Park residents pay 0% corporate tax and VAT, with a 7.5% flat personal income rate. A young workforce, multilingual talent, and dedicated market-entry support make early positioning in this market practical."
       ],
       "presentation": {
         "intro": "Download our investment overview to share with your team.",
@@ -92,35 +93,34 @@
     },
     "track": {
       "label": "Track record",
-      "title": "The numbers behind the momentum.",
-      "stats": [
+      "title": "Uzbekistan in numbers",
+      "cta": "Why Uzbekistan",
+      "prev": "Previous figures",
+      "next": "Next figures",
+      "figures": [
         {
-          "value": 1,
-          "prefix": "$",
-          "suffix": "B+",
-          "decimals": 0,
-          "label": "IT service exports in 2025",
-          "source": "Ministry of Digital Technologies"
+          "value": "7.7%",
+          "label": "GDP Growth (2025)"
         },
         {
-          "value": 2990,
-          "suffix": "+",
-          "decimals": 0,
-          "label": "IT Park member companies",
-          "source": "IT Park Uzbekistan"
+          "value": "$43.1 bln",
+          "label": "Attracted foreign investments (2025)"
         },
         {
-          "value": 44000,
-          "suffix": "+",
-          "decimals": 0,
-          "label": "Technology jobs created",
-          "source": "IT Park Uzbekistan"
+          "value": "$1B+",
+          "label": "IT service exports (2025)"
         },
         {
-          "value": 90,
-          "decimals": 0,
-          "label": "Export destination countries",
-          "source": "IT Park Uzbekistan"
+          "value": "2,990+",
+          "label": "IT Park member companies"
+        },
+        {
+          "value": "90",
+          "label": "Export destination countries"
+        },
+        {
+          "value": "38.2M",
+          "label": "Population"
         }
       ]
     },
@@ -156,40 +156,41 @@
       ]
     },
     "sectors": {
-      "label": "Priority sectors",
+      "label": "Priority Fields",
       "title": "Where investment is going.",
-      "intro": "The office channels capital, grants and partnerships into the areas driving Uzbekistan's digital economy.",
-      "cta": "Explore sectors",
+      "intro": "The office channels capital, grants and partnerships into the fields driving Uzbekistan's digital economy.",
+      "cta": "Explore fields",
+      "viewField": "View field",
       "items": [
         {
+          "slug": "ai-computing",
           "name": "AI & Computing",
-          "desc": "Intelligent computing centres and applied artificial intelligence.",
-          "img": "/sector-ai.jpg"
+          "desc": "Intelligent computing centres and applied artificial intelligence."
         },
         {
+          "slug": "digital-infrastructure",
           "name": "Digital Infrastructure",
-          "desc": "Data centres and the backbone of the digital economy.",
-          "img": "/sector-infra.jpg"
+          "desc": "Data centres and the backbone of the digital economy."
         },
         {
+          "slug": "it-outsourcing-bpo",
           "name": "IT Outsourcing & BPO",
-          "desc": "Export-oriented delivery centres serving global clients.",
-          "img": "/sector-outsourcing.jpg"
+          "desc": "Export-oriented delivery centres serving global clients."
         },
         {
+          "slug": "creative-gaming",
           "name": "Creative & Gaming",
-          "desc": "Animation, game development and digital media.",
-          "img": "/sector-gaming.jpg"
+          "desc": "Animation, game development and digital media."
         },
         {
+          "slug": "fintech-startups",
           "name": "Fintech & Startups",
-          "desc": "High-growth digital startups and financial technology.",
-          "img": "/sector-fintech.jpg"
+          "desc": "High-growth digital startups and financial technology."
         },
         {
+          "slug": "digital-education",
           "name": "Digital Education",
-          "desc": "Talent pipelines and skills for the technology sector.",
-          "img": "/sector-education.jpg"
+          "desc": "Talent pipelines and skills for the technology sector."
         }
       ]
     },
@@ -247,6 +248,14 @@
         }
       ]
     },
+    "stories": {
+      "eyebrow": "Success stories",
+      "title": "Proof from the digital sector.",
+      "intro": "Foreign capital, talent partnerships and export milestones — the cases investors ask about first.",
+      "cta": "All stories",
+      "readStory": "Read story",
+      "more": "More cases"
+    },
     "news": {
       "eyebrow": "Newsroom",
       "title": "Latest from the office.",
@@ -280,9 +289,9 @@
       ]
     },
     "contact": {
-      "title": "Let's build your Uzbekistan story.",
-      "subtitle": "Tell us what you're planning. We'll map the fastest, lowest-risk path to market — and stay with you long after you land.",
-      "primary": "Book an introduction",
+      "title": "Start a conversation with the office.",
+      "subtitle": "Tell us what you're planning. We'll outline a clear path into Uzbekistan's digital economy.",
+      "primary": "Contact the office",
       "secondary": "Email invest@digital.uz"
     },
     "guides": {
@@ -306,6 +315,10 @@
         }
       ]
     },
+    "investmentMap": {
+      "title": "Investment map of Uzbekistan",
+      "intro": "Click a region for key indicators and a PDF brief."
+    },
     "regionsTeaser": {
       "eyebrow": "Investment map",
       "title": "Explore digital opportunity by region.",
@@ -320,106 +333,145 @@
     }
   },
   "about": {
+    "metaTitle": "About",
+    "metaDescription": "The Investment Project Office under the Ministry of Digital Technologies of Uzbekistan: mandate, structure and team.",
     "hero": {
       "eyebrow": "About the office",
-      "title": "The gateway to Uzbekistan's digital economy.",
-      "subtitle": "Established in 2023 as a structural unit of the Ministry of Digital Technologies, the Investment Project Office advances the nation's digital transformation in line with the Digital Uzbekistan 2030 Strategy — and helps the world take part in it."
+      "title": "Investment Project Office.",
+      "subtitle": "A structural unit of the Ministry of Digital Technologies of the Republic of Uzbekistan. We attract digital investment and guide international companies from first contact to operations."
     },
-    "mission": {
-      "eyebrow": "Our mission",
-      "title": "Driving digital growth through strategic IT investment.",
-      "body": [
-        "The Investment Project Office is a structural unit under the Ministry of Digital Technologies of the Republic of Uzbekistan. Its main task is to attract new investments, grants and sponsorship funds in the field of digital technologies, and to support foreign investors in entering and expanding within Uzbekistan's IT sector.",
-        "The Office provides comprehensive market-entry assistance and full business support — including company registration, legal and administrative guidance, facilitation of residence and tax procedures, and connections with local service providers."
-      ]
+    "sidebar": {
+      "navLabel": "About sections",
+      "office": "Office",
+      "structure": "Structure",
+      "team": "Team"
     },
-    "stats": {
-      "title": "A digital economy with momentum.",
-      "intro": "The macro picture behind every conversation we have with investors."
-    },
-    "focus": {
-      "eyebrow": "What we do",
-      "title": "Five areas of focus.",
-      "items": [
+    "office": {
+      "metaTitle": "Office",
+      "metaDescription": "The Investment Project Office under the Ministry of Digital Technologies: mandate, affiliation and how we support market entry.",
+      "eyebrow": "Office",
+      "title": "Who we are and what we do.",
+      "belongs": "The Investment Project Office belongs to the Ministry of Digital Technologies of the Republic of Uzbekistan. It was established in 2023 to advance Digital Uzbekistan 2030 and open investment channels into the national IT sector.",
+      "mandate": "Our mandate is to attract investment, grants and sponsorship into digital technologies, and to support foreign investors who enter or expand in Uzbekistan's IT market.",
+      "support": "We handle market entry end to end: company registration, legal and administrative guidance, residence and tax procedures, IT Park residency, and introductions to local partners and service providers.",
+      "facts": [
         {
-          "icon": "cost",
-          "title": "Digital investment facilitation",
-          "desc": "Attracting and structuring investment, grants and sponsorship into the digital sector."
+          "label": "Institutional home",
+          "value": "Ministry of Digital Technologies"
         },
         {
-          "icon": "registration",
-          "title": "IT project design & PPPs",
-          "desc": "Designing high-potential projects and public–private partnerships in technology."
+          "label": "Established",
+          "value": "2023"
         },
         {
-          "icon": "partners",
-          "title": "Support for local companies & startups",
-          "desc": "Helping Uzbek technology companies and startups scale and reach global markets."
-        },
-        {
-          "icon": "talent",
-          "title": "Human capital & education reform",
-          "desc": "Expanding the specialist workforce through education reform and skills initiatives."
-        },
-        {
-          "icon": "export",
-          "title": "Foreign companies & global integration",
-          "desc": "Bringing international IT companies into Uzbekistan and integrating the sector globally."
+          "label": "Strategy",
+          "value": "Digital Uzbekistan 2030"
         }
-      ]
+      ],
+      "buildingAlt": "Ministry of Digital Technologies, Tashkent"
     },
-    "initiatives": {
-      "eyebrow": "National initiatives",
-      "title": "Programs we help drive.",
-      "items": [
-        {
-          "title": "1 Million Programmers",
-          "desc": "A national drive to cultivate a vast pool of programming talent."
-        },
-        {
-          "title": "AI & digital literacy",
-          "desc": "Empowering women and youth with essential digital and AI skills."
-        },
-        {
-          "title": "Smart City & GovTech",
-          "desc": "Modernising urban living and government operations with advanced technology."
-        },
-        {
-          "title": "IT curricula & certification",
-          "desc": "Updating educational frameworks to meet international industry standards."
-        }
-      ]
+    "structure": {
+      "metaTitle": "Structure",
+      "metaDescription": "Organisational structure of the Investment Project Office within the Ministry of Digital Technologies.",
+      "eyebrow": "Structure",
+      "title": "How the office sits in the ministry.",
+      "intro": "Select a role to view the responsible official, title and contact details.",
+      "clickHint": "Click a role for details",
+      "close": "Close",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website",
+      "reception": "Reception hours",
+      "nodes": {
+        "ministry": "Ministry of Digital Technologies",
+        "minister": "Minister",
+        "deputyMinister": "Deputy minister",
+        "ipo": "Investment Project Office",
+        "head": "Head of department",
+        "officerGrants": "Investment & grants",
+        "officerSenior": "Senior officer",
+        "officerProjects": "Project manager",
+        "officerMinistry": "Ministry liaison"
+      }
     },
     "team": {
-      "eyebrow": "Leadership",
-      "title": "The people you'll work with.",
-      "intro": "Investment decisions are built on relationships. Our team leads bilateral delegations and works directly with investors from first contact onward.",
-      "leaders": [
-        {
-          "name": "Akbarkhuja Akramkhujaev",
-          "role": "Head of Department, Investment Project Office"
-        },
-        {
-          "name": "Rustam Karimjonov",
-          "role": "Deputy Minister, Ministry of Digital Technologies"
-        },
-        {
-          "name": "Jamshidbek Gayratjonov",
-          "role": "Investment & Grants Officer"
-        },
-        {
-          "name": "Diyora Inomjonova",
-          "role": "Senior Officer"
-        },
-        {
-          "name": "Samandar Khakkiev",
-          "role": "Project Manager"
-        },
-        {
-          "name": "Khasan Khamrakulov",
-          "role": "Ministry of Digital Technologies"
-        }
-      ]
+      "metaTitle": "Team",
+      "metaDescription": "Leadership and officers of the Investment Project Office.",
+      "eyebrow": "Team",
+      "title": "The people you will work with.",
+      "intro": "Our officers lead investor conversations, bilateral visits and day-to-day market-entry support.",
+      "contactLabel": "Contact",
+      "viewInStructure": "View in structure"
+    },
+    "people": {
+      "shermatov": {
+        "name": "Sherzod Shermatov",
+        "role": "Minister of Digital Technologies",
+        "unit": "Minister",
+        "bio": "Minister of Digital Technologies of the Republic of Uzbekistan and National Chief Information Officer (CIO).",
+        "email": "info@digital.uz",
+        "website": "https://digital.uz",
+        "reception": "First and last Thursday of every month, 10:00–12:00"
+      },
+      "karimjonov": {
+        "name": "Karimjonov Rustam Olimjonovich",
+        "role": "Deputy minister of digital technologies",
+        "unit": "Deputy minister",
+        "bio": "Deputy Minister overseeing investment-related digital programmes and coordination with the Investment Project Office.",
+        "phone": "+998 71 238 43 00",
+        "email": "info@digital.uz",
+        "website": "https://digital.uz",
+        "reception": "Thursday 16:00–18:00"
+      },
+      "maxsudov": {
+        "name": "Maxsudov Jamol Tilloyevich",
+        "role": "Deputy minister",
+        "unit": "Deputy minister",
+        "bio": "Deputy Minister of Digital Technologies of the Republic of Uzbekistan.",
+        "phone": "+998 71 238 43 10",
+        "email": "info@digital.uz",
+        "reception": "Tuesday 16:00–18:00"
+      },
+      "akramkhujaev": {
+        "name": "Akbarkhuja Akramkhujaev",
+        "role": "Head of Department, Investment Project Office",
+        "unit": "Investment Project Office",
+        "bio": "Leads the Investment Project Office. Primary counterpart for international companies and investors from first meeting through operational setup.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "gayratjonov": {
+        "name": "Jamshidbek Gayratjonov",
+        "role": "Investment & Grants Officer",
+        "unit": "Investment Project Office",
+        "bio": "Supports investment structuring, grant pathways and sponsorship opportunities in the digital sector.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "inomjonova": {
+        "name": "Diyora Inomjonova",
+        "role": "Senior Officer",
+        "unit": "Investment Project Office",
+        "bio": "Coordinates investor dossiers, institutional correspondence and follow-up across ministry partners.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "khakkiev": {
+        "name": "Samandar Khakkiev",
+        "role": "Project Manager",
+        "unit": "Investment Project Office",
+        "bio": "Manages project pipelines, site visits and delivery milestones for companies entering the market.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      },
+      "khamrakulov": {
+        "name": "Khasan Khamrakulov",
+        "role": "Ministry of Digital Technologies",
+        "unit": "Investment Project Office",
+        "bio": "Liaises between the Investment Project Office and ministry departments on regulatory and administrative matters.",
+        "phone": "+998 71 238 41 76",
+        "email": "invest@digital.uz"
+      }
     }
   },
   "services": {
@@ -600,6 +652,18 @@
       "title": "News from the office.",
       "subtitle": "Investment, partnerships and momentum from Uzbekistan's digital economy."
     },
+    "filterAll": "All",
+    "filterLabel": "Filter by topic",
+    "readArticle": "Read article",
+    "backToNews": "All news",
+    "empty": "No articles in this topic yet.",
+    "featuredLabel": "Featured",
+    "sidebar": {
+      "contactTitle": "Contact",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "addressLabel": "Office"
+    },
     "items": [
       {
         "tag": "AI & Data",
@@ -738,12 +802,19 @@
     "eyebrow": "Opportunities",
     "title": "Uzbekistan's Digital Economy — Region by Region",
     "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
-    "mapHint": "Click a region to open its brief.",
+    "mapHint": "Select a region on the map or from the list.",
     "mapAria": "Interactive map of Uzbekistan regions",
     "keyFacts": "Key facts",
-    "downloadBrief": "Download regional brief",
+    "downloadBrief": "PDF brief",
     "bookIntro": "Book an introduction",
     "close": "Close",
+    "statLabels": {
+      "population": "Population",
+      "projects": "Investment projects",
+      "fdi": "FDI and credits",
+      "trade": "Foreign trade",
+      "area": "Sq/km"
+    },
     "panelEmptyEyebrow": "Select a region",
     "panelEmptyTitle": "Click the map to explore.",
     "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",

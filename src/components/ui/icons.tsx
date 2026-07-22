@@ -57,6 +57,19 @@ export const Icons = {
       <path d="M9 11l6-3.5M9 13l6 3.5" />
     </svg>
   ),
+  growth: (p: IconProps) => (
+    <svg {...base} {...p}>
+      <path d="M4 16.5 9 11l3.5 3.5L20 7" />
+      <path d="M14.5 7H20v5.5" />
+    </svg>
+  ),
+  population: (p: IconProps) => (
+    <svg {...base} {...p}>
+      <circle cx="8" cy="9" r="2.8" />
+      <circle cx="16" cy="9" r="2.8" />
+      <path d="M3.5 19a4.5 4.5 0 0 1 9 0M11.5 19a4.5 4.5 0 0 1 9 0" />
+    </svg>
+  ),
   registration: (p: IconProps) => (
     <svg {...base} {...p}>
       <path d="M7 3h7l4 4v14H7z" />
