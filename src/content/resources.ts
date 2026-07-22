@@ -1,7 +1,14 @@
 export type Resource = {
   slug: string;
   title: string;
-  category: "Guide" | "Presentation" | "Report" | "One-pager" | "Legal";
+  category:
+    | "Guide"
+    | "Presentation"
+    | "Report"
+    | "One-pager"
+    | "Legal"
+    | "Region brief"
+    | "Sector offer";
   description: string;
   href: string;
   external?: boolean;
@@ -10,12 +17,66 @@ export type Resource = {
 
 export const RESOURCES: Resource[] = [
   {
+    slug: "digital-investment-guide",
+    title: "Digital Investment Guide",
+    category: "Guide",
+    description:
+      "Comprehensive overview for technology FDI: sectors, incentives, soft-landing and how the office supports market entry.",
+    href: "/briefs/digital-investment-guide.pdf",
+    date: "2026",
+  },
+  {
+    slug: "soft-landing-brief",
+    title: "Soft-Landing Brief",
+    category: "Guide",
+    description:
+      "Practical market-entry pathway for founding and specialist teams — registration, visas, IT Park and first hires.",
+    href: "/briefs/soft-landing-brief.pdf",
+    date: "2026",
+  },
+  {
     slug: "investment-presentation",
     title: "Investment Project Office — presentation",
     category: "Presentation",
     description:
       "Overview deck covering the office mandate, digital opportunity, priority sectors and how we support market entry.",
     href: "/investment-presentation.pdf",
+    date: "2026",
+  },
+  {
+    slug: "sector-ai-offer",
+    title: "AI & Computing — investment offer",
+    category: "Sector offer",
+    description:
+      "Sector snapshot, key stats and outlook for AI infrastructure and applied artificial intelligence.",
+    href: "/briefs/sectors/ai-computing.pdf",
+    date: "2026",
+  },
+  {
+    slug: "sector-infra-offer",
+    title: "Digital Infrastructure — investment offer",
+    category: "Sector offer",
+    description:
+      "Data centres, green power and backbone capacity — opportunity brief for infrastructure investors.",
+    href: "/briefs/sectors/digital-infrastructure.pdf",
+    date: "2026",
+  },
+  {
+    slug: "region-tashkent-city",
+    title: "Tashkent City — regional digital brief",
+    category: "Region brief",
+    description:
+      "IT Park hub, talent density and soft-landing context for the capital.",
+    href: "/briefs/regions/tashkent-city.pdf",
+    date: "2026",
+  },
+  {
+    slug: "region-karakalpakstan",
+    title: "Karakalpakstan — regional digital brief",
+    category: "Region brief",
+    description:
+      "AI compute frontier and digital infrastructure opportunity in western Uzbekistan.",
+    href: "/briefs/regions/karakalpakstan.pdf",
     date: "2026",
   },
   {

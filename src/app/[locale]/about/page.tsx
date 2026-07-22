@@ -5,7 +5,6 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card, IconTile } from "@/components/ui/card";
 import { Stat } from "@/components/ui/stat";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Icons, type IconName } from "@/components/ui/icons";
 
 export async function generateMetadata({
@@ -165,7 +164,6 @@ function AboutContent() {
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

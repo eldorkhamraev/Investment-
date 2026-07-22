@@ -4,9 +4,8 @@ import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
-import { ContactCta } from "@/components/home/contact-cta";
-import { Link } from "@/i18n/navigation";
-import { Icons } from "@/components/ui/icons";
+import { SimpleBars } from "@/components/ui/simple-bars";
+import { WhySidebar } from "@/components/why/why-sidebar";
 import { WHY_PAGES, getWhyPage } from "@/content/why";
 
 export function generateStaticParams() {
@@ -45,20 +44,30 @@ export default async function WhyDetailPage({
       />
 
       <Section>
-        <div className="mx-auto max-w-3xl">
-          <Link
-            href="/why"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-azure-700 hover:gap-2.5"
-          >
-            <Icons.arrow className="h-4 w-4 rotate-180" />
-            Why Uzbekistan
-          </Link>
-          <div className="mt-8 space-y-5">
-            {page.body.map((p, i) => (
-              <p key={i} className="text-lg leading-relaxed text-steel">
-                {p}
-              </p>
-            ))}
+        <div className="grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
+          <WhySidebar current={page.slug} />
+          <div className="min-w-0">
+            <div className="space-y-5">
+              {page.body.map((p, i) => (
+                <p key={i} className="text-lg leading-relaxed text-steel">
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {page.charts && page.charts.length > 0 ? (
+              <div className="mt-12 grid gap-6">
+                {page.charts.map((chart) => (
+                  <SimpleBars
+                    key={chart.title}
+                    title={chart.title}
+                    caption={chart.caption}
+                    unit={chart.unit}
+                    items={chart.items}
+                  />
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </Section>
@@ -76,8 +85,6 @@ export default async function WhyDetailPage({
           ))}
         </div>
       </Section>
-
-      <ContactCta />
     </>
   );
 }

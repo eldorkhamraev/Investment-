@@ -3,7 +3,6 @@ import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Link } from "@/i18n/navigation";
 import { FOOTER_EXPLORE } from "@/config/navigation";
 import { WHY_PAGES } from "@/content/why";
@@ -123,7 +122,6 @@ function SitemapContent() {
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

@@ -31,7 +31,8 @@
     "contact": "Contact",
     "search": "Search",
     "cta": "Become a partner",
-    "menu": "Menu"
+    "menu": "Menu",
+    "regions": "Viloyatlar"
   },
   "footer": {
     "tagline": "Helping the world invest in Uzbekistan's digital future.",
@@ -277,6 +278,39 @@
       "subtitle": "Tell us what you're planning. We'll map the fastest, lowest-risk path to market — and stay with you long after you land.",
       "primary": "Book an introduction",
       "secondary": "Email invest@digital.uz"
+    },
+    "guides": {
+      "eyebrow": "Qo‘llanmalar",
+      "title": "Investorlar ichki jamoada ulashadigan brieflardan boshlang.",
+      "intro": "Raqamli investitsiya qo‘llanmasi va soft-landing briefni yuklab oling — keyin kirishni strukturalashga tayyor bo‘lganda tanishtiruvga yoziling.",
+      "allResources": "Barcha resurslar",
+      "explore": "Hisobotni ochish",
+      "items": [
+        {
+          "title": "Raqamli investitsiya qo‘llanmasi",
+          "desc": "Texnologiya FDI uchun makro kontekst, ustuvor raqamli sektorlar, imtiyozlar va ofisning bozorga kirishdagi yordami — birinchi suhbatdan operatsiyagacha.",
+          "href": "/briefs/digital-investment-guide.pdf",
+          "meta": "PDF · Qoralama · 2026"
+        },
+        {
+          "title": "Soft-Landing brief",
+          "desc": "Asoschilar va mutaxassislar uchun amaliy yo‘l: ro‘yxatdan o‘tish, IT Park rezidentligi, IT-Visa, bank tanishtiruvlari va birinchi yollashlar.",
+          "href": "/briefs/soft-landing-brief.pdf",
+          "meta": "PDF · Qoralama · 2026"
+        }
+      ]
+    },
+    "regionsTeaser": {
+      "eyebrow": "Investitsiya xaritasi",
+      "title": "Raqamli imkoniyatlarni viloyatlar bo‘yicha o‘rganing.",
+      "intro": "Har qanday viloyatni bosing: raqamli iqtisod briefi, asosiy faktlar va PDF — Toshkentdagi IT Park hubidan Qoraqalpog‘istondagi AI hisoblash chegarasigacha.",
+      "cta": "Xaritani ochish",
+      "badge": "14 viloyat",
+      "bullets": [
+        "Hover va klaviatura qo‘llab-quvvatlovchi interaktiv SVG xarita",
+        "Har bir ma’muriy bo‘linma uchun faktlar bilan yon panel",
+        "Yuklab olinadigan viloyat raqamli brieflari (PDF)"
+      ]
     }
   },
   "about": {
@@ -720,5 +754,148 @@
     "stats": "Statistics",
     "cards": "Cards",
     "badges": "Badges"
+  },
+  "regionsPage": {
+    "metaTitle": "Regions",
+    "eyebrow": "Opportunities",
+    "title": "Uzbekistan's Digital Economy — Region by Region",
+    "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
+    "mapHint": "Click a region to open its brief.",
+    "mapAria": "Interactive map of Uzbekistan regions",
+    "keyFacts": "Key facts",
+    "downloadBrief": "Download regional brief",
+    "bookIntro": "Book an introduction",
+    "close": "Close",
+    "panelEmptyEyebrow": "Select a region",
+    "panelEmptyTitle": "Click the map to explore.",
+    "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",
+    "items": {
+      "karakalpakstan": {
+        "name": "Qoraqalpog‘iston Respublikasi",
+        "description": "AI hisoblash investitsiyalari va raqamli infratuzilma uchun katta maydon — g‘arbiy O‘zbekistonda texnologiya kapitali uchun strategik yo‘nalish.",
+        "facts": [
+          "Rejalashtirilgan $3,5 mlrd Modular Intelligent Computing Centre maydoni",
+          "Yashil data-markazlar uchun qayta tiklanadigan energiya salohiyati",
+          "Sanoat loyihalari bilan birga raqamli ko‘nikmalarga e’tibor"
+        ]
+      },
+      "xorazm": {
+        "name": "Xorazm",
+        "description": "Markaziy Osiyoni bog‘lovchi tarixiy yo‘lak — raqamli xizmatlar, logistika texnologiyalari va mintaqaviy bog‘liqlikda imkoniyatlar.",
+        "facts": [
+          "Yirik transport yo‘laklari yonida strategik joylashuv",
+          "Poytaxt hublaridan tashqarida IT xizmatlari o‘sishi uchun joy",
+          "Agro-raqam va turizm texnologiyalarida hamkorlik salohiyati"
+        ]
+      },
+      "navoiy": {
+        "name": "Navoiy",
+        "description": "Data infratuzilmasi uchun joy va energiya bilan sanoat markazi — compute, sanoat IoT va eksportga yo‘naltirilgan texnologiya operatsiyalari uchun jozibador.",
+        "facts": [
+          "Kuchli sanoat bazasi va energiya infratuzilmasi",
+          "Yirik raqamli obyektlar uchun mos",
+          "Milliy logistika va xomashyo zanjirlariga yaqinlik"
+        ]
+      },
+      "bukhara": {
+        "name": "Buxoro",
+        "description": "Mehmonlar va xizmatlar uchun yangilanayotgan Ipak yo‘li shahri — turizm texnologiyasi, ijodiy raqam va masofaviy jamoalar imkoniyatlari.",
+        "facts": [
+          "Xalqaro turizm brendi va raqamli xizmat salohiyati",
+          "Ijodiy va madaniy texnologiyalarga o‘sib borayotgan qiziqish",
+          "Mintaqaviy xizmat markazlari uchun soft-landing imkoniyati"
+        ]
+      },
+      "samarqand": {
+        "name": "Samarqand",
+        "description": "Madaniy poytaxt va o‘sib borayotgan ikkinchi texnologiya tuguni — talent, turizmni raqamlashtirish va Toshkentdan tashqaridagi delivery markazlari.",
+        "facts": [
+          "Kuchli universitet va mutaxassislar oqimi",
+          "Turizm va merosni raqamlashtirishga talab",
+          "Autsorsing jamoalari uchun hayotiy muqobil hub"
+        ]
+      },
+      "qashqadaryo": {
+        "name": "Qashqadaryo",
+        "description": "Energiya va sanoat raqamli transformatsiya bilan uchrashadi — sanoat dasturi, energiya texnologiyasi va ko‘nikma hamkorliklari.",
+        "facts": [
+          "Energiya sektori raqamli yechimlarga talab yaratadi",
+          "Mintaqaviy talent IT autsorsing o‘sishiga tayyor",
+          "Sanoat va logistika texnologiyasi uchun infratuzilma"
+        ]
+      },
+      "surxondaryo": {
+        "name": "Surxondaryo",
+        "description": "O‘zbekistonning janubiy darvozasi — raqamli logistika, chegara xizmatlari va janub-sharqqa qaragan kompaniyalar uchun bog‘liqlik.",
+        "facts": [
+          "Chegara savdosi logistika-tech talabini oshiradi",
+          "IT o‘qitish dasturlari uchun yosh ishchi kuchi",
+          "Mintaqaviy xizmat yetkazib berishga qiziqish oshmoqda"
+        ]
+      },
+      "jizzakh": {
+        "name": "Jizzax",
+        "description": "Yirik hublar orasidagi ixcham viloyat — o‘rta texnologiya operatsiyalari, industriya parklari va ko‘nikma dasturlari uchun mos.",
+        "facts": [
+          "Toshkent va Samarqand yo‘laklari orasida",
+          "Texnologiya ishlab chiqarish uchun industriya park quvvati",
+          "Delivery jamoalari uchun raqobatbardosh xarajatlar"
+        ]
+      },
+      "sirdaryo": {
+        "name": "Sirdaryo",
+        "description": "Poytaxt yo‘lagiga yaqin, sanoat va agro-raqam salohiyati bilan — poytaxt narxlarisiz kengayish uchun amaliy baza.",
+        "facts": [
+          "Toshkent talent va mijozlariga qisqa masofa",
+          "Agro-tech va sanoatni raqamlashtirish imkoniyatlari",
+          "Sun’iy yo‘ldosh delivery va qo‘llab-quvvatlash markazlari uchun jozibador"
+        ]
+      },
+      "tashkent-region": {
+        "name": "Toshkent viloyati",
+        "description": "Poytaxt atrofidagi iqtisodiyot — sanoat zonalari, logistika va Toshkent shahri texnologiya o‘sishining toshqinini qabul qiluvchi kampuslar.",
+        "facts": [
+          "Poytaxt yaqinida sanoat va erkin zonalar",
+          "Data-markazlar va kampus maydonlari uchun joy",
+          "Toshkent spilloveridan chuqur mehnat bozori"
+        ]
+      },
+      "tashkent-city": {
+        "name": "Toshkent shahri",
+        "description": "Milliy raqamli hub — IT Park, vazirliklar, investorlar va dasturchilar, startaplar hamda xorijiy kompaniya ofislarining eng zich joylashuvi.",
+        "facts": [
+          "IT Park shtab-kvartirasi va flagman rezidentlar jamiyati",
+          "Dasturchilar va raqamli talentning eng yuqori zichligi",
+          "Soft-landing va davlat bilan ishlashning asosiy nuqtasi"
+        ]
+      },
+      "namangan": {
+        "name": "Namangan",
+        "description": "Farg‘ona vodiysi talent kamarining qismi — kuchli ishlab chiqarish merosi dasturiy ta’minot, BPO va raqamli ko‘nikmalarga talab bilan uchrashadi.",
+        "facts": [
+          "Farg‘ona vodiysi talent va ishlab chiqarish bazasi",
+          "IT ta’lim hamkorliklariga o‘sib borayotgan qiziqish",
+          "Toshkentga nisbatan raqobatbardosh delivery xarajati"
+        ]
+      },
+      "andijan": {
+        "name": "Andijon",
+        "description": "Avtomobil va ishlab chiqarish ildizlariga ega sharqiy sanoat markazi — sanoatni raqamlashtirish, embedded dastur va eksport xizmatlari uchun tayyor.",
+        "facts": [
+          "Avto va sanoat klasterlari raqamli vositalarga muhtoj",
+          "Zich aholi va yosh ishchi kuchi",
+          "Eksportga yo‘naltirilgan ishlab chiqarish + IT imkoniyati"
+        ]
+      },
+      "fergana": {
+        "name": "Farg‘ona",
+        "description": "Farg‘ona vodiysi yuragi — eng ko‘p aholili viloyatlardan biri, autsorsing, fintech tarqatish va raqamli ta’lim uchun miqyosga ega.",
+        "facts": [
+          "BPO va dasturiy ta’minot uchun katta mehnat bozori",
+          "Andijon va Namangan bilan vodiy bo‘ylab bog‘liqlik",
+          "Mintaqaviy IT ta’limiga investitsiya uchun kuchli asos"
+        ]
+      }
+    }
   }
 }

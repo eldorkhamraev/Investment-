@@ -6,7 +6,6 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Link } from "@/i18n/navigation";
 import { searchContent } from "@/content/search";
 
@@ -26,7 +25,7 @@ function SearchInner() {
       <PageHero
         eyebrow="Search"
         title="Find pages, projects and answers."
-        subtitle="Search sectors, programs, stories, events, FAQ and more."
+        subtitle="Search sectors, programs, stories, FAQ and more."
         image="/samarkand.jpg"
       />
 
@@ -79,7 +78,6 @@ function SearchInner() {
         </ul>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

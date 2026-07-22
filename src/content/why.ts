@@ -6,6 +6,13 @@ export type WhyPage = {
   image: string;
   body: string[];
   points: { title: string; desc: string }[];
+  /** Optional chart blocks (IT growth storytelling). */
+  charts?: {
+    title: string;
+    caption?: string;
+    unit?: string;
+    items: { label: string; value: number }[];
+  }[];
 };
 
 export const WHY_PAGES: WhyPage[] = [
@@ -32,6 +39,19 @@ export const WHY_PAGES: WhyPage[] = [
       {
         title: "National skills programmes",
         desc: "Million Programmers, Five Million AI Leaders, corporate academies.",
+      },
+    ],
+    charts: [
+      {
+        title: "Developer base growth",
+        caption: "Approximate GitHub-active developers in Uzbekistan",
+        unit: "k",
+        items: [
+          { label: "2020", value: 25 },
+          { label: "2022", value: 90 },
+          { label: "2024", value: 180 },
+          { label: "2025", value: 275 },
+        ],
       },
     ],
   },
@@ -86,6 +106,21 @@ export const WHY_PAGES: WhyPage[] = [
         desc: "Landmark FDI already committed across AI and green data centres.",
       },
     ],
+    charts: [
+      {
+        title: "Path to $5B digital exports",
+        caption: "IT service export volume (illustrative trajectory)",
+        unit: " $M",
+        items: [
+          { label: "2020", value: 16 },
+          { label: "2021", value: 47 },
+          { label: "2022", value: 141 },
+          { label: "2023", value: 344 },
+          { label: "2025", value: 1000 },
+          { label: "2030*", value: 5000 },
+        ],
+      },
+    ],
   },
   {
     slug: "ecosystem",
@@ -110,6 +145,29 @@ export const WHY_PAGES: WhyPage[] = [
       {
         title: "Events & deal flow",
         desc: "Investment forums and ministerial engagement on the calendar.",
+      },
+    ],
+    charts: [
+      {
+        title: "IT Park resident companies",
+        caption: "Growth of the resident community",
+        items: [
+          { label: "2020", value: 411 },
+          { label: "2021", value: 523 },
+          { label: "2022", value: 1122 },
+          { label: "2023", value: 1652 },
+          { label: "2025", value: 2990 },
+        ],
+      },
+      {
+        title: "Foreign IT companies in the Park",
+        caption: "International residents establishing local presence",
+        items: [
+          { label: "2020", value: 14 },
+          { label: "2021", value: 23 },
+          { label: "2022", value: 156 },
+          { label: "2023", value: 426 },
+        ],
       },
     ],
   },

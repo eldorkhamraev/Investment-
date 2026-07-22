@@ -7,7 +7,6 @@ import { Link } from "@/i18n/navigation";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/ui/icons";
-import { ContactCta } from "@/components/home/contact-cta";
 import { getNewsById, type NewsDetail } from "@/lib/cms";
 import { NEWS_BODIES } from "@/content/news-bodies";
 
@@ -131,7 +130,6 @@ export default async function NewsArticle({
           </div>
         </Section>
       </article>
-      <ContactCta />
     </>
   );
 }

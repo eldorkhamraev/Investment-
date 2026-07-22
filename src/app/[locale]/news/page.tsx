@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
-import { ContactCta } from "@/components/home/contact-cta";
 import { NewsGrid } from "@/components/news/news-grid";
 import { getNews, type NewsItem } from "@/lib/cms";
 
@@ -46,7 +45,6 @@ export default async function NewsPage({
       <Section>
         <NewsGrid items={items} />
       </Section>
-      <ContactCta />
     </>
   );
 }

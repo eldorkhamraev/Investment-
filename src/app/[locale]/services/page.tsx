@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Icons, type IconName } from "@/components/ui/icons";
 import { Link } from "@/i18n/navigation";
 import { PROGRAMS } from "@/content/programs";
@@ -139,7 +138,6 @@ function ServicesContent() {
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

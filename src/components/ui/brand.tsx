@@ -42,18 +42,18 @@ export function Wordmark({
 }) {
   const dark = tone === "dark";
   return (
-    <span className="flex items-center gap-2.5">
-      <EmblemMark className="h-11 w-11 shrink-0" />
+    <span className="flex items-center gap-2">
+      <EmblemMark className="h-8 w-8 shrink-0" />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display text-lg font-extrabold tracking-tight ${
+          className={`font-display text-[0.95rem] font-bold tracking-tight ${
             dark ? "text-white" : "text-ink"
           }`}
         >
           Investment Office
         </span>
         <span
-          className={`mt-1 text-[0.72rem] font-medium tracking-wide ${
+          className={`mt-0.5 text-[0.65rem] font-medium tracking-wide ${
             dark ? "text-azure-100/70" : "text-slate"
           }`}
         >

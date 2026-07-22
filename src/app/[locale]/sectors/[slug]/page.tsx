@@ -5,7 +5,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ContactCta } from "@/components/home/contact-cta";
+import { ButtonLink } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { Icons } from "@/components/ui/icons";
 import { SECTORS, getSector } from "@/content/sectors";
@@ -50,6 +50,22 @@ export default async function SectorDetailPage({
         image={sector.img}
       />
 
+      {/* Key stats band — invest.gov sector pattern */}
+      <section className="border-b border-line bg-ink">
+        <div className="container-edge grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 lg:py-12">
+          {sector.stats.map((stat) => (
+            <div key={stat.label}>
+              <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                {stat.value}
+              </p>
+              <p className="mt-1.5 text-sm leading-snug text-azure-100/75">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <Section>
         <div className="mx-auto max-w-3xl">
           <Link
@@ -59,10 +75,35 @@ export default async function SectorDetailPage({
             <Icons.arrow className="h-4 w-4 rotate-180" />
             All sectors
           </Link>
-          <h2 className="mt-8 text-2xl md:text-3xl">The opportunity</h2>
+
+          <h2 className="mt-8 text-2xl md:text-3xl">Snapshot</h2>
+          <p className="mt-4 text-lg leading-relaxed text-steel">
+            {sector.snapshot}
+          </p>
+
+          <h2 className="mt-12 text-2xl md:text-3xl">The opportunity</h2>
           <p className="mt-4 text-lg leading-relaxed text-steel">
             {sector.opportunity}
           </p>
+
+          <h2 className="mt-12 text-2xl md:text-3xl">Future outlook</h2>
+          <p className="mt-4 text-lg leading-relaxed text-steel">
+            {sector.outlook}
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a
+              href={sector.offerPdf}
+              download
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-azure-600 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-azure-700"
+            >
+              Download investment offer
+              <Icons.arrow className="h-4 w-4" />
+            </a>
+            <ButtonLink href="/contact" variant="outline">
+              Talk to the office
+            </ButtonLink>
+          </div>
         </div>
       </Section>
 
@@ -110,8 +151,6 @@ export default async function SectorDetailPage({
           </div>
         </Section>
       ) : null}
-
-      <ContactCta />
     </>
   );
 }

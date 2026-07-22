@@ -2,10 +2,11 @@ import { SECTORS } from "./sectors";
 import { WHY_PAGES } from "./why";
 import { PROJECTS } from "./projects";
 import { STORIES } from "./stories";
-import { EVENTS } from "./events";
 import { RESOURCES } from "./resources";
 import { FAQ } from "./faq";
 import { PROGRAMS } from "./programs";
+import { REGIONS } from "@/lib/regionData";
+import en from "../../messages/en.json";
 
 export type SearchHit = {
   title: string;
@@ -58,6 +59,13 @@ export function buildSearchIndex(): SearchHit[] {
       type: "Page",
       excerpt: "Common questions on mandate, incentives and process.",
     },
+    {
+      title: "Regions",
+      href: "/regions",
+      type: "Page",
+      excerpt:
+        "Interactive map of Uzbekistan's fourteen regions — digital economy briefs and investor introductions.",
+    },
   ];
 
   for (const s of SECTORS) {
@@ -92,14 +100,6 @@ export function buildSearchIndex(): SearchHit[] {
       excerpt: s.excerpt,
     });
   }
-  for (const e of EVENTS) {
-    hits.push({
-      title: e.title,
-      href: `/events/${e.slug}`,
-      type: "Event",
-      excerpt: e.excerpt,
-    });
-  }
   for (const r of RESOURCES) {
     hits.push({
       title: r.title,
@@ -122,6 +122,21 @@ export function buildSearchIndex(): SearchHit[] {
       href: "/faq",
       type: "FAQ",
       excerpt: f.a,
+    });
+  }
+  for (const region of REGIONS) {
+    const item = (
+      en.regionsPage.items as Record<
+        string,
+        { name: string; description: string }
+      >
+    )[region.id];
+    if (!item) continue;
+    hits.push({
+      title: item.name,
+      href: "/regions",
+      type: "Region",
+      excerpt: item.description,
     });
   }
 

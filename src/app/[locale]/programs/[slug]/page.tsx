@@ -4,7 +4,6 @@ import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
-import { ContactCta } from "@/components/home/contact-cta";
 import { ButtonLink } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { Icons } from "@/components/ui/icons";
@@ -109,7 +108,6 @@ export default async function ProgramDetailPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

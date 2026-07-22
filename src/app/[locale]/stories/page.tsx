@@ -4,10 +4,11 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Link } from "@/i18n/navigation";
 import { STORIES } from "@/content/stories";
 import { getStories } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Success stories",
@@ -24,17 +25,21 @@ export default async function StoriesPage({
   setRequestLocale(locale);
 
   const cms = await getStories();
+  const cmsMapped = cms.map((s) => ({
+    slug: s.slug,
+    company: s.company,
+    sector: s.sector,
+    country: s.country,
+    excerpt: s.excerpt,
+    image: s.image || "/deal-itpark.jpg",
+    highlight: s.highlight || undefined,
+  }));
   const stories =
-    cms.length > 0
-      ? cms.map((s) => ({
-          slug: s.slug,
-          company: s.company,
-          sector: s.sector,
-          country: s.country,
-          excerpt: s.excerpt,
-          image: s.image || "/deal-itpark.jpg",
-          highlight: s.highlight || undefined,
-        }))
+    cmsMapped.length > 0
+      ? [
+          ...cmsMapped,
+          ...STORIES.filter((s) => !cmsMapped.some((c) => c.slug === s.slug)),
+        ]
       : STORIES;
 
   return (
@@ -90,7 +95,6 @@ export default async function StoriesPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

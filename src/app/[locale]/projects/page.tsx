@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
-import { ContactCta } from "@/components/home/contact-cta";
 import { PortfolioExplorer } from "@/components/projects/portfolio-explorer";
-import { projectsByYear } from "@/content/projects";
+import { PROJECTS, type ProjectDeal } from "@/content/projects";
+import { getProjects } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -17,6 +18,24 @@ export async function generateMetadata({
   return { title: "Projects", description: t("subtitle") };
 }
 
+function groupByYear(projects: ProjectDeal[]) {
+  const years = [...new Set(projects.map((p) => p.year).filter(Boolean))].sort(
+    (a, b) => b.localeCompare(a),
+  );
+  return years.map((year) => ({
+    year,
+    deals: projects
+      .filter((p) => p.year === year)
+      .map((d) => ({
+        sector: d.sector,
+        title: d.title,
+        img: d.img,
+        desc: d.desc,
+        slug: d.slug,
+      })),
+  }));
+}
+
 export default async function ProjectsPage({
   params,
 }: {
@@ -24,21 +43,26 @@ export default async function ProjectsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ProjectsContent />;
-}
+  const t = await getTranslations({ locale, namespace: "projectsPage" });
 
-function ProjectsContent() {
-  const t = useTranslations("projectsPage");
-  const years = projectsByYear().map((y) => ({
-    year: y.year,
-    deals: y.deals.map((d) => ({
-      sector: d.sector,
-      title: d.title,
-      img: d.img,
-      desc: d.desc,
-      slug: d.slug,
-    })),
+  const cms = await getProjects();
+  const cmsMapped: ProjectDeal[] = cms.map((p) => ({
+    slug: p.slug,
+    year: p.year || "Other",
+    sector: p.sector,
+    title: p.title,
+    img: p.image || "/deal-itpark.jpg",
+    desc: p.desc,
+    status: p.status || undefined,
   }));
+  const projects =
+    cmsMapped.length > 0
+      ? [
+          ...cmsMapped,
+          ...PROJECTS.filter((p) => !cmsMapped.some((c) => c.slug === p.slug)),
+        ]
+      : PROJECTS;
+  const years = groupByYear(projects);
 
   return (
     <>
@@ -57,7 +81,6 @@ function ProjectsContent() {
           years={years}
         />
       </Section>
-      <ContactCta />
     </>
   );
 }

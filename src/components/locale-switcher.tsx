@@ -20,7 +20,7 @@ export function LocaleSwitcher({ tone = "light" }: { tone?: "light" | "dark" }) 
 
   return (
     <div
-      className={`inline-flex items-center rounded-full p-0.5 text-sm ${
+      className={`inline-flex items-center rounded-full p-0.5 text-xs ${
         dark ? "bg-white/10" : "bg-cloud"
       } ${isPending ? "opacity-60" : ""}`}
       role="group"
@@ -34,7 +34,7 @@ export function LocaleSwitcher({ tone = "light" }: { tone?: "light" | "dark" }) 
             onClick={() => onSelect(l)}
             aria-current={active ? "true" : undefined}
             title={localeNames[l]}
-            className={`rounded-full px-2.5 py-1 font-semibold uppercase transition-colors ${
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold uppercase transition-colors ${
               active
                 ? dark
                   ? "bg-white text-ink"

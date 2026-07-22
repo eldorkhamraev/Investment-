@@ -3,7 +3,6 @@ import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Link } from "@/i18n/navigation";
 import { SECTORS } from "@/content/sectors";
 
@@ -65,7 +64,6 @@ export default async function SectorsPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

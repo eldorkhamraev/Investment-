@@ -16,7 +16,9 @@ export function SiteHeader() {
   const [openKey, setOpenKey] = useState<string | null>(null);
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   const groupActive = (item: NavItem) => {
     if (isActive(item.href)) return true;
@@ -25,13 +27,17 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-white/85 backdrop-blur-md">
-      <div className="container-edge flex h-20 items-center justify-between gap-4 py-3">
-        <Link href="/" aria-label="Investment Office — home">
+      <div className="container-edge flex h-16 items-center justify-between gap-3">
+        <Link
+          href="/"
+          aria-label="Investment Office — home"
+          className="shrink-0"
+        >
           <Wordmark />
         </Link>
 
-        <div className="hidden items-center gap-3 xl:flex">
-          <nav className="flex items-center gap-0.5">
+        <div className="hidden min-w-0 items-center gap-2 xl:flex">
+          <nav className="flex items-center">
             {NAV.map((item) =>
               item.children ? (
                 <DesktopDropdown
@@ -48,7 +54,7 @@ export function SiteHeader() {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-colors ${
                     isActive(item.href)
                       ? "bg-azure-50 text-azure-700"
                       : "text-steel hover:bg-cloud hover:text-ink"
@@ -60,16 +66,21 @@ export function SiteHeader() {
             )}
           </nav>
 
-          <div className="flex items-center gap-2 border-l border-line/70 pl-4">
+          <div className="flex shrink-0 items-center gap-1.5 border-l border-line/70 pl-3">
             <Link
               href="/search"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-steel hover:bg-cloud hover:text-ink"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-steel hover:bg-cloud hover:text-ink"
               aria-label={t("search")}
             >
-              <Icons.search className="h-4 w-4" />
+              <Icons.search className="h-3.5 w-3.5" />
             </Link>
             <LocaleSwitcher />
-            <ButtonLink href="/contact" size="sm" variant="secondary">
+            <ButtonLink
+              href="/contact"
+              size="sm"
+              variant="secondary"
+              className="!h-8 whitespace-nowrap !px-3.5 !text-[13px]"
+            >
               {t("cta")}
             </ButtonLink>
           </div>
@@ -78,18 +89,18 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 xl:hidden">
           <Link
             href="/search"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-ink hover:bg-cloud"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-ink hover:bg-cloud"
             aria-label={t("search")}
           >
-            <Icons.search className="h-5 w-5" />
+            <Icons.search className="h-4 w-4" />
           </Link>
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-ink hover:bg-cloud"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-ink hover:bg-cloud"
             aria-label={t("menu")}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               {open ? (
                 <path
                   d="M6 6l12 12M18 6L6 18"
@@ -114,11 +125,14 @@ export function SiteHeader() {
         <div className="border-t border-line bg-white xl:hidden">
           <nav className="container-edge flex max-h-[80vh] flex-col overflow-y-auto py-3">
             {NAV.map((item) => (
-              <div key={item.key} className="border-b border-line/60 py-1 last:border-0">
+              <div
+                key={item.key}
+                className="border-b border-line/60 py-1 last:border-0"
+              >
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`block rounded-lg px-3 py-2.5 text-base font-semibold ${
+                  className={`block rounded-lg px-3 py-2.5 text-sm font-semibold ${
                     groupActive(item) ? "text-azure-700" : "text-ink"
                   }`}
                 >
@@ -194,7 +208,7 @@ function DesktopDropdown({
     >
       <button
         type="button"
-        className={`inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+        className={`inline-flex items-center gap-0.5 rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-colors ${
           active || open
             ? "bg-azure-50 text-azure-700"
             : "text-steel hover:bg-cloud hover:text-ink"
@@ -203,7 +217,7 @@ function DesktopDropdown({
         onClick={() => (open ? onClose() : onOpen())}
       >
         {label}
-        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+        <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true">
           <path
             d="M3 4.5L6 7.5L9 4.5"
             fill="none"
@@ -215,14 +229,14 @@ function DesktopDropdown({
         </svg>
       </button>
       {open && item.children ? (
-        <div className="absolute left-0 top-full z-50 pt-2">
-          <div className="min-w-[220px] rounded-2xl border border-line bg-white p-2 shadow-lift">
+        <div className="absolute left-0 top-full z-50 pt-1.5">
+          <div className="min-w-[200px] rounded-xl border border-line bg-white p-1.5 shadow-lift">
             {item.children.map((child) => (
               <Link
                 key={child.key}
                 href={child.href}
                 onClick={onClose}
-                className="block rounded-xl px-3 py-2.5 text-sm text-steel transition-colors hover:bg-cloud hover:text-ink"
+                className="block rounded-lg px-3 py-2 text-[13px] text-steel transition-colors hover:bg-cloud hover:text-ink"
               >
                 {t(child.key)}
               </Link>

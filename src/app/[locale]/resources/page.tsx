@@ -4,16 +4,27 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ContactCta } from "@/components/home/contact-cta";
 import { Link } from "@/i18n/navigation";
 import { RESOURCES } from "@/content/resources";
 import { getDocuments } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Guides, presentations and one-pagers for investing in Uzbekistan's digital sector.",
+    "Guides, presentations, sector offers and regional briefs for investing in Uzbekistan's digital sector.",
 };
+
+function isFileDownload(href: string) {
+  return (
+    href.endsWith(".pdf") ||
+    href.endsWith(".doc") ||
+    href.endsWith(".docx") ||
+    href.endsWith(".ppt") ||
+    href.endsWith(".pptx")
+  );
+}
 
 export default async function ResourcesPage({
   params,
@@ -45,7 +56,7 @@ export default async function ResourcesPage({
       <PageHero
         eyebrow="For investors"
         title="Resources & documents."
-        subtitle="Presentations, checklists and one-pagers to share with your team before the first call."
+        subtitle="Guides, sector offers, regional briefs and one-pagers to share with your team before the first call."
         image="/services-hero.jpg"
       />
 
@@ -60,6 +71,7 @@ export default async function ResourcesPage({
               item.external ||
               item.href.startsWith("http://") ||
               item.href.startsWith("https://");
+            const download = !isExternal && isFileDownload(item.href);
             const inner = (
               <Card interactive className="h-full">
                 <div className="flex flex-wrap items-center gap-2">
@@ -89,6 +101,19 @@ export default async function ResourcesPage({
               );
             }
 
+            if (download) {
+              return (
+                <a
+                  key={item.slug}
+                  href={item.href}
+                  download
+                  className="group"
+                >
+                  {inner}
+                </a>
+              );
+            }
+
             return (
               <Link key={item.slug} href={item.href} className="group">
                 {inner}
@@ -97,8 +122,6 @@ export default async function ResourcesPage({
           })}
         </div>
       </Section>
-
-      <ContactCta />
     </>
   );
 }

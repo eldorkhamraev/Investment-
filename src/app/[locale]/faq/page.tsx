@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { ContactCta } from "@/components/home/contact-cta";
 import { FAQ, FAQ_CATEGORIES } from "@/content/faq";
 
 export const metadata: Metadata = {
@@ -68,7 +67,6 @@ export default async function FaqPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

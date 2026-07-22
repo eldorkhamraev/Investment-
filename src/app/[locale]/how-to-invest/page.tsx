@@ -3,7 +3,6 @@ import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
-import { ContactCta } from "@/components/home/contact-cta";
 import { ButtonLink } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -45,8 +44,8 @@ const STEPS = [
     title: "Grow",
     desc: "Hire, expand and stay connected to the ecosystem — forums, partners and aftercare from the office.",
     links: [
-      { label: "Events", href: "/events" },
       { label: "Success stories", href: "/stories" },
+      { label: "News", href: "/news" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -115,7 +114,6 @@ export default async function HowToInvestPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

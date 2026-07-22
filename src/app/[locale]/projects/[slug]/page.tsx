@@ -4,12 +4,13 @@ import { setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
-import { ContactCta } from "@/components/home/contact-cta";
 import { ButtonLink } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { Icons } from "@/components/ui/icons";
 import { PROJECTS, getProject } from "@/content/projects";
 import { getProjectBySlug } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -97,7 +98,6 @@ export default async function ProjectDetailPage({
         </div>
       </Section>
 
-      <ContactCta />
     </>
   );
 }

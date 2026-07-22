@@ -4,9 +4,27 @@ import { ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/ui/icons";
 import { STORIES } from "@/content/stories";
+import { getStories } from "@/lib/cms";
 
-export function StoriesTeaser() {
-  const items = STORIES.slice(0, 3);
+export async function StoriesTeaser() {
+  const cms = await getStories(3);
+  const cmsMapped = cms.map((s) => ({
+    slug: s.slug,
+    company: s.company,
+    sector: s.sector,
+    country: s.country,
+    excerpt: s.excerpt,
+    image: s.image || "/deal-itpark.jpg",
+    highlight: s.highlight || undefined,
+  }));
+  const merged =
+    cmsMapped.length > 0
+      ? [
+          ...cmsMapped,
+          ...STORIES.filter((s) => !cmsMapped.some((c) => c.slug === s.slug)),
+        ]
+      : STORIES;
+  const items = merged.slice(0, 3);
 
   return (
     <Section>

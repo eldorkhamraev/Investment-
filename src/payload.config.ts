@@ -11,7 +11,6 @@ import { News } from "./collections/News";
 import { Projects } from "./collections/Projects";
 import { Inquiries } from "./collections/Inquiries";
 import { Stories } from "./collections/Stories";
-import { Events } from "./collections/Events";
 import { Documents } from "./collections/Documents";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -27,7 +26,6 @@ export default buildConfig({
     News,
     Projects,
     Stories,
-    Events,
     Documents,
     Inquiries,
     Media,

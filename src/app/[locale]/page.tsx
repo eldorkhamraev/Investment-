@@ -1,16 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/home/hero";
 import { WhyUzbekistan } from "@/components/home/why-uzbekistan";
+import { GuidesStrip } from "@/components/home/guides-strip";
 import { TrackRecord } from "@/components/home/track-record";
-import { Timeline } from "@/components/home/timeline";
 import { ServicesTeaser } from "@/components/home/services-teaser";
 import { Sectors } from "@/components/home/sectors";
-import { ProjectsTeaser } from "@/components/home/projects-teaser";
+import { RegionsTeaser } from "@/components/home/regions-teaser";
 import { StoriesTeaser } from "@/components/home/stories-teaser";
-import { EventsTeaser } from "@/components/home/events-teaser";
 import { NewsTeaser } from "@/components/home/news-teaser";
-import { ResourcesTeaser } from "@/components/home/resources-teaser";
-import { ContactCta } from "@/components/home/contact-cta";
 
 // The news teaser reads from the CMS, so render on demand.
 export const dynamic = "force-dynamic";
@@ -23,20 +20,20 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  // Portal-style home (invest.gov structure, digital mandate):
+  // hero → why → guides → proof → services → sectors → map teaser → stories → news.
+  // No testimonials. No events. No closing sales CTA.
   return (
     <>
       <Hero />
       <WhyUzbekistan />
+      <GuidesStrip />
       <TrackRecord />
-      <Timeline />
       <ServicesTeaser />
       <Sectors />
-      <ProjectsTeaser />
+      <RegionsTeaser />
       <StoriesTeaser />
-      <EventsTeaser />
       <NewsTeaser />
-      <ResourcesTeaser />
-      <ContactCta />
     </>
   );
 }

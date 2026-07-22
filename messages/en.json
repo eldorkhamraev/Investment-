@@ -24,6 +24,7 @@
     "projects": "Projects",
     "sectors": "Sectors",
     "stories": "Success stories",
+    "regions": "Regions",
     "news": "News",
     "events": "Events",
     "about": "About",
@@ -277,6 +278,39 @@
       "subtitle": "Tell us what you're planning. We'll map the fastest, lowest-risk path to market — and stay with you long after you land.",
       "primary": "Book an introduction",
       "secondary": "Email invest@digital.uz"
+    },
+    "guides": {
+      "eyebrow": "Guides",
+      "title": "Start with the briefs investors share internally.",
+      "intro": "Download the digital investment guide and soft-landing brief — then book an introduction when you are ready to structure entry.",
+      "allResources": "All resources",
+      "explore": "Explore the report",
+      "items": [
+        {
+          "title": "Digital Investment Guide",
+          "desc": "Macro context for technology FDI, priority digital sectors, incentives and how the office supports market entry — from first conversation to operations.",
+          "href": "/briefs/digital-investment-guide.pdf",
+          "meta": "PDF · Placeholder · 2026"
+        },
+        {
+          "title": "Soft-Landing Brief",
+          "desc": "Practical pathway for founding and specialist teams: registration, IT Park residency, IT-Visa, banking introductions and first hires.",
+          "href": "/briefs/soft-landing-brief.pdf",
+          "meta": "PDF · Placeholder · 2026"
+        }
+      ]
+    },
+    "regionsTeaser": {
+      "eyebrow": "Investment map",
+      "title": "Explore digital opportunity by region.",
+      "intro": "Click any region for a digital-economy brief, key facts and a downloadable PDF — from Tashkent's IT Park hub to Karakalpakstan's AI compute frontier.",
+      "cta": "Open the map",
+      "badge": "14 regions",
+      "bullets": [
+        "Interactive SVG map with hover and keyboard support",
+        "Side panel with facts for every administrative division",
+        "Downloadable regional digital briefs (PDF)"
+      ]
     }
   },
   "about": {
@@ -691,6 +725,149 @@
           "href": "https://www.linkedin.com/company/investment-project-office/"
         }
       ]
+    }
+  },
+  "regionsPage": {
+    "metaTitle": "Regions",
+    "eyebrow": "Opportunities",
+    "title": "Uzbekistan's Digital Economy — Region by Region",
+    "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
+    "mapHint": "Click a region to open its brief.",
+    "mapAria": "Interactive map of Uzbekistan regions",
+    "keyFacts": "Key facts",
+    "downloadBrief": "Download regional brief",
+    "bookIntro": "Book an introduction",
+    "close": "Close",
+    "panelEmptyEyebrow": "Select a region",
+    "panelEmptyTitle": "Click the map to explore.",
+    "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",
+    "items": {
+      "karakalpakstan": {
+        "name": "Republic of Karakalpakstan",
+        "description": "Home to landmark AI compute investment and vast land for digital infrastructure — a strategic frontier for foreign technology capital in western Uzbekistan.",
+        "facts": [
+          "Host of the planned $3.5B Modular Intelligent Computing Centre",
+          "Large-scale renewable potential for green data centres",
+          "Growing focus on digital skills alongside industrial projects"
+        ]
+      },
+      "xorazm": {
+        "name": "Xorazm",
+        "description": "A historic corridor connecting Central Asia — emerging opportunities in digital services, logistics tech and regional connectivity for investors entering from the west.",
+        "facts": [
+          "Strategic location near major transport corridors",
+          "Room to grow IT services beyond the capital hubs",
+          "Partnership potential with agri-digital and tourism tech"
+        ]
+      },
+      "navoiy": {
+        "name": "Navoiy",
+        "description": "An industrial powerhouse with space and power for data infrastructure — attractive for compute, industrial IoT and export-oriented technology operations.",
+        "facts": [
+          "Strong industrial base and energy infrastructure",
+          "Suitable for large-footprint digital facilities",
+          "Proximity to national logistics and mining supply chains"
+        ]
+      },
+      "bukhara": {
+        "name": "Bukhara",
+        "description": "A Silk Road city reinventing itself for visitors and services — opportunities in tourism tech, creative digital and remote-ready talent pools.",
+        "facts": [
+          "International tourism brand with digital service upside",
+          "Growing interest in creative and cultural tech",
+          "Soft-landing potential for regional service centres"
+        ]
+      },
+      "samarqand": {
+        "name": "Samarqand",
+        "description": "Uzbekistan's cultural capital and a rising secondary tech node — talent, tourism digitalisation and mid-size delivery centres beyond Tashkent.",
+        "facts": [
+          "Strong university and specialist pipeline",
+          "Tourism and heritage digitalisation demand",
+          "Viable alternative hub for outsourcing teams"
+        ]
+      },
+      "qashqadaryo": {
+        "name": "Qashqadaryo",
+        "description": "Energy and industry meet digital transformation — room for industrial software, energy tech and workforce upskilling partnerships.",
+        "facts": [
+          "Energy sector creating demand for digital solutions",
+          "Regional talent ready for IT outsourcing growth",
+          "Infrastructure for industrial and logistics tech"
+        ]
+      },
+      "surxondaryo": {
+        "name": "Surxondaryo",
+        "description": "Uzbekistan's southern gateway — digital logistics, cross-border services and expanding connectivity for companies looking south and east.",
+        "facts": [
+          "Border trade creating logistics-tech demand",
+          "Young workforce with room for IT training programmes",
+          "Growing interest in regional service delivery"
+        ]
+      },
+      "jizzakh": {
+        "name": "Jizzakh",
+        "description": "A compact region positioned between major hubs — suited to mid-size tech operations, industrial parks and skills programmes.",
+        "facts": [
+          "Between Tashkent and Samarqand corridors",
+          "Industrial park capacity for tech manufacturing",
+          "Competitive operating costs for delivery teams"
+        ]
+      },
+      "sirdaryo": {
+        "name": "Sirdaryo",
+        "description": "Close to the capital corridor with industrial and agri-digital potential — a practical base for near-Tashkent expansion without capital-city costs.",
+        "facts": [
+          "Short reach to Tashkent talent and clients",
+          "Agri-tech and industrial digitalisation opportunities",
+          "Attractive for satellite delivery and support centres"
+        ]
+      },
+      "tashkent-region": {
+        "name": "Tashkent Region",
+        "description": "The capital's surrounding economy — industrial zones, logistics and satellite campuses that absorb overflow from Tashkent City's tech growth.",
+        "facts": [
+          "Industrial and free-zone capacity near the capital",
+          "Space for data centres and campus-style campuses",
+          "Deep labour market spillover from Tashkent City"
+        ]
+      },
+      "tashkent-city": {
+        "name": "Tashkent City",
+        "description": "The national digital hub — IT Park, ministries, investors and the densest concentration of developers, startups and foreign company offices.",
+        "facts": [
+          "IT Park headquarters and flagship resident community",
+          "Highest density of developers and digital talent",
+          "Primary soft-landing and government engagement point"
+        ]
+      },
+      "namangan": {
+        "name": "Namangan",
+        "description": "Part of the Fergana Valley talent belt — strong manufacturing heritage meeting rising demand for software, BPO and digital skills.",
+        "facts": [
+          "Fergana Valley talent and manufacturing base",
+          "Growing appetite for IT education partnerships",
+          "Cost-competitive delivery relative to Tashkent"
+        ]
+      },
+      "andijan": {
+        "name": "Andijan",
+        "description": "Eastern industrial centre with automotive and manufacturing roots — ripe for industrial digitalisation, embedded software and export services.",
+        "facts": [
+          "Automotive and industrial clusters needing digital tools",
+          "Dense population and young workforce",
+          "Export-oriented manufacturing + IT opportunity"
+        ]
+      },
+      "fergana": {
+        "name": "Fergana",
+        "description": "Heart of the Fergana Valley — one of Uzbekistan's most populous regions, with scale for outsourcing, fintech distribution and digital education.",
+        "facts": [
+          "Large labour market for BPO and software delivery",
+          "Valley-wide connectivity to Andijan and Namangan",
+          "Strong case for regional IT education investment"
+        ]
+      }
     }
   },
   "privacy": {
