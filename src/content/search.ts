@@ -24,10 +24,29 @@ export function buildSearchIndex(): SearchHit[] {
       excerpt: "Talent, incentives, Digital 2030, ecosystem and living.",
     },
     {
-      title: "How to invest",
+      title: "For investors",
       href: "/how-to-invest",
       type: "Page",
+      excerpt:
+        "Where to start, sectors, projects, preferential zones, and public-private partnership.",
+    },
+    {
+      title: "Where to start",
+      href: "/how-to-invest/where-to-start",
+      type: "Page",
       excerpt: "Discover → Structure → Establish → Grow.",
+    },
+    {
+      title: "Preferential zones",
+      href: "/how-to-invest/zones",
+      type: "Page",
+      excerpt: "IT Park Zero Risk and related technology regimes.",
+    },
+    {
+      title: "Public-private partnership",
+      href: "/how-to-invest/partnership",
+      type: "Page",
+      excerpt: "Digital partnerships with ministries and agencies.",
     },
     {
       title: "Services",

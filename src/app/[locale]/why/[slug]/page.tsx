@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
-import { Section, SectionHeading } from "@/components/ui/section";
-import { Card } from "@/components/ui/card";
-import { SimpleBars } from "@/components/ui/simple-bars";
-import { WhySidebar } from "@/components/why/why-sidebar";
-import { WHY_PAGES, getWhyPage } from "@/content/why";
+import { WhySubnav } from "@/components/why/why-subnav";
+import { WhyBlocks } from "@/components/why/why-blocks";
+import { ContactCta } from "@/components/home/contact-cta";
+import { redirect } from "@/i18n/navigation";
+import {
+  WHY_PAGES,
+  WHY_SLUG_REDIRECTS,
+  getWhyPage,
+} from "@/content/why";
 
 export function generateStaticParams() {
-  return WHY_PAGES.map((p) => ({ slug: p.slug }));
+  return [
+    ...WHY_PAGES.map((p) => ({ slug: p.slug })),
+    ...Object.keys(WHY_SLUG_REDIRECTS).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -18,7 +25,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = getWhyPage(slug);
+  const target = WHY_SLUG_REDIRECTS[slug];
+  const page = getWhyPage(target ?? slug);
   if (!page) return { title: "Why Uzbekistan" };
   return { title: page.eyebrow, description: page.subtitle };
 }
@@ -31,8 +39,15 @@ export default async function WhyDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
+  const redirected = WHY_SLUG_REDIRECTS[slug];
+  if (redirected) {
+    redirect({ href: `/why/${redirected}`, locale });
+  }
+
   const page = getWhyPage(slug);
   if (!page) notFound();
+
+  const t = await getTranslations({ locale, namespace: "whyPage" });
 
   return (
     <>
@@ -42,49 +57,33 @@ export default async function WhyDetailPage({
         subtitle={page.subtitle}
         image={page.image}
       />
+      <WhySubnav current={page.slug} />
 
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
-          <WhySidebar current={page.slug} />
-          <div className="min-w-0">
-            <div className="space-y-5">
-              {page.body.map((p, i) => (
-                <p key={i} className="text-lg leading-relaxed text-steel">
-                  {p}
-                </p>
-              ))}
-            </div>
-
-            {page.charts && page.charts.length > 0 ? (
-              <div className="mt-12 grid gap-6">
-                {page.charts.map((chart) => (
-                  <SimpleBars
-                    key={chart.title}
-                    title={chart.title}
-                    caption={chart.caption}
-                    unit={chart.unit}
-                    items={chart.items}
-                  />
-                ))}
-              </div>
-            ) : null}
-          </div>
+      <section className="bg-paper py-12 md:py-16">
+        <div className="container-edge">
+          <WhyBlocks
+            blocks={page.blocks}
+            pointsEyebrow={t("pointsEyebrow")}
+            pointsTitle={t("pointsTitle")}
+          />
+          <p className="mt-12 max-w-2xl border-t border-line pt-8 text-sm text-slate">
+            {t.rich("sidebarNote", {
+              link: (chunks) => (
+                <a
+                  href="https://invest.gov.uz/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-azure-700 underline-offset-2 hover:underline"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
+          </p>
         </div>
-      </Section>
+      </section>
 
-      <Section tone="mist">
-        <SectionHeading eyebrow="Key points" title="What investors should know." />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {page.points.map((point) => (
-            <Card key={point.title}>
-              <h3 className="text-lg">{point.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">
-                {point.desc}
-              </p>
-            </Card>
-          ))}
-        </div>
-      </Section>
+      <ContactCta />
     </>
   );
 }

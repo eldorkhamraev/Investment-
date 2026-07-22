@@ -68,7 +68,7 @@ function SitemapContent() {
       </Section>
 
       <Section tone="mist">
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h2 className="text-xl">Why Uzbekistan</h2>
             <ul className="mt-4 space-y-2">
@@ -102,6 +102,43 @@ function SitemapContent() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-xl">For investors</h2>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link
+                  href="/how-to-invest"
+                  className="text-sm text-azure-700 hover:underline"
+                >
+                  Overview
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-to-invest/where-to-start"
+                  className="text-sm text-azure-700 hover:underline"
+                >
+                  Where to start
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-to-invest/zones"
+                  className="text-sm text-azure-700 hover:underline"
+                >
+                  Preferential zones
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-to-invest/partnership"
+                  className="text-sm text-azure-700 hover:underline"
+                >
+                  Public-private partnership
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

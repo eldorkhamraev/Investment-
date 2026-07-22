@@ -108,11 +108,11 @@ export const RESOURCES: Resource[] = [
   },
   {
     slug: "digital-2030-highlights",
-    title: "Digital Uzbekistan 2030 — highlights",
+    title: "2030 strategy — highlights",
     category: "Report",
     description:
       "National strategy highlights relevant to foreign technology investors and digital FDI.",
-    href: "/why/digital-2030",
+    href: "/why/strategy",
     date: "2026",
   },
   {

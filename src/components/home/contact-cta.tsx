@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { ButtonLink } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";

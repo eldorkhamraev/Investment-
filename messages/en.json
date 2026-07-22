@@ -9,13 +9,19 @@
     "home": "Home",
     "why": "Why Uzbekistan",
     "whyOverview": "Overview",
+    "whyEconomy": "Economy",
     "whyTalent": "Talent",
-    "whyIncentives": "Incentives & IT Park",
-    "whyStrategy": "Digital Uzbekistan 2030",
-    "whyEcosystem": "Ecosystem",
+    "whyInnovation": "Innovation and Digital",
+    "whyCulture": "Culture",
     "whyLiving": "Living in Uzbekistan",
+    "whyStrategy": "2030 Strategy",
     "investors": "For investors",
+    "investorsOverview": "Overview",
     "howToInvest": "How to invest",
+    "whereToStart": "Where to start",
+    "exploreSectors": "Explore your sector",
+    "freeZones": "Preferential zones",
+    "partnership": "Public-private partnership",
     "services": "Services",
     "programs": "Programs",
     "faq": "FAQ",
@@ -887,6 +893,127 @@
       "Changes. We may update this Privacy Policy from time to time. The \"Last updated\" date at the top of this page reflects the latest revision. Continued use of the Site after changes constitutes notice of the updated policy where permitted by law.",
       "Contact. For privacy questions or requests, write to invest@digital.uz."
     ]
+  },
+  "whyPage": {
+    "metaTitle": "Why digital Uzbekistan",
+    "metaDescription": "Economy, talent, innovation, culture, living, and 2030 strategy — why technology investors look at Uzbekistan.",
+    "eyebrow": "Why Uzbekistan",
+    "title": "Why digital Uzbekistan.",
+    "subtitle": "A growing economy, a young STEM workforce, a national digital push, and a country opening to the world.",
+    "hubEyebrow": "The opportunity",
+    "hubTitle": "Six reasons technology investors look here first.",
+    "hubIntro": "Explore the foundations of Uzbekistan's investment pitch — from the macroeconomy and talent to innovation, culture, living, and the 2030 strategy.",
+    "sidebarLabel": "Why Uzbekistan",
+    "overview": "Overview",
+    "sidebarNote": "Economy-wide topics beyond the digital sector live on <link>invest.gov.uz</link>.",
+    "keyIndicators": "Key economic indicators 2025",
+    "pointsEyebrow": "Key points",
+    "pointsTitle": "What investors should know.",
+    "goalsEyebrow": "2030 goals",
+    "goalsTitle": "Targets on the national agenda."
+  },
+  "investorsPage": {
+    "metaTitle": "For investors",
+    "metaDescription": "Where to start, explore digital sectors, priority projects, preferential zones, and public-private partnership — with the Investment Project Office.",
+    "eyebrow": "For investors",
+    "title": "How to invest in digital Uzbekistan.",
+    "subtitle": "Five guides for technology companies entering the market — from first conversation to preferential regimes and public-private partnership.",
+    "hubEyebrow": "Investor guides",
+    "hubTitle": "Choose the path that fits your next step.",
+    "hubIntro": "We kept the investor-guide structure investors already know from the national portal, focused on digital and IT Park pathways.",
+    "subnavLabel": "For investors",
+    "overview": "Overview",
+    "sidebarNote": "Economy-wide topics such as privatization, consultants, and bonds live on <link>invest.gov.uz</link>.",
+    "whereToStart": {
+      "metaTitle": "Where to start",
+      "metaDescription": "Discover, structure, establish and grow — the Investment Project Office path for technology market entry in Uzbekistan.",
+      "eyebrow": "Where to start",
+      "title": "Four stages from first conversation to growth.",
+      "subtitle": "You do not need to know the full process before contacting us. Bring your goals; we map the path.",
+      "pathEyebrow": "Pathway",
+      "pathTitle": "Discover → Structure → Establish → Grow.",
+      "pathIntro": "Each stage links to the pages and programs you will use most.",
+      "ctaPrimary": "Book an introduction",
+      "ctaSecondary": "See our services"
+    },
+    "zones": {
+      "metaTitle": "Preferential zones",
+      "metaDescription": "IT Park Zero Risk and related preferential regimes for technology companies in Uzbekistan.",
+      "eyebrow": "Preferential zones",
+      "title": "IT Park is the digital preferential zone.",
+      "subtitle": "Qualifying residents can operate under 0% corporate tax, 0% VAT, and a flat 7.5% personal income tax — with Soft-Landing and IT-Visa beside the regime.",
+      "itParkEyebrow": "IT Park Zero Risk",
+      "itParkTitle": "Preferential terms built for technology exporters.",
+      "itParkIntro": "2,990+ IT Park member companies and $1B+ in IT service exports (2025) sit inside this regime. The office helps you confirm eligibility and sequence residency with incorporation.",
+      "highlights": [
+        {
+          "title": "0% corporate income tax",
+          "desc": "For qualifying IT Park residents under programme rules."
+        },
+        {
+          "title": "0% VAT",
+          "desc": "Aligned with export-oriented technology activity."
+        },
+        {
+          "title": "7.5% flat personal income tax",
+          "desc": "A simple rate for founders and specialists on the regime."
+        }
+      ],
+      "programsEyebrow": "Related programs",
+      "programsTitle": "Pair the regime with visas and soft-landing.",
+      "programsIntro": "Most companies combine IT Park residency with IT-Visa and Soft-Landing support.",
+      "ctaPrimary": "Book an introduction",
+      "ctaSecondary": "Browse all programs",
+      "nationalNote": "Economy-wide free economic zones and special economic zones are covered on <link>invest.gov.uz</link>."
+    },
+    "partnership": {
+      "metaTitle": "Public-private partnership",
+      "metaDescription": "How technology companies partner with Uzbek ministries and agencies on digital delivery, with IPO support.",
+      "eyebrow": "Public-private partnership",
+      "title": "Partner with government on digital delivery.",
+      "subtitle": "When your model needs a public counterpart — govtech, digital infrastructure, or shared service delivery — we help you frame the conversation and find the right door.",
+      "howEyebrow": "How we help",
+      "howTitle": "Concept → counterpart → conversation.",
+      "howIntro": "IPO does not replace the formal PPP process for economy-wide infrastructure. We focus on digital and technology partnerships.",
+      "stages": [
+        {
+          "title": "Frame the concept",
+          "desc": "Clarify the public problem, your delivery model, and what you need from a ministry or agency."
+        },
+        {
+          "title": "Find the counterpart",
+          "desc": "We introduce the right digital and sector stakeholders so you are not cold-calling across government."
+        },
+        {
+          "title": "Structure the next step",
+          "desc": "Pilot, MoU, or formal procurement path — sequenced with Soft-Landing and incentives where they apply."
+        }
+      ],
+      "fitEyebrow": "Where it fits",
+      "fitTitle": "Digital partnership models we see most often.",
+      "fitIntro": "If your project sits outside digital remits, we point you to the national IPA.",
+      "fits": [
+        {
+          "title": "Govtech and digital public services",
+          "desc": "Platforms, identity, payments, and service delivery that need a ministry sponsor."
+        },
+        {
+          "title": "Digital infrastructure",
+          "desc": "Connectivity, data centres, cloud, and shared platforms with public demand."
+        },
+        {
+          "title": "Skills and digital education",
+          "desc": "Workforce and education partnerships tied to technology investment."
+        },
+        {
+          "title": "Sector digitization",
+          "desc": "Fintech, healthtech, and logistics tech that plug into regulated public systems."
+        }
+      ],
+      "ctaPrimary": "Book an introduction",
+      "ctaSecondary": "Browse digital projects",
+      "nationalNote": "Economy-wide PPP rules, tender stages, and thresholds are published on <link>invest.gov.uz</link>."
+    }
   },
   "styleguide": {
     "title": "Design System",
