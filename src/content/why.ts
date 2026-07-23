@@ -722,27 +722,24 @@ export const WHY_PAGES: WhyPage[] = [
         ],
       },
       {
-        type: "split-media",
-        heading: "Hospitality at the table",
-        imageAspect: "wide",
-        prose: [
-          "Plov, Uzbekistan's national dish, is on UNESCO's Intangible Cultural Heritage list. Shared tables, non bread, and tea are how teams host partners and settle into local life.",
-          "Tashkent bazaars and plov centres make that hospitality easy to show on the same day as meetings.",
+        type: "media-strip",
+        title: "Hospitality and craft",
+        caption:
+          "How international teams host partners and experience living industries beyond meetings.",
+        items: [
+          {
+            src: "/why/culture/food.jpg",
+            caption: "Table culture",
+            detail:
+              "Plov is on UNESCO's Intangible Cultural Heritage list. Shared meals, non bread, and tea are practical ways to host partners and help specialists settle.",
+          },
+          {
+            src: "/why/culture/craft.jpg",
+            caption: "Living craft industries",
+            detail:
+              "Bukhara is a UNESCO Creative City of Crafts and Folk Art. Workshops in silk, ceramics, jewellery, and woodwork remain in production across the Silk Road cities.",
+          },
         ],
-        image: "/why/culture/food.jpg",
-        imageAlt: "Uzbek table culture and hospitality",
-      },
-      {
-        type: "split-media",
-        reverse: true,
-        heading: "Craft as a living industry",
-        imageAspect: "wide",
-        prose: [
-          "Bukhara is a UNESCO Creative City of Crafts and Folk Art. Workshops still produce gold embroidery, ceramics, jewellery, and woodwork.",
-          "Silk and carpet studios in cities such as Khiva keep traditional techniques in production, next to textiles, fashion, and creative collaboration.",
-        ],
-        image: "/why/culture/craft.jpg",
-        imageAlt: "Craft workshops and traditional making",
       },
       {
         type: "pathways",

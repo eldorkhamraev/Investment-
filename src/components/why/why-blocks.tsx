@@ -686,9 +686,11 @@ export function WhyBlocks({
                 </div>
                 <ul
                   className={
-                    block.items.length <= 3
-                      ? "mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-                      : "mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+                    block.items.length === 2
+                      ? "mt-6 grid gap-5 sm:grid-cols-2"
+                      : block.items.length <= 3
+                        ? "mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+                        : "mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
                   }
                 >
                   {block.items.map((item) => (
