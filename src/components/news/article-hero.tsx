@@ -77,7 +77,7 @@ export function ArticleHero({
             ) : null}
           </div>
 
-          <h1 className="mt-3 max-w-3xl text-2xl leading-[1.15] text-white md:text-3xl lg:text-[2.15rem]">
+          <h1 className="mt-3 max-w-3xl text-2xl font-bold leading-[1.2] tracking-normal text-white md:text-3xl lg:text-[2.15rem] [font-family:var(--font-montserrat)]">
             {title}
           </h1>
         </div>

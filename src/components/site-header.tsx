@@ -14,18 +14,61 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [openKey, setOpenKey] = useState<string | null>(null);
 
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname.startsWith(`${href}/`);
+  // Prefer the longest matching nav href so "/about" does not stay
+  // active on "/about/team" (Office vs Structure vs Team).
+  const navHrefs = NAV.flatMap((item) => [
+    item.href,
+    ...(item.children?.map((c) => c.href) ?? []),
+  ]);
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (pathname !== href && !pathname.startsWith(`${href}/`)) return false;
+    const best = navHrefs
+      .filter((h) => h !== "/" && (pathname === h || pathname.startsWith(`${h}/`)))
+      .reduce((a, b) => (a.length >= b.length ? a : b), "");
+    return best === href;
+  };
+
+  /** Match length for a top-level group against the current path. */
+  const groupScore = (item: NavItem) => {
+    const hrefs = [item.href, ...(item.children?.map((c) => c.href) ?? [])];
+    let best = 0;
+    for (const href of hrefs) {
+      if (href === "/") continue;
+      if (pathname === href || pathname.startsWith(`${href}/`)) {
+        best = Math.max(best, href.length);
+      }
+    }
+    return best;
+  };
+
+  // Only one top-level item can be active. Prefer a primary href match
+  // when scores tie (shared child routes across groups).
   const groupActive = (item: NavItem) => {
-    if (isActive(item.href)) return true;
-    return item.children?.some((c) => isActive(c.href)) ?? false;
+    const score = groupScore(item);
+    if (score === 0) return false;
+
+    let winner = item;
+    let winnerScore = score;
+    for (const other of NAV) {
+      const otherScore = groupScore(other);
+      if (otherScore > winnerScore) {
+        winner = other;
+        winnerScore = otherScore;
+      } else if (otherScore === winnerScore && otherScore > 0) {
+        const otherPrimary =
+          pathname === other.href || pathname.startsWith(`${other.href}/`);
+        const winnerPrimary =
+          pathname === winner.href || pathname.startsWith(`${winner.href}/`);
+        if (otherPrimary && !winnerPrimary) winner = other;
+      }
+    }
+    return winner.key === item.key;
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-paper shadow-[0_1px_0_0_rgba(13,27,42,0.06)]">
+    <header className="sticky top-0 z-50 bg-paper shadow-[0_1px_0_0_rgba(13,27,42,0.06)] [font-family:var(--font-montserrat)]">
       {/* Top: brand + utilities */}
       <div className="bg-paper">
         <div className="container-edge flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.75rem]">
@@ -108,10 +151,10 @@ export function SiteHeader() {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`relative px-3.5 py-3.5 text-sm tracking-tight transition-colors ${
+                  className={`relative px-3.5 py-3.5 text-[0.8125rem] font-medium tracking-wide transition-colors ${
                     isActive(item.href)
                       ? "font-semibold text-azure-800 after:absolute after:inset-x-3.5 after:bottom-0 after:h-0.5 after:bg-azure-600"
-                      : "font-medium text-ink/75 hover:text-ink"
+                      : "text-ink/75 hover:text-ink"
                   }`}
                 >
                   {t(item.key)}
@@ -241,10 +284,10 @@ function DesktopDropdown({
     >
       <button
         type="button"
-        className={`relative inline-flex items-center gap-1.5 px-3.5 py-3.5 text-sm tracking-tight transition-colors ${
+        className={`relative inline-flex items-center gap-1.5 px-3.5 py-3.5 text-[0.8125rem] font-medium tracking-wide transition-colors ${
           active || open
             ? "font-semibold text-azure-700 after:absolute after:inset-x-3.5 after:bottom-0 after:h-0.5 after:bg-azure-600"
-            : "font-medium text-ink/80 hover:text-ink"
+            : "text-ink/80 hover:text-ink"
         }`}
         aria-expanded={open}
         aria-haspopup="true"
@@ -306,7 +349,7 @@ function DesktopDropdown({
                             <Link
                               href={child.href}
                               onClick={onClose}
-                              className={`relative px-3.5 py-3 text-sm leading-snug tracking-tight transition-colors ${
+                              className={`relative px-3.5 py-3 text-[0.8125rem] leading-snug tracking-wide transition-colors ${
                                 childActive
                                   ? "font-semibold text-ink after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-azure-600"
                                   : "font-medium text-steel hover:text-ink"
@@ -336,7 +379,7 @@ function DesktopDropdown({
                       <Link
                         href={child.href}
                         onClick={onClose}
-                        className={`relative px-3.5 py-3 text-sm leading-snug tracking-tight transition-colors ${
+                        className={`relative px-3.5 py-3 text-[0.8125rem] leading-snug tracking-wide transition-colors ${
                           childActive
                             ? "font-semibold text-ink after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-azure-600"
                             : "font-medium text-steel hover:text-ink"

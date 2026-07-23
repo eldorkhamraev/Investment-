@@ -166,6 +166,14 @@ export const REGIONS: RegionMeta[] = [
   },
 ];
 
+/** Homepage teaser + default deep-links. */
+export const FEATURED_REGION_IDS = [
+  "tashkent-city",
+  "samarqand",
+  "karakalpakstan",
+  "fergana",
+] as const;
+
 export function getRegion(id: string): RegionMeta | undefined {
   return REGIONS.find((r) => r.id === id);
 }

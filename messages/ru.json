@@ -195,30 +195,26 @@
       ]
     },
     "services": {
-      "eyebrow": "How we help",
-      "title": "We de-risk your market entry.",
-      "intro": "One office, from your first question to your first local hire. We carry the administrative complexity so you can focus on building.",
-      "cta": "See all services",
+      "eyebrow": "Услуги",
+      "title": "Поддержка от первого контакта до запуска.",
+      "intro": "Инвестиционный проектный офис сопровождает международные технологические компании: регистрация, регуляторные процедуры, статус резидента и контакты в цифровой экосистеме Узбекистана.",
+      "cta": "Все услуги",
       "items": [
         {
-          "icon": "registration",
-          "title": "Company registration",
-          "desc": "Fast, guided incorporation of your legal entity in Uzbekistan, with the right structure for your business."
+          "title": "Регистрация компании",
+          "desc": "Сопровождение при создании юридического лица в Узбекистане с учётом структуры, подходящей вашей деятельности."
         },
         {
-          "icon": "legal",
-          "title": "Legal & administrative guidance",
-          "desc": "Clear answers on regulation, licensing and compliance for the technology sector."
+          "title": "Правовая и административная поддержка",
+          "desc": "Разъяснения по регулированию, лицензированию и требованиям соответствия для технологических компаний."
         },
         {
-          "icon": "tax",
-          "title": "Residence & tax procedures",
-          "desc": "Support with tax setup, residence and the IT-Visa for you and your team."
+          "title": "Резидентство и налоговые процедуры",
+          "desc": "Помощь с налоговой регистрацией, статусом резидента и IT-Visa для основателей, инвесторов и специалистов."
         },
         {
-          "icon": "partners",
-          "title": "Local partnerships",
-          "desc": "Warm introductions to vetted local service providers, partners and talent."
+          "title": "Локальные партнёрства",
+          "desc": "Знакомство с поставщиками услуг, партнёрами и кадрами, релевантными для выхода на рынок."
         }
       ]
     },
@@ -315,21 +311,16 @@
         }
       ]
     },
+    "regionsTeaser": {
+      "eyebrow": "Регионы",
+      "title": "Цифровые возможности по регионам.",
+      "intro": "От хаба IT Park в Ташкенте до AI-вычислений в Каракалпакстане; бриф, факты и PDF по каждому региону.",
+      "cta": "Все регионы",
+      "openRegion": "Открыть бриф"
+    },
     "investmentMap": {
       "title": "Инвестиционная карта Узбекистана",
       "intro": "Выберите регион — ключевые показатели и PDF-бриф."
-    },
-    "regionsTeaser": {
-      "eyebrow": "Инвестиционная карта",
-      "title": "Изучите цифровые возможности по регионам.",
-      "intro": "Нажмите на любой регион: цифровой бриф, ключевые факты и PDF — от хаба IT Park в Ташкенте до AI-вычислений в Каракалпакстане.",
-      "cta": "Открыть карту",
-      "badge": "14 регионов",
-      "bullets": [
-        "Интерактивная SVG-карта с наведением и поддержкой клавиатуры",
-        "Боковая панель с фактами по каждому административному делению",
-        "Скачиваемые региональные цифровые брифы (PDF)"
-      ]
     }
   },
   "about": {
@@ -821,17 +812,39 @@
     "eyebrow": "Why Uzbekistan",
     "title": "Why digital Uzbekistan.",
     "subtitle": "A growing economy, a young STEM workforce, a national digital push, and a country opening to the world.",
-    "hubEyebrow": "The opportunity",
-    "hubTitle": "Six reasons technology investors look here first.",
-    "hubIntro": "Explore the foundations of Uzbekistan's investment pitch — from the macroeconomy and talent to innovation, culture, living, and the 2030 strategy.",
+    "proofEyebrow": "В цифрах",
+    "numbersTitle": "Узбекистан в цифрах",
+    "numbersPrev": "Предыдущие показатели",
+    "numbersNext": "Следующие показатели",
+    "hubEyebrow": "Why Uzbekistan",
+    "hubTitle": "Что инвестору нужно знать до входа на рынок.",
+    "hubIntro": "В 2025 году ВВП вырос на 7,7%, привлечённые иностранные инвестиции достигли $43 млрд, а Fitch оценивает Узбекистан на уровне BB. Ниже — экономика, кадры, цифровая экосистема, культура, условия жизни и повестка 2030.",
+    "exploreChapter": "Открыть раздел",
     "sidebarLabel": "Why Uzbekistan",
     "overview": "Overview",
     "sidebarNote": "Economy-wide topics beyond the digital sector live on <link>invest.gov.uz</link>.",
     "keyIndicators": "Key economic indicators 2025",
-    "pointsEyebrow": "Key points",
-    "pointsTitle": "What investors should know.",
+    "pointsEyebrow": "Для инвестора",
+    "pointsTitle": "Что стоит запомнить.",
     "goalsEyebrow": "2030 goals",
-    "goalsTitle": "Targets on the national agenda."
+    "goalsTitle": "Targets on the national agenda.",
+    "chartsEyebrow": "IT Park в цифрах",
+    "chartsTitle": "Путь к IT-лидерству.",
+    "chartsIntro": "Смотрите рост и структуру. Наведите или нажмите на столбец или сегмент; клик закрепит значение.",
+    "chartHint": "Наведите или нажмите на год, чтобы увидеть цифры. Клик закрепит значение.",
+    "chartSegmentHint": "Наведите или нажмите на сегмент, чтобы выделить. Клик закрепит значение.",
+    "chartIndicatorHint": "Выберите показатель или листайте стрелками.",
+    "chartTapHint": "Нажмите, чтобы увидеть изменение",
+    "chartTotal": "Итого",
+    "chartPrev": "Предыдущие показатели",
+    "chartNext": "Следующие показатели",
+    "chartPage": "Страница",
+    "chartDownBy": "Снижение на {value} п.п.",
+    "chartUpBy": "Рост на {value} п.п.",
+    "mosaicHint": "STEM и кампус. Наведите или нажмите, чтобы увидеть подпись.",
+    "universitiesEyebrow": "Кампусы",
+    "uniPrev": "Предыдущие университеты",
+    "uniNext": "Следующие университеты"
   },
   "investorsPage": {
     "metaTitle": "For investors",
@@ -947,16 +960,15 @@
     "badges": "Badges"
   },
   "regionsPage": {
-    "metaTitle": "Regions",
-    "eyebrow": "Opportunities",
-    "title": "Uzbekistan's Digital Economy — Region by Region",
-    "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
-    "mapHint": "Выберите регион на карте или из списка.",
-    "mapAria": "Interactive map of Uzbekistan regions",
-    "keyFacts": "Key facts",
+    "metaTitle": "Регионы",
+    "eyebrow": "Возможности",
+    "title": "Цифровые возможности по регионам.",
+    "subtitle": "Четырнадцать регионов. Цифровые брифы, рыночный контекст и прямой путь к разговору с офисом.",
+    "listLabel": "Регионы",
+    "detailEyebrow": "Региональный бриф",
+    "keyFacts": "Ключевые факты",
     "downloadBrief": "PDF-бриф",
-    "bookIntro": "Book an introduction",
-    "close": "Close",
+    "bookIntro": "Записаться на знакомство",
     "statLabels": {
       "population": "Население",
       "projects": "Инвестиционные проекты",
@@ -964,9 +976,6 @@
       "trade": "Внешняя торговля",
       "area": "Кв/км"
     },
-    "panelEmptyEyebrow": "Select a region",
-    "panelEmptyTitle": "Click the map to explore.",
-    "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",
     "items": {
       "karakalpakstan": {
         "name": "Республика Каракалпакстан",
@@ -1094,6 +1103,9 @@
           "Сильный кейс для инвестиций в региональное IT-образование"
         ]
       }
-    }
+    },
+    "mapHint": "Выберите регион на карте или из списка.",
+    "mapAria": "Interactive map of Uzbekistan regions",
+    "close": "Close"
   }
 }

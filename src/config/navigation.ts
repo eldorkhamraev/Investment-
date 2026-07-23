@@ -29,8 +29,6 @@ export const NAV: readonly NavItem[] = [
     children: [
       { key: "investorsOverview", href: "/how-to-invest" },
       { key: "whereToStart", href: "/how-to-invest/where-to-start" },
-      { key: "exploreSectors", href: "/sectors" },
-      { key: "projects", href: "/projects" },
       { key: "freeZones", href: "/how-to-invest/zones" },
       { key: "partnership", href: "/how-to-invest/partnership" },
     ],

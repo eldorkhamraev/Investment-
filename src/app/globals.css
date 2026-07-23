@@ -44,11 +44,11 @@
   --color-foreground: var(--color-ink);
 
   /* ---- Typography ---- */
+  /* Primary: Montserrat (gov.uz). Inter stays loaded as --font-inter if needed. */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  /* News article body — Inter, matching UzNIF / invest.gov */
-  --font-article: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  --font-article: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-alt: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* ---- Radius & shadow ---- */
   --radius-lg: 0.75rem;
@@ -160,9 +160,9 @@
   .prose-news {
     color: var(--color-ink);
     font-family: var(--font-article);
-    font-size: 0.9375rem; /* 15px */
+    font-size: 1rem; /* 16px — closer to gov.uz article body */
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.65;
     letter-spacing: 0;
   }
   .prose-news > * + * {

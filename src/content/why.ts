@@ -22,7 +22,11 @@ export type WhyChart = {
 export type WhyShare = {
   title: string;
   caption?: string;
-  items: { label: string; value: number; color?: "azure" | "navy" | "gold" | "steel" | "mist" }[];
+  items: {
+    label: string;
+    value: number;
+    color?: "azure" | "navy" | "gold" | "steel" | "mist";
+  }[];
 };
 
 export type WhyStacked = {
@@ -61,36 +65,128 @@ export type WhyRank = {
 
 export type WhyGoal = { number: string; text: string };
 
-export type WhyUniversity = { name: string };
+export type WhyUniversity = {
+  name: string;
+  logo?: string;
+  /** Logos designed on black sit on an ink tile. */
+  tone?: "light" | "dark";
+};
+
+export type WhyMosaicImage = {
+  src: string;
+  caption: string;
+  /** Optional body under the caption (e.g. travel note on a city tile). */
+  detail?: string;
+};
+
+export type WhyPathway = {
+  title: string;
+  detail: string;
+  href?: string;
+};
 
 /** Ordered page sections for zigzag storytelling. */
 export type WhyBlock =
-  | { type: "split"; reverse?: boolean; prose: string[]; compare: WhyCompare }
-  | { type: "split-line"; reverse?: boolean; prose: string[]; line: WhyLine }
+  | {
+      type: "proof";
+      items: WhyStat[];
+    }
+  | {
+      type: "story";
+      number: string;
+      heading: string;
+      prose: string[];
+      evidence:
+        | { kind: "line"; line: WhyLine }
+        | { kind: "compares"; items: WhyCompare[] }
+        | { kind: "share"; share: WhyShare }
+        | { kind: "grouped"; grouped: WhyGrouped };
+    }
+  | {
+      type: "bridge";
+      heading: string;
+      paragraphs: string[];
+      href: string;
+      linkLabel: string;
+    }
+  | {
+      type: "split";
+      reverse?: boolean;
+      heading?: string;
+      prose: string[];
+      compare: WhyCompare;
+    }
+  | {
+      type: "split-line";
+      reverse?: boolean;
+      heading?: string;
+      prose: string[];
+      line: WhyLine;
+    }
   | {
       type: "split-stacked";
       reverse?: boolean;
+      heading?: string;
       prose: string[];
       stacked: WhyStacked;
     }
   | {
+      type: "split-share";
+      reverse?: boolean;
+      heading?: string;
+      prose: string[];
+      share: WhyShare;
+    }
+  | {
       type: "split-rank";
       reverse?: boolean;
+      heading?: string;
       prose: string[];
       rank: WhyRank;
       image?: string;
     }
-  | { type: "prose"; paragraphs: string[]; heading?: string }
+  | {
+      type: "split-media";
+      reverse?: boolean;
+      heading?: string;
+      prose: string[];
+      image: string;
+      imageAlt?: string;
+      /** Shorter image height for text-heavy rows (e.g. culture cities). */
+      imageAspect?: "standard" | "wide";
+      /** `feature` = hub-style bordered card. Default is side-by-side split. */
+      layout?: "split" | "feature";
+    }
+  | {
+      type: "proof-mosaic";
+      images: WhyMosaicImage[];
+      stats: WhyStat[];
+      paragraphs: string[];
+    }
+  | {
+      type: "prose";
+      paragraphs: string[];
+      heading?: string;
+      aside?: { value: string; label: string };
+    }
   | { type: "stats"; title?: string; items: WhyStat[] }
   | { type: "charts-grid"; charts: WhyChart[]; shares: WhyShare[] }
-  | { type: "grouped"; grouped: WhyGrouped }
-  | { type: "rings"; items: WhyStat[] }
+  | { type: "grouped"; heading?: string; caption?: string; grouped: WhyGrouped }
+  | { type: "rings"; title?: string; caption?: string; items: WhyStat[] }
   | { type: "universities"; title: string; items: WhyUniversity[] }
   | {
-      type: "gallery";
+      type: "media-strip";
       title: string;
-      images: string[];
-      paragraphs: string[];
+      caption?: string;
+      items: WhyMosaicImage[];
+    }
+  | {
+      type: "pathways";
+      title: string;
+      intro?: string;
+      items: WhyPathway[];
+      /** Slim footer links without the large mist/paper card. */
+      compact?: boolean;
     }
   | {
       type: "goals-split";
@@ -107,6 +203,12 @@ export type WhyPage = {
   eyebrow: string;
   subtitle: string;
   image: string;
+  /** Hub chapter tile image. */
+  cardImage: string;
+  /** Investor-job title on the hub overview. */
+  hubLabel: string;
+  /** Hub body paragraphs under the job title. */
+  hubBody: string[];
   blocks: WhyBlock[];
 };
 
@@ -117,14 +219,34 @@ export const WHY_SLUG_REDIRECTS: Record<string, string> = {
   "digital-2030": "strategy",
 };
 
+export const WHY_HUB_STATS: WhyStat[] = [
+  { value: "7.7%", label: "GDP growth (2025)" },
+  { value: "$43B", label: "Foreign investment attracted (2025)" },
+  { value: "$81.2B", label: "Foreign trade turnover (2025)" },
+  { value: "~$145B", label: "GDP (2025)" },
+  { value: "BB", label: "Fitch sovereign credit rating" },
+  { value: "4.8%", label: "Unemployment rate (2025)" },
+  { value: "88", label: "Cities with direct flights to Tashkent" },
+  { value: "55", label: "Double taxation agreements" },
+  { value: "100%", label: "Foreign ownership allowed" },
+  { value: "Top 1", label: "Political stability in Central Asia" },
+  { value: "Top 10", label: "GovTech Maturity Index globally" },
+];
+
 export const WHY_PAGES: WhyPage[] = [
   {
     slug: "economy",
-    title: "Economy",
+    title: "Stable and growing economy",
     eyebrow: "Economy",
     subtitle:
-      "GDP grew 7.7% in 2025, foreign investment topped $43 billion, and a young population of 38 million is powering demand.",
-    image: "/tashkent-city.webp",
+      "GDP grew 7.7% in 2025, foreign investment reached $43 billion, and trade turnover hit $81.2 billion.",
+    image: "/why/economy/tashkent-business.jpg",
+    cardImage: "/why/economy/tashkent-city.webp",
+    hubLabel: "Stable and growing economy",
+    hubBody: [
+      "GDP grew 7.7% in 2025, with nominal output around $145 billion. Foreign investment attracted reached $43 billion, and foreign trade turnover hit $81.2 billion.",
+      "Inflation eased to 7.3% by year-end and unemployment fell to 4.8%, the lowest on record per the IMF. A young domestic market continues to expand private consumption and investment.",
+    ],
     blocks: [
       {
         type: "split-line",
@@ -150,14 +272,14 @@ export const WHY_PAGES: WhyPage[] = [
           ],
         },
         prose: [
-          "GDP grew by 7.7% in 2025, up from 6.7% in 2024, with nominal output reaching approximately USD 147 billion, placing Uzbekistan among the world's 60 largest economies. Rapid urbanization, favorable demographic trends, and expanding domestic demand are shaping one of the region's most dynamic consumer markets.",
+          "GDP grew by 7.7% in 2025, up from 6.7% in 2024, with nominal output around USD 145 billion, placing Uzbekistan among the world's 60 largest economies. Rapid urbanization, a young demographic, and expanding domestic demand are shaping one of the region's most dynamic consumer markets.",
         ],
       },
       {
         type: "split",
         reverse: true,
         prose: [
-          "Macroeconomic policy remains focused on stability and predictability. The labor market has seen significant improvement: the unemployment rate fell to 4.8% in 2025 per the IMF, the lowest on record, driven by rising formal employment, up 17% year-on-year, and private sector expansion. Uzbekistan's population reached 38.2 million as of January 2026 (National Statistics Committee), one of Central Asia's youngest demographics, with a median age of just 27 years.",
+          "Macroeconomic policy remains focused on stability and predictability. The unemployment rate fell to 4.8% in 2025 per the IMF, the lowest on record, driven by rising formal employment (up 17% year-on-year) and private sector expansion. Population reached 38.2 million as of January 2026, with a median age of 27.",
         ],
         compare: {
           title: "Unemployment Rate, %",
@@ -169,12 +291,11 @@ export const WHY_PAGES: WhyPage[] = [
       {
         type: "split",
         prose: [
-          "The structure of the economy is becoming increasingly diversified. Services now account for 48.6% of GDP, industry 26.8%, construction 7.3%, and agriculture 17.3%. Private consumption rose 9.2% in real terms in 2025, driven by higher wages and remittances, while total investment grew by 10.5%, with investment as a share of GDP reaching 31.9%.",
-          "Foreign trade turnover exceeded USD 81.2 billion in 2025, with exports reaching USD 33.8 billion, up 24% year-on-year, actively developing across gold, agriculture, energy, and processing industries. Economic policy is focused on promoting export-oriented production, deepening value-added processing, and integrating the country into regional and global value chains.",
+          "The structure of the economy continues to diversify. Services account for 48.6% of GDP, industry 26.8%, construction 7.3%, and agriculture 17.3%. Private consumption rose 9.2% in real terms in 2025, while total investment grew by 10.5%, with investment as a share of GDP reaching 31.9%.",
         ],
         compare: {
           title: "Inflation Rate, %",
-          caption: "Decreased by 2 times",
+          caption: "Decreased by about 2 times since 2017",
           before: { label: "2017", value: "14.4" },
           after: { label: "2025", value: "7.3" },
         },
@@ -183,11 +304,11 @@ export const WHY_PAGES: WhyPage[] = [
         type: "split-stacked",
         reverse: true,
         prose: [
-          "Foreign direct investment is a key source of growth. Total attracted foreign investment reached USD 43.1 billion in 2025, a 24% increase year-on-year, and 18,164 enterprises with foreign capital now operate across the country as of January 2026, nearly double the number five years ago. Investor interest is concentrated in manufacturing, energy, mining, and digital infrastructure, supported by improvements in investment legislation, privatization initiatives, and expanding public-private partnerships.",
+          "Foreign direct investment is a key source of growth. Total attracted foreign investment reached USD 43.1 billion in 2025, a 24% increase year-on-year, and 18,164 enterprises with foreign capital operated across the country as of January 2026, nearly double the number five years ago.",
         ],
         stacked: {
           title:
-            "Foreign trade turnover (FTT) (January – December 2025, 81.2 billion US Dollars)",
+            "Foreign trade turnover (FTT), January–December 2025 (USD 81.2 billion)",
           series: [
             { key: "imports", label: "Imports", tone: "gold" },
             { key: "exports", label: "Exports", tone: "azure" },
@@ -235,13 +356,12 @@ export const WHY_PAGES: WhyPage[] = [
         type: "stats",
         title: "Key Economic Indicators 2025",
         items: [
-          { value: "$145 billion", label: "GDP" },
+          { value: "~$145B", label: "GDP" },
           { value: "7.7%", label: "GDP Growth", progress: 7.7 },
           { value: "7.3%", label: "Inflation", progress: 7.3 },
-          { value: "4.9%", label: "Unemployment rate", progress: 4.9 },
-          { value: ">$81 billion", label: "Foreign Trade Turnover" },
-          { value: "38.2 million", label: "Population" },
-          { value: ">$43 billion", label: "FDI" },
+          { value: "4.8%", label: "Unemployment rate", progress: 4.8 },
+          { value: ">$81B", label: "Foreign Trade Turnover" },
+          { value: ">$43B", label: "FDI" },
         ],
       },
       {
@@ -266,60 +386,98 @@ export const WHY_PAGES: WhyPage[] = [
           ],
         },
       },
-      {
-        type: "points",
-        items: [
-          {
-            title: "Diversified growth engines",
-            desc: "Services, industry, construction, and agriculture each contributing, with private consumption and investment rising together.",
-          },
-          {
-            title: "FDI at scale",
-            desc: "$43.1 billion attracted in 2025 and 18,164 enterprises with foreign capital operating nationwide.",
-          },
-          {
-            title: "Young domestic market",
-            desc: "38.2 million people, median age 27, with urbanization and rising real incomes.",
-          },
-        ],
-      },
     ],
   },
   {
     slug: "talent",
-    title: "Talent",
+    title: "A young country built for STEM.",
     eyebrow: "Talent",
     subtitle:
-      "Forty percent of the population is under 19. Education takes 6% of GDP, and millions of students are training for a digital economy.",
-    image: "/sector-education.jpg",
+      "Forty percent of the population is under 19. Education takes 6% of GDP, and developers on GitHub grew tenfold in five years.",
+    image: "/why/talent/education.jpg",
+    cardImage: "/why/talent/students.jpeg",
+    hubLabel: "Talent pipeline",
+    hubBody: [
+      "Forty percent of the population is under 19, and education receives about 6% of GDP. Nearly 6.5 million students attend high school, with further study across 209 higher education institutions.",
+      "International campuses feed STEM hiring pipelines. Developers on GitHub grew from about 25,000 in 2020 to 275,000 in 2025, supporting delivery centres, product teams, and R&D.",
+    ],
     blocks: [
       {
         type: "prose",
         paragraphs: [
-          "Since Khiva-born Al-Khawarizmi, 'the grandfather of computer science,' gave the world algebra, Uzbeks have made an outsized contribution to humanity's collective understanding of the world and the scientific principles underpinning it. This is a culture in which education and intellectual inquiry are highly valued.",
-          "With 40% of the population under the age of 19, and 30% even younger than 14, Uzbekistan is a young country, full of the dynamism and energy of youth.",
+          "Since Khiva-born Al-Khawarizmi gave the world algebra, Uzbeks have punched above their weight in science and mathematics. Education and intellectual inquiry sit at the center of the culture.",
+          "With 40% of the population under 19, and 30% younger than 14, Uzbekistan is a young country with the energy investors need for delivery centres, product teams, and R&D.",
         ],
+        aside: {
+          value: "40%",
+          label:
+            "of the population is under 19; a young market for delivery teams and R&D.",
+        },
       },
       {
-        type: "stats",
-        items: [
+        type: "proof-mosaic",
+        images: [
+          {
+            src: "/why/talent/coding.jpeg",
+            caption: "Coding and digital skills programmes",
+          },
+          {
+            src: "/why/talent/engineering.jpg",
+            caption: "Engineering and applied STEM training",
+          },
+          {
+            src: "/why/talent/students.jpeg",
+            caption: "University and campus talent pipelines",
+          },
+          {
+            src: "/why/talent/together.jpg",
+            caption: "Collaborative delivery teams",
+          },
+          {
+            src: "/why/talent/ai-leaders.jpg",
+            caption: "National AI and digital literacy push",
+          },
+        ],
+        stats: [
           { value: "40%", label: "Population under 19" },
-          { value: "6.5m", label: "High school students" },
+          { value: "6.5M", label: "High school students" },
           { value: "6%", label: "GDP allocated to education" },
         ],
+        paragraphs: [
+          "Nearly 6.5 million students attend high schools with a growing STEM focus, and about a million train further at one of 209 higher education institutions.",
+          "National programmes such as Million Programmers and large-scale AI literacy sit alongside corporate academies, building the skills base for a digital economy.",
+        ],
       },
       {
-        type: "prose",
-        paragraphs: [
-          "What's more, the almost 6.5 million students currently attending Uzbekistan's high schools are benefiting from an increasingly sophisticated STEM education, and a million are receiving further training at one of the country's 209 higher educational institutions, preparing the nation's next generation for a critical role in the global economy of tomorrow.",
-          "From science and math to art, literature, and music, Uzbeks inherit a legacy of great achievement, and we are determined to enrich the 21st century just as we have enriched so many other periods in history.",
+        type: "split-line",
+        reverse: true,
+        line: {
+          title: "Developers on GitHub",
+          caption: "Uzbekistan accounts, thousands (GitHub Innovation Graph)",
+          labels: ["2020", "2025"],
+          yMin: 0,
+          yMax: 300,
+          series: [
+            {
+              key: "devs",
+              label: "Developers (thousands)",
+              tone: "azure",
+              points: [25, 275],
+            },
+          ],
+        },
+        prose: [
+          "Uzbek developers on GitHub grew more than tenfold, from about 25,000 in 2020 to 275,000 in 2025, according to GitHub Innovation Graph figures cited publicly by industry leaders. That growth tracks the push into IT exports and AI readiness.",
+          "Teams are bilingual in practice: strong Russian across engineering cohorts, with English proficiency rising in delivery centres and product organisations.",
         ],
       },
       {
         type: "rings",
+        title: "Education coverage",
+        caption: "Enrollment rates and public spend on education.",
         items: [
           { value: "76%", label: "Pre-school", progress: 76 },
-          { value: "100", label: "School", progress: 100 },
+          { value: "100%", label: "School", progress: 100 },
           { value: "41%", label: "Higher", progress: 41 },
           {
             value: "6%",
@@ -330,14 +488,22 @@ export const WHY_PAGES: WhyPage[] = [
       },
       {
         type: "universities",
-        title: "International universities",
+        title: "International campuses in Uzbekistan",
         items: [
-          { name: "Amity University" },
-          { name: "Bucheon University" },
-          { name: "Inha University" },
-          { name: "Turin Polytechnic University in Tashkent" },
-          { name: "Westminster International University in Tashkent" },
-          { name: "Webster University" },
+          { name: "Amity University", logo: "/why/talent/amity.png" },
+          { name: "Bucheon University", logo: "/why/talent/bucheon.png" },
+          { name: "Inha University", logo: "/why/talent/inha.png" },
+          { name: "Turin Polytechnic", logo: "/why/talent/turin.png" },
+          {
+            name: "Westminster International",
+            logo: "/why/talent/westminster.png",
+          },
+          { name: "Webster University", logo: "/why/talent/webster.png" },
+          { name: "MDIS", logo: "/why/talent/mdis.png" },
+          {
+            name: "American University of Technology",
+            logo: "/why/talent/aut.png",
+          },
         ],
       },
       {
@@ -353,7 +519,7 @@ export const WHY_PAGES: WhyPage[] = [
           },
           {
             title: "National skills programmes",
-            desc: "Million Programmers, AI literacy at scale, and corporate academies.",
+            desc: "Million Programmers, AI literacy at scale, and corporate academies feeding IT Park hiring.",
           },
         ],
       },
@@ -364,22 +530,30 @@ export const WHY_PAGES: WhyPage[] = [
     title: "Innovation and Digital",
     eyebrow: "Innovation and Digital",
     subtitle:
-      "IT Park, fintech growth, and export momentum, plus Zero Risk tax treatment and the IT-Visa for teams that want to land fast.",
-    image: "/itpark.jpg",
+      "IT Park growth, fintech scale-ups, and export momentum, plus Zero Risk tax treatment and the IT-Visa for teams that want to land fast.",
+    image: "/why/innovation/it-park.jpg",
+    cardImage: "/why/innovation/itpark-campus.png",
+    hubLabel: "Innovation and digital ecosystem",
+    hubBody: [
+      "IT Park membership passed 2,990 companies, with national IT service exports above $1 billion in 2025 and reach across more than 90 countries.",
+      "Zero Risk offers 0% corporate tax, 0% VAT, and a 7.5% flat personal income tax for qualifying residents. The IT-Visa covers founders, investors, and specialists for up to three years.",
+    ],
     blocks: [
       {
-        type: "prose",
-        paragraphs: [
+        type: "split-media",
+        prose: [
           "With smartphone penetration set to reach 77% by 2025 and over 27 million internet users, Uzbekistan is a digitally literate society, with its young population building the leading tech businesses of tomorrow.",
-          "Central to the economy's growing tech leadership is the IT Park in Tashkent, a dedicated digital business ecosystem that has grown exponentially over the last four years, from 411 businesses in 2020 to 1,652 in 2023 and more than 2,990 by 2025. Attracted by a skilled workforce and a total exemption from corporate tax, businesses within the IT Park exported $344 million in IT products and services in 2023, with national IT service exports crossing $1 billion in 2025.",
-          "A burgeoning IT sector runs in parallel with a constellation of fintech startups that are capitalizing on Uzbekistan's rapidly evolving digital payments and online retail markets. Leading the country's fintech charge is Uzum, an e-commerce business and, with a market value of more than $1 billion, the first Uzbek unicorn. With over a thousand startups active in Uzbekistan, Uzum will not be the last.",
+          "Central to that story is IT Park in Tashkent: from 411 resident businesses in 2020 to more than 2,990 by 2025. Attracted by skilled talent and Zero Risk tax treatment, residents exported hundreds of millions in IT services earlier in the decade, with national IT service exports crossing $1 billion in 2025 and reaching more than 90 countries.",
+          "Fintech runs in parallel with software and outsourcing. Uzum, valued above $1 billion, became the first Uzbek unicorn. With more than a thousand startups active in the country, it will not be the last.",
         ],
+        image: "/why/innovation/itpark-campus.png",
+        imageAlt: "Young professionals at IT Park Uzbekistan in Tashkent",
       },
       {
         type: "charts-grid",
         charts: [
           {
-            title: "Companies",
+            title: "IT Park companies",
             items: [
               { label: "2020", value: 411 },
               { label: "2021", value: 523 },
@@ -390,24 +564,29 @@ export const WHY_PAGES: WhyPage[] = [
           },
           {
             title: "Foreign IT companies",
+            caption: "2025 figure as of mid-year (IT Park)",
             items: [
               { label: "2020", value: 14 },
               { label: "2021", value: 23 },
               { label: "2022", value: 156 },
               { label: "2023", value: 426 },
+              { label: "2025", value: 776 },
             ],
           },
           {
-            title: "Exporters",
+            title: "Export-oriented residents",
+            caption: "2024 figure as of Q3 (IT Park)",
             items: [
               { label: "2020", value: 59 },
               { label: "2021", value: 104 },
               { label: "2022", value: 353 },
               { label: "2023", value: 551 },
+              { label: "2024", value: 936 },
             ],
           },
           {
-            title: "Volume (million dollars)",
+            title: "IT export volume",
+            unit: "USD millions",
             items: [
               { label: "2020", value: 16.3 },
               { label: "2021", value: 46.6 },
@@ -421,21 +600,55 @@ export const WHY_PAGES: WhyPage[] = [
           {
             title: "Types of IT companies",
             items: [
-              { label: "IT services", value: 54, color: "azure" },
-              { label: "Products", value: 24, color: "mist" },
+              { label: "IT services", value: 54, color: "navy" },
+              { label: "Products", value: 24, color: "steel" },
               { label: "IT educational", value: 22, color: "gold" },
             ],
           },
           {
-            title: "Exports by country",
+            title: "Exports by region",
             items: [
               { label: "North America", value: 44, color: "navy" },
-              { label: "EU + UK", value: 24, color: "azure" },
-              { label: "CIS", value: 20, color: "gold" },
-              { label: "APAC", value: 8, color: "steel" },
+              { label: "EU + UK", value: 24, color: "gold" },
+              { label: "CIS", value: 20, color: "steel" },
+              { label: "APAC", value: 8, color: "azure" },
               { label: "MENA", value: 4, color: "mist" },
             ],
           },
+        ],
+      },
+      {
+        type: "media-strip",
+        title: "Operators already building here",
+        caption:
+          "Fintech, telecom, and digital platforms that signal a working commercial stack.",
+        items: [
+          {
+            src: "/why/innovation/uzum.jpg",
+            caption: "Uzum — first Uzbek unicorn",
+          },
+          {
+            src: "/why/innovation/tbc-bank.webp",
+            caption: "TBC Bank — digital banking",
+          },
+          {
+            src: "/why/innovation/ucell.webp",
+            caption: "Ucell — connectivity at scale",
+          },
+          {
+            src: "/why/innovation/fintech.jpg",
+            caption: "Fintech and payments growth",
+          },
+        ],
+      },
+      {
+        type: "stats",
+        title: "Incentives for technology residents",
+        items: [
+          { value: "0%", label: "Corporate tax (Zero Risk)" },
+          { value: "0%", label: "VAT (Zero Risk)" },
+          { value: "7.5%", label: "Flat personal income tax" },
+          { value: "3 yrs", label: "IT-Visa (up to)" },
         ],
       },
       {
@@ -459,52 +672,92 @@ export const WHY_PAGES: WhyPage[] = [
   },
   {
     slug: "culture",
-    title: "Culture",
+    title: "A place teams want to stay.",
     eyebrow: "Culture",
     subtitle:
-      "Craft traditions, hospitality, and UNESCO cities that make partnerships warmer and tourism, creative, and service investments natural.",
-    image: "/samarkand.jpg",
+      "UNESCO cities within reach of Tashkent, and hospitality that helps specialists settle and host partners.",
+    image: "/why/culture/samarkand.jpg",
+    cardImage: "/why/culture/bukhara.jpg",
+    hubLabel: "Culture and hospitality",
+    hubBody: [
+      "Samarkand, Bukhara, and Khiva are UNESCO World Heritage sites on the Silk Road, within practical reach of teams based in Tashkent.",
+      "Craft traditions in silk, ceramics, and design remain living industries. Hospitality is part of how international specialists settle and build local partnerships.",
+    ],
     blocks: [
       {
-        type: "prose",
-        paragraphs: [
-          "Uzbekistan is renowned for its artisanal crafts, including intricate silk weaving, pottery, and decorative woodwork, with techniques passed down through generations. This craftsmanship has created a foundation for sectors like textiles, fashion, and tourism, offering the opportunity to collaborate with skilled local artisans to bring authentic, high-quality products to international markets.",
+        type: "split-media",
+        heading: "Culture as operating context",
+        layout: "feature",
+        prose: [
+          "Culture is part of the operating environment. For relocating specialists and visiting deal teams, food, hospitality, and a deep sense of place shape how quickly people settle and how easily they host partners.",
+          "Three UNESCO World Heritage cities sit on the Silk Road within practical reach of Tashkent. Craft traditions in silk, ceramics, and design remain living industries.",
         ],
+        image: "/why/culture/bukhara-2.jpg",
+        imageAlt: "Historic architecture and courtyards in Bukhara",
       },
       {
-        type: "prose",
-        paragraphs: [
-          'Uzbekistan\'s culinary traditions, particularly its world-famous dishes like "plov", highlight its deep-seated hospitality and social culture. The warm, welcoming nature of Uzbek people is one of the country\'s greatest assets, creating a friendly environment for foreign investors and facilitating meaningful local partnerships. This cultural warmth also supports the growth of key sectors such as hospitality, tourism, and services.',
-        ],
-      },
-      {
-        type: "gallery",
-        title: "UNESCO World Heritage Sites in Uzbekistan",
-        images: [
-          "/samarkand.jpg",
-          "/samarkand-track.jpg",
-          "/tashkent-city.webp",
-          "/about-building.png",
-        ],
-        paragraphs: [
-          "Home to stunning cities like Samarkand, Bukhara, and Khiva, Uzbekistan boasts numerous UNESCO World Heritage Sites. The government is actively promoting these attractions, which provides fertile ground for tourism investments. The expanding infrastructure and commitment to preserving historical sites signals great potential for investors interested in tourism, hospitality, and cultural exchange initiatives.",
-          "Investing in Uzbekistan is more than a financial opportunity; it is a chance to engage with a culture rich in tradition and forward-thinking ambition. The country's unique cultural landscape creates an inviting, inspiring environment for investors who value both economic potential and cultural depth.",
-        ],
-      },
-      {
-        type: "points",
+        type: "media-strip",
+        title: "Weekend geography from Tashkent",
+        caption:
+          "UNESCO cities for client hosting and team weekends. Confirm live rail and flight schedules when you book.",
         items: [
           {
-            title: "Craft and creative industries",
-            desc: "Silk, ceramics, and design traditions that feed textiles, fashion, and export-ready products.",
+            src: "/why/culture/samarkand-2.jpg",
+            caption: "Samarkand",
+            detail:
+              "UNESCO World Heritage city. Afrosiyob high-speed rail from Tashkent in about 2 to 2.5 hours; strong for a day trip or overnight with guests.",
           },
           {
-            title: "Hospitality as an advantage",
-            desc: "A welcoming culture that helps foreign teams build local relationships faster.",
+            src: "/why/culture/bukhara.jpg",
+            caption: "Bukhara",
+            detail:
+              "UNESCO Historic Centre and Creative City of Crafts. Afrosiyob about four hours from Tashkent; about 1.5 hours from Samarkand.",
           },
           {
-            title: "UNESCO cities",
-            desc: "Samarkand, Bukhara, and Khiva as anchors for tourism and cultural investment.",
+            src: "/why/culture/khiva-2.jpg",
+            caption: "Khiva",
+            detail:
+              "Itchan Kala walled city. Fly Tashkent to Urgench in about 1.5 to 2 hours, then a short transfer; overnight train about 14 to 15 hours.",
+          },
+        ],
+      },
+      {
+        type: "split-media",
+        heading: "Hospitality at the table",
+        imageAspect: "wide",
+        prose: [
+          "Plov, Uzbekistan's national dish, is on UNESCO's Intangible Cultural Heritage list. Shared tables, non bread, and tea are how teams host partners and settle into local life.",
+          "Tashkent bazaars and plov centres make that hospitality easy to show on the same day as meetings.",
+        ],
+        image: "/why/culture/food.jpg",
+        imageAlt: "Uzbek table culture and hospitality",
+      },
+      {
+        type: "split-media",
+        reverse: true,
+        heading: "Craft as a living industry",
+        imageAspect: "wide",
+        prose: [
+          "Bukhara is a UNESCO Creative City of Crafts and Folk Art. Workshops still produce gold embroidery, ceramics, jewellery, and woodwork.",
+          "Silk and carpet studios in cities such as Khiva keep traditional techniques in production, next to textiles, fashion, and creative collaboration.",
+        ],
+        image: "/why/culture/craft.jpg",
+        imageAlt: "Craft workshops and traditional making",
+      },
+      {
+        type: "pathways",
+        compact: true,
+        title: "Related chapters",
+        items: [
+          {
+            title: "Living in Uzbekistan",
+            href: "/why/living",
+            detail: "Visas, safety, and daily life in Tashkent.",
+          },
+          {
+            title: "Regions",
+            href: "/regions",
+            detail: "Geography and briefs beyond the Silk Road circuit.",
           },
         ],
       },
@@ -515,26 +768,70 @@ export const WHY_PAGES: WhyPage[] = [
     title: "Living in Uzbekistan",
     eyebrow: "Living in Uzbekistan",
     subtitle:
-      "A Central Asian hub of 448,900 km² with Tashkent at the center, practical visa routes, and a strong safety record.",
-    image: "/tashkent-city.webp",
+      "A Central Asian hub of 448,900 km² with Tashkent at the centre, practical visa routes, and a top Safety Perceptions Index ranking.",
+    image: "/why/living/modern-tashkent.webp",
+    cardImage: "/why/living/magic-city.jpeg",
+    hubLabel: "Living and relocation",
+    hubBody: [
+      "Citizens of about 90 countries can enter visa-free. Longer stays use the Investment Visa or the IT-Visa for founders, investors, and specialists.",
+      "Uzbekistan ranked first among 121 countries in the Safety Perceptions Index 2023. Tashkent is a practical base for posting international teams, with soft-landing support for residence and first hires.",
+    ],
     blocks: [
       {
-        type: "prose",
-        paragraphs: [
-          "The Republic of Uzbekistan is a country located in Central Asia. Its capital is Tashkent, which is also the largest city in the country. Covering an area of 448,900 km², Uzbekistan is a country rich in history and culture, standing out as a regional hub with a unique blend of traditions and modernity. Tashkent, with its special administrative status, serves as the country's economic and cultural center.",
-          "Uzbekistan's administrative structure is diverse, comprising the autonomous Republic of Karakalpakstan, several regions (known as viloyat), rural districts (tuman), urban districts, and cities with regional subordination. Smaller communities, including villages called kishlaks and auls, reflect the country's deep-rooted traditions and close-knit society.",
-          "Located in the UTC +5 time zone (MSK +2), Uzbekistan is globally connected through the international dialing code +998. It is an exciting destination for those interested in its historical heritage, strategic location, and the economic opportunities it offers as a modernizing nation.",
-          "Mild climate, more than 300 sunny days make Uzbekistan favorable for agriculture and tourism. Uzbekistan's stable and secure environment, coupled with its rapidly growing economy and dynamic young population, fosters a vibrant and optimistic atmosphere where bold ideas are encouraged, and every contribution is valued.",
+        type: "split-media",
+        prose: [
+          "Uzbekistan sits at the centre of Central Asia. Tashkent is the capital and largest city, the country's economic and cultural hub, covering a national territory of 448,900 km².",
+          "Mild climate and more than 300 sunny days support outdoor life and travel. UTC+5 keeps working hours aligned with Europe mornings and Asia afternoons. The international dialing code is +998.",
+          "For technology teams, the living question is practical: can specialists relocate, feel safe, and run a normal city life while building a delivery centre or regional HQ?",
+        ],
+        image: "/why/living/building.jpg",
+        imageAlt: "Contemporary residential and business districts in Tashkent",
+      },
+      {
+        type: "media-strip",
+        title: "Daily life in Tashkent",
+        caption:
+          "Transit, parks, schools, and neighbourhood markets that matter to relocating teams.",
+        items: [
+          {
+            src: "/why/living/metro.jpg",
+            caption: "Metro and city transit",
+          },
+          {
+            src: "/why/living/magic-city.jpeg",
+            caption: "Magic City and public parks",
+          },
+          {
+            src: "/why/living/schools.jpeg",
+            caption: "Schools and family infrastructure",
+          },
+          {
+            src: "/why/living/bazaar.avif",
+            caption: "Neighbourhood markets and food culture",
+          },
         ],
       },
       {
-        type: "prose",
-        heading: "Entry regulations",
-        paragraphs: [
-          "Citizens of 90 countries can enter Uzbekistan without a visa, with the allowed duration of stay ranging from 10 days to one year, depending on nationality. Additionally, residents of the UAE and individuals aged 55 and older are also exempt from requiring a visa to travel to Uzbekistan.",
-          "The process for obtaining an Investment Visa in Uzbekistan is detailed in Resolution No. 864 (11.10.2019). Foreign nationals who invest at least 8,500 times the base calculation amount (BCA) in Uzbekistan can receive a three-year, multiple-entry Investment Visa, which is renewable indefinitely without leaving the country. Family members (spouse, parents, children) are also eligible for guest visas with the same conditions.",
-          "Investment Visas are issued and renewed by regional offices of Uzbekistan's Ministry of Internal Affairs for foreign nationals entering with business, guest, or compatriot visas. Extensions for those with an initial Investment Visa are processed by the same offices. Foreign investors wishing to apply for permanent residence must submit an application, along with an investment confirmation certificate from the Central Securities Depository (for shares) or the Public Services Agency (for stakes or foreign-invested enterprises).",
-          "Technology teams can also use the IT-Visa for founders, investors, and specialists for up to three years.",
+        type: "pathways",
+        title: "Entry and residence pathways",
+        intro:
+          "Scannable routes for visiting teams, investors, and technology specialists. Confirm current thresholds with counsel; the Investment Visa amount tracks the Base Calculation Amount (BCA).",
+        items: [
+          {
+            title: "Visa-free entry",
+            detail:
+              "Citizens of about 90 countries can enter without a visa, with stays from 10 days up to one year depending on nationality. Separate facilitations apply for certain UAE residents and travellers aged 55+.",
+          },
+          {
+            title: "Investment Visa",
+            detail:
+              "Foreign nationals investing at least 8,500× the Base Calculation Amount (about USD 290,000 as of late 2025 guidance) can receive a three-year, multiple-entry Investment Visa, renewable without leaving the country. Spouse, parents, and children may receive matching guest visas.",
+          },
+          {
+            title: "IT-Visa",
+            detail:
+              "Technology founders, investors, and specialists can use the IT-Visa for residence of up to three years, paired with IT Park soft-landing support for registration, banking, and first hires.",
+          },
         ],
       },
       {
@@ -542,11 +839,13 @@ export const WHY_PAGES: WhyPage[] = [
         reverse: true,
         prose: [
           "A stable and secure environment supports long-term posting for international teams. Soft-landing support from the office covers residence questions, banking introductions, and getting your first team on the ground.",
+          "In the Safety Perceptions Index 2023 (Lloyd's Register Foundation / Institute for Economics & Peace), Uzbekistan ranked first among 121 countries for overall safety perceptions, driven by low reported experience of harm.",
         ],
-        image: "/samarkand.jpg",
+        image: "/why/living/modern-tashkent.webp",
         rank: {
-          title: "Safety Perceptions Index",
-          caption: "Capturing the impact of risk in countries around the world",
+          title: "Safety Perceptions Index 2023",
+          caption:
+            "Least risk-impacted countries — Lloyd's Register Foundation / IEP",
           items: [
             { rank: 1, country: "Uzbekistan" },
             { rank: 2, country: "UAE" },
@@ -566,7 +865,7 @@ export const WHY_PAGES: WhyPage[] = [
         items: [
           {
             title: "Practical relocation",
-            desc: "Visa-free entry for many nationalities, Investment Visa, and IT-Visa options for teams.",
+            desc: "Visa-free entry for many nationalities, Investment Visa, and IT-Visa options for technology teams.",
           },
           {
             title: "Competitive cost base",
@@ -574,7 +873,7 @@ export const WHY_PAGES: WhyPage[] = [
           },
           {
             title: "Central location",
-            desc: "Flight links toward Europe, the Gulf, China, and South Asia.",
+            desc: "Flight links toward Europe, the Gulf, China, and South Asia from a UTC+5 base.",
           },
         ],
       },
@@ -585,8 +884,14 @@ export const WHY_PAGES: WhyPage[] = [
     title: "2030 Strategy Highlights",
     eyebrow: "2030 Strategy Highlights",
     subtitle:
-      "Upper-middle-income targets, FDI at scale, green transition, and a more open regulatory environment for foreign capital.",
-    image: "/samarkand-track.jpg",
+      "Upper-middle-income targets, FDI at scale, green transition, and a national digital push to $5 billion in IT exports.",
+    image: "/why/strategy/together.webp",
+    cardImage: "/why/economy/data-centers.jpg",
+    hubLabel: "2030 national strategy",
+    hubBody: [
+      "Uzbekistan–2030 targets upper-middle-income status, $250 billion in investment, and full high-speed internet coverage across the regions.",
+      "The digital pillar aims for $5 billion in IT exports, 300,000 technology jobs, and 1,000 foreign IT companies. Preferential FEZ and FDI tax regimes are already in force.",
+    ],
     blocks: [
       {
         type: "goals-split",
@@ -598,7 +903,7 @@ export const WHY_PAGES: WhyPage[] = [
           },
           {
             number: "02",
-            text: "Ensuring an annual inflation rate of 5-6 percent",
+            text: "Ensuring an annual inflation rate of 5–6 percent",
           },
           {
             number: "03",
@@ -606,8 +911,8 @@ export const WHY_PAGES: WhyPage[] = [
           },
         ],
         prose: [
-          "Uzbekistan's 2030 strategy aims to achieve upper middle-income nation status by the end of the decade, through a radical reform programme designed to liberalise the economy, attract foreign investment, dramatically expand the country's technological capacity and strategic infrastructure, and reduce regulatory burdens on businesses.",
-          "Moreover, compelling incentives to attract foreign direct investment are already creating obvious results. International businesses operating in the country's Free Economic Zones (FEZ) benefit from tax exemptions of up to 10 years, and FDI enterprises enjoy exemptions on property, water usage, and land taxes for up to seven years.",
+          "Uzbekistan's 2030 strategy aims for upper-middle-income status by the end of the decade through liberalisation, foreign investment, expanded technological capacity, and lighter regulatory burdens on business.",
+          "Preferential regimes already show results. Free Economic Zone residents can receive tax exemptions of up to 10 years, and FDI enterprises can enjoy exemptions on property, water, and land taxes for up to seven years.",
         ],
       },
       {
@@ -625,12 +930,31 @@ export const WHY_PAGES: WhyPage[] = [
           },
           {
             number: "06",
-            text: "Radically reducing poverty rate (by more than 2 times)",
+            text: "Radically reducing the poverty rate (by more than 2 times)",
           },
         ],
         prose: [
-          "As well as the most liberal tax regime in the region, Uzbekistan's export development is accelerating as major deregulation takes effect, with the abolition of more than 130 permits and licences, as well as all customs duties on exported goods and services. The government's privatisation programme has also marked significant milestones, with sale of more than $1 billion worth of state assets and the adoption of a landmark law on Public-Private Partnership facilitating $17 billion-worth of projects.",
-          "Moreover, by increasing the number of countries with which Uzbekistan enjoys a visa-free regime from nine to 93, the country is attracting talent and investment from across the world. A critical pillar of the 2030 Strategy has been the substantial expansion of investor protections, ensuring the safeguarding of investor rights and complementing the dispute mechanisms of the Tashkent International Arbitration Centre.",
+          "Export development is accelerating as deregulation takes effect: more than 130 permits and licences abolished, and customs duties removed on exported goods and services. Privatisation has transferred more than $1 billion in state assets, and the Public-Private Partnership law has unlocked about $17 billion in projects.",
+          "Visa-free access expanded from nine countries to about 90, and investor protections were strengthened alongside the Tashkent International Arbitration Centre.",
+        ],
+      },
+      {
+        type: "split-media",
+        prose: [
+          "For the Ministry of Digital Technologies and this office, the digital pillar of Uzbekistan–2030 is the operating mandate.",
+          "National targets include raising IT service and software exports to $5 billion, creating 300,000 technology jobs, attracting 1,000 foreign IT companies, and placing Uzbekistan among the top 30 in the UN E-Government Development Index. Telecom coverage in populated areas has already risen from 41% to about 98%, with international bandwidth expanded sharply.",
+        ],
+        image: "/why/economy/data-centers.jpg",
+        imageAlt: "Data centre and digital infrastructure investment",
+      },
+      {
+        type: "stats",
+        title: "Digital targets on the 2030 agenda",
+        items: [
+          { value: "$5B", label: "IT exports target" },
+          { value: "300K", label: "IT jobs target" },
+          { value: "1,000", label: "Foreign IT companies target" },
+          { value: "Top 30", label: "UN e-Government Index aim" },
         ],
       },
       {
@@ -645,7 +969,7 @@ export const WHY_PAGES: WhyPage[] = [
             desc: "National push for connectivity, IT exports, and technology FDI through 2030.",
           },
           {
-            title: "Office as operator",
+            title: "Office as counterpart",
             desc: "We convert strategy into investor outcomes, from first meeting to fully operational.",
           },
         ],

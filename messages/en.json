@@ -195,30 +195,26 @@
       ]
     },
     "services": {
-      "eyebrow": "How we help",
-      "title": "We de-risk your market entry.",
-      "intro": "One office, from your first question to your first local hire. We carry the administrative complexity so you can focus on building.",
-      "cta": "See all services",
+      "eyebrow": "Services",
+      "title": "Support from first contact to operations.",
+      "intro": "The Investment Project Office assists international technology companies with registration, regulatory procedures, residence status, and introductions across Uzbekistan's digital ecosystem.",
+      "cta": "All services",
       "items": [
         {
-          "icon": "registration",
           "title": "Company registration",
-          "desc": "Fast, guided incorporation of your legal entity in Uzbekistan, with the right structure for your business."
+          "desc": "Guidance on incorporating a legal entity in Uzbekistan under a structure suited to your activity."
         },
         {
-          "icon": "legal",
-          "title": "Legal & administrative guidance",
-          "desc": "Clear answers on regulation, licensing and compliance for the technology sector."
+          "title": "Legal and administrative guidance",
+          "desc": "Advice on regulation, licensing, and compliance requirements for technology companies."
         },
         {
-          "icon": "tax",
-          "title": "Residence & tax procedures",
-          "desc": "Support with tax setup, residence and the IT-Visa for you and your team."
+          "title": "Residence and tax procedures",
+          "desc": "Assistance with tax registration, residence status, and the IT-Visa for founders, investors, and specialists."
         },
         {
-          "icon": "partners",
           "title": "Local partnerships",
-          "desc": "Warm introductions to vetted local service providers, partners and talent."
+          "desc": "Introductions to service providers, partners, and talent relevant to your market entry."
         }
       ]
     },
@@ -315,21 +311,16 @@
         }
       ]
     },
+    "regionsTeaser": {
+      "eyebrow": "Regions",
+      "title": "Digital opportunity by region.",
+      "intro": "From Tashkent's IT Park hub to Karakalpakstan's AI compute frontier; browse every region's brief, facts, and PDF.",
+      "cta": "Browse all regions",
+      "openRegion": "Open brief"
+    },
     "investmentMap": {
       "title": "Investment map of Uzbekistan",
       "intro": "Click a region for key indicators and a PDF brief."
-    },
-    "regionsTeaser": {
-      "eyebrow": "Investment map",
-      "title": "Explore digital opportunity by region.",
-      "intro": "Click any region for a digital-economy brief, key facts and a downloadable PDF — from Tashkent's IT Park hub to Karakalpakstan's AI compute frontier.",
-      "cta": "Open the map",
-      "badge": "14 regions",
-      "bullets": [
-        "Interactive SVG map with hover and keyboard support",
-        "Side panel with facts for every administrative division",
-        "Downloadable regional digital briefs (PDF)"
-      ]
     }
   },
   "about": {
@@ -800,14 +791,13 @@
   "regionsPage": {
     "metaTitle": "Regions",
     "eyebrow": "Opportunities",
-    "title": "Uzbekistan's Digital Economy — Region by Region",
-    "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
-    "mapHint": "Select a region on the map or from the list.",
-    "mapAria": "Interactive map of Uzbekistan regions",
+    "title": "Digital opportunity by region.",
+    "subtitle": "Fourteen regions. Digital briefs, market context, and a direct path to speak with the office.",
+    "listLabel": "Regions",
+    "detailEyebrow": "Regional brief",
     "keyFacts": "Key facts",
     "downloadBrief": "PDF brief",
     "bookIntro": "Book an introduction",
-    "close": "Close",
     "statLabels": {
       "population": "Population",
       "projects": "Investment projects",
@@ -815,9 +805,6 @@
       "trade": "Foreign trade",
       "area": "Sq/km"
     },
-    "panelEmptyEyebrow": "Select a region",
-    "panelEmptyTitle": "Click the map to explore.",
-    "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",
     "items": {
       "karakalpakstan": {
         "name": "Republic of Karakalpakstan",
@@ -945,7 +932,10 @@
           "Strong case for regional IT education investment"
         ]
       }
-    }
+    },
+    "mapHint": "Select a region on the map or from the list.",
+    "mapAria": "Interactive map of Uzbekistan regions",
+    "close": "Close"
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -971,17 +961,39 @@
     "eyebrow": "Why Uzbekistan",
     "title": "Why digital Uzbekistan.",
     "subtitle": "A growing economy, a young STEM workforce, a national digital push, and a country opening to the world.",
-    "hubEyebrow": "The opportunity",
-    "hubTitle": "Six reasons technology investors look here first.",
-    "hubIntro": "Explore the foundations of Uzbekistan's investment pitch — from the macroeconomy and talent to innovation, culture, living, and the 2030 strategy.",
+    "proofEyebrow": "At a glance",
+    "numbersTitle": "Uzbekistan in numbers",
+    "numbersPrev": "Previous figures",
+    "numbersNext": "Next figures",
+    "hubEyebrow": "Why Uzbekistan",
+    "hubTitle": "What investors need to know before entering the market.",
+    "hubIntro": "GDP grew 7.7% in 2025, foreign investment reached $43 billion, and Fitch rates Uzbekistan BB. The chapters below cover the economy, talent, digital ecosystem, culture, living conditions, and the 2030 agenda.",
+    "exploreChapter": "Explore this chapter",
     "sidebarLabel": "Why Uzbekistan",
     "overview": "Overview",
     "sidebarNote": "Economy-wide topics beyond the digital sector live on <link>invest.gov.uz</link>.",
     "keyIndicators": "Key economic indicators 2025",
-    "pointsEyebrow": "Key points",
-    "pointsTitle": "What investors should know.",
+    "pointsEyebrow": "Investor essentials",
+    "pointsTitle": "What to take away.",
     "goalsEyebrow": "2030 goals",
-    "goalsTitle": "Targets on the national agenda."
+    "goalsTitle": "Targets on the national agenda.",
+    "chartsEyebrow": "IT Park in numbers",
+    "chartsTitle": "The path to IT excellence.",
+    "chartsIntro": "Explore growth and composition. Hover or tap a bar or segment for the figure; click to pin.",
+    "chartHint": "Hover or tap a year to see figures. Click to pin.",
+    "chartSegmentHint": "Hover or tap a segment to highlight. Click to pin.",
+    "chartIndicatorHint": "Select an indicator, or use the arrows to browse.",
+    "chartTapHint": "Tap for the change in points",
+    "chartTotal": "Total",
+    "chartPrev": "Previous indicators",
+    "chartNext": "Next indicators",
+    "chartPage": "Page",
+    "chartDownBy": "Down {value} points",
+    "chartUpBy": "Up {value} points",
+    "mosaicHint": "STEM and campus photos. Hover or tap a photo for the caption.",
+    "universitiesEyebrow": "Campuses",
+    "uniPrev": "Previous universities",
+    "uniNext": "Next universities"
   },
   "investorsPage": {
     "metaTitle": "For investors",

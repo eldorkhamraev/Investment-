@@ -75,25 +75,31 @@ export default async function StyleguidePage({
         <SectionHeading
           eyebrow="Foundations"
           title="Typography"
-          intro="Manrope for display, Inter for text — both with full Cyrillic support for Russian and Uzbek. Tight tracking on headings, generous line-height on body."
+          intro="Montserrat for everything on-brand (gov.uz). Inter remains available as an optional long-form alternate via --font-alt."
         />
         <div className="mt-10 space-y-6 rounded-2xl border border-line bg-white p-8">
           <div>
-            <span className="text-xs text-slate">Display / H1 — Manrope 700</span>
+            <span className="text-xs text-slate">Display / H1 — Montserrat 700</span>
             <p className="font-display text-5xl font-bold tracking-tight text-ink">
               Invest in Uzbekistan
             </p>
           </div>
           <div>
-            <span className="text-xs text-slate">Heading / H2</span>
+            <span className="text-xs text-slate">Heading / H2 — Montserrat</span>
             <h2 className="text-3xl">O‘zbekiston · Инвестиции · Digital</h2>
           </div>
           <div>
-            <span className="text-xs text-slate">Body — Inter</span>
+            <span className="text-xs text-slate">Body — Montserrat</span>
             <p className="max-w-2xl text-lg leading-relaxed text-steel">
               The Investment Project Office helps foreign technology companies
               enter Uzbekistan — from company registration and legal guidance to
               tax procedures and local partnerships.
+            </p>
+          </div>
+          <div>
+            <span className="text-xs text-slate">Optional alt — Inter (--font-alt)</span>
+            <p className="max-w-2xl text-lg leading-relaxed text-steel [font-family:var(--font-alt)]">
+              Long-form alternate if a denser reading face is needed later.
             </p>
           </div>
           <div>

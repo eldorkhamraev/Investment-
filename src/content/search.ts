@@ -95,7 +95,7 @@ export function buildSearchIndex(): SearchHit[] {
       href: "/regions",
       type: "Page",
       excerpt:
-        "Interactive map of Uzbekistan's fourteen regions — digital economy briefs and investor introductions.",
+        "Digital economy briefs across Uzbekistan's fourteen regions, with key facts and PDF downloads.",
     },
   ];
 
@@ -165,7 +165,7 @@ export function buildSearchIndex(): SearchHit[] {
     if (!item) continue;
     hits.push({
       title: item.name,
-      href: "/regions",
+      href: `/regions?region=${region.id}`,
       type: "Region",
       excerpt: item.description,
     });

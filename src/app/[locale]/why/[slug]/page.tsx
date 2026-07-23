@@ -4,7 +4,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/page-hero";
 import { WhySubnav } from "@/components/why/why-subnav";
 import { WhyBlocks } from "@/components/why/why-blocks";
-import { ContactCta } from "@/components/home/contact-cta";
 import { redirect } from "@/i18n/navigation";
 import {
   WHY_PAGES,
@@ -65,25 +64,13 @@ export default async function WhyDetailPage({
             blocks={page.blocks}
             pointsEyebrow={t("pointsEyebrow")}
             pointsTitle={t("pointsTitle")}
+            chartsEyebrow={t("chartsEyebrow")}
+            chartsTitle={t("chartsTitle")}
+            chartsIntro={t("chartsIntro")}
+            mosaicHint={t("mosaicHint")}
           />
-          <p className="mt-12 max-w-2xl border-t border-line pt-8 text-sm text-slate">
-            {t.rich("sidebarNote", {
-              link: (chunks) => (
-                <a
-                  href="https://invest.gov.uz/en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-azure-700 underline-offset-2 hover:underline"
-                >
-                  {chunks}
-                </a>
-              ),
-            })}
-          </p>
         </div>
       </section>
-
-      <ContactCta />
     </>
   );
 }

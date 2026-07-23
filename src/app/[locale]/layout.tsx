@@ -9,15 +9,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { Analytics } from "@/components/analytics";
 import "../globals.css";
 
-// Montserrat ships Cyrillic — required for RU and UZ content. Variable font,
-// so all weights (400–800) are available for both body and display use.
+// Montserrat — primary UI + marketing face (gov.uz / ministry).
+// Cyrillic subsets for RU and UZ; variable weights 400–800.
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   variable: "--font-montserrat",
   display: "swap",
 });
 
-// News body only — same face as UzNIF / invest.gov press pages.
+// Inter — kept available as an optional long-form alternate.
+// Not used as the default; Montserrat is sitewide.
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",

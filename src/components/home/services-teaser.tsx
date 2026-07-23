@@ -1,56 +1,50 @@
 import { useTranslations } from "next-intl";
-import { Section, SectionHeading } from "@/components/ui/section";
-import { ButtonLink } from "@/components/ui/button";
-import { Icons, type IconName } from "@/components/ui/icons";
+import { Link } from "@/i18n/navigation";
+import { Section } from "@/components/ui/section";
+import { Icons } from "@/components/ui/icons";
 
-type Service = { icon: IconName; title: string; desc: string };
+type Service = { title: string; desc: string };
 
+/**
+ * Home services strip — institutional list, not marketing cards.
+ */
 export function ServicesTeaser() {
   const t = useTranslations("home.services");
   const items = t.raw("items") as Service[];
 
   return (
-    <Section tone="mist">
-      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <SectionHeading
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
-        />
-        <ButtonLink href="/services" variant="outline" className="shrink-0">
+    <Section tone="paper" className="!py-14 md:!py-20">
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
+        <div className="max-w-2xl">
+          <span className="eyebrow">{t("eyebrow")}</span>
+          <h2 className="mt-2 text-2xl tracking-tight md:text-3xl">
+            {t("title")}
+          </h2>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-steel">
+            {t("intro")}
+          </p>
+        </div>
+        <Link
+          href="/services"
+          className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-azure-700 transition-colors hover:text-azure-800"
+        >
           {t("cta")}
-          <Icons.arrow className="h-4 w-4" />
-        </ButtonLink>
+          <Icons.arrow className="h-3.5 w-3.5" />
+        </Link>
       </div>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((s, i) => {
-          const Icon = Icons[s.icon];
-          return (
-            <div
-              key={s.title}
-              className="group relative flex flex-col rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-azure-200 hover:shadow-lift"
-            >
-              <span className="font-display text-sm font-bold text-azure-300">
-                0{i + 1}
-              </span>
-              <IconWrap>
-                <Icon className="h-6 w-6" />
-              </IconWrap>
-              <h3 className="mt-4 text-lg">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">{s.desc}</p>
-            </div>
-          );
-        })}
-      </div>
+      <ul className="mt-10 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((item) => (
+          <li key={item.title} className="bg-paper px-5 py-7 sm:px-6 sm:py-8">
+            <h3 className="text-[0.95rem] font-semibold leading-snug tracking-tight text-ink md:text-base">
+              {item.title}
+            </h3>
+            <p className="mt-2.5 text-sm leading-relaxed text-steel">
+              {item.desc}
+            </p>
+          </li>
+        ))}
+      </ul>
     </Section>
-  );
-}
-
-function IconWrap({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mt-3 flex h-11 w-11 items-center justify-center rounded-xl bg-azure-600 text-white shadow-sm">
-      {children}
-    </div>
   );
 }

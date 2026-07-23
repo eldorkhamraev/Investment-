@@ -58,9 +58,11 @@ export async function NewsTeaser() {
                 ) : null}
               </div>
               {n.date ? (
-                <p className="mt-3 text-xs text-slate">{n.date}</p>
+                <p className="mt-3 text-xs font-normal tracking-wide text-slate [font-family:var(--font-montserrat)]">
+                  {n.date}
+                </p>
               ) : null}
-              <h3 className="mt-1.5 text-sm font-semibold leading-snug text-ink transition-colors line-clamp-2 group-hover:text-azure-800 md:text-[0.95rem]">
+              <h3 className="mt-1.5 line-clamp-2 text-[0.95rem] font-bold leading-snug tracking-normal text-navy-800 transition-colors group-hover:text-azure-800 md:text-base [font-family:var(--font-montserrat)]">
                 {n.title}
               </h3>
             </Link>

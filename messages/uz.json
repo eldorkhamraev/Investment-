@@ -195,30 +195,26 @@
       ]
     },
     "services": {
-      "eyebrow": "How we help",
-      "title": "We de-risk your market entry.",
-      "intro": "One office, from your first question to your first local hire. We carry the administrative complexity so you can focus on building.",
-      "cta": "See all services",
+      "eyebrow": "Xizmatlar",
+      "title": "Birinchi murojaatdan faoliyatgacha qo‘llab-quvvatlash.",
+      "intro": "Investitsiya loyiha ofisi xalqaro texnologiya kompaniyalariga ro‘yxatdan o‘tish, tartibga solish jarayonlari, rezidentlik maqomi va O‘zbekiston raqamli ekotizimidagi aloqalar bo‘yicha yordam beradi.",
+      "cta": "Barcha xizmatlar",
       "items": [
         {
-          "icon": "registration",
-          "title": "Company registration",
-          "desc": "Fast, guided incorporation of your legal entity in Uzbekistan, with the right structure for your business."
+          "title": "Kompaniyani ro‘yxatdan o‘tkazish",
+          "desc": "Faoliyatingizga mos tuzilma asosida O‘zbekistonda yuridik shaxs tashkil etish bo‘yicha yo‘l-yo‘riq."
         },
         {
-          "icon": "legal",
-          "title": "Legal & administrative guidance",
-          "desc": "Clear answers on regulation, licensing and compliance for the technology sector."
+          "title": "Huquqiy va ma’muriy yo‘riqnoma",
+          "desc": "Texnologiya kompaniyalari uchun tartibga solish, litsenziyalash va muvofiqlik talablari bo‘yicha maslahat."
         },
         {
-          "icon": "tax",
-          "title": "Residence & tax procedures",
-          "desc": "Support with tax setup, residence and the IT-Visa for you and your team."
+          "title": "Rezidentlik va soliq tartiblari",
+          "desc": "Soliq ro‘yxati, rezidentlik maqomi va asoschilar, investorlar hamda mutaxassislar uchun IT-Visa bo‘yicha yordam."
         },
         {
-          "icon": "partners",
-          "title": "Local partnerships",
-          "desc": "Warm introductions to vetted local service providers, partners and talent."
+          "title": "Mahalliy hamkorliklar",
+          "desc": "Bozorga kirish uchun tegishli xizmat ko‘rsatuvchilar, hamkorlar va kadrlarga tanishtirish."
         }
       ]
     },
@@ -315,21 +311,16 @@
         }
       ]
     },
+    "regionsTeaser": {
+      "eyebrow": "Hududlar",
+      "title": "Raqamli imkoniyatlar hududlar bo‘yicha.",
+      "intro": "Toshkentdagi IT Park hubidan Qoraqalpog‘istondagi AI hisoblashgacha; har bir hudud uchun brif, faktlar va PDF.",
+      "cta": "Barcha hududlar",
+      "openRegion": "Brifni ochish"
+    },
     "investmentMap": {
       "title": "O‘zbekiston investitsiya xaritasi",
       "intro": "Hududni tanlang — asosiy ko‘rsatkichlar va PDF brif."
-    },
-    "regionsTeaser": {
-      "eyebrow": "Investitsiya xaritasi",
-      "title": "Raqamli imkoniyatlarni viloyatlar bo‘yicha o‘rganing.",
-      "intro": "Har qanday viloyatni bosing: raqamli iqtisod briefi, asosiy faktlar va PDF — Toshkentdagi IT Park hubidan Qoraqalpog‘istondagi AI hisoblash chegarasigacha.",
-      "cta": "Xaritani ochish",
-      "badge": "14 viloyat",
-      "bullets": [
-        "Hover va klaviatura qo‘llab-quvvatlovchi interaktiv SVG xarita",
-        "Har bir ma’muriy bo‘linma uchun faktlar bilan yon panel",
-        "Yuklab olinadigan viloyat raqamli brieflari (PDF)"
-      ]
     }
   },
   "about": {
@@ -821,17 +812,39 @@
     "eyebrow": "Why Uzbekistan",
     "title": "Why digital Uzbekistan.",
     "subtitle": "A growing economy, a young STEM workforce, a national digital push, and a country opening to the world.",
-    "hubEyebrow": "The opportunity",
-    "hubTitle": "Six reasons technology investors look here first.",
-    "hubIntro": "Explore the foundations of Uzbekistan's investment pitch — from the macroeconomy and talent to innovation, culture, living, and the 2030 strategy.",
+    "proofEyebrow": "Qisqacha",
+    "numbersTitle": "O‘zbekiston raqamlarda",
+    "numbersPrev": "Oldingi ko‘rsatkichlar",
+    "numbersNext": "Keyingi ko‘rsatkichlar",
+    "hubEyebrow": "Why Uzbekistan",
+    "hubTitle": "Bozorga kirishdan oldin investor bilishi kerak bo‘lgan narsalar.",
+    "hubIntro": "2025-yilda YaIM 7,7% o‘sdi, jalb qilingan xorijiy investitsiyalar $43 mlrd ga yetdi, Fitch O‘zbekistonga BB reytingini beradi. Quyida iqtisodiyot, kadrlar, raqamli ekotizim, madaniyat, yashash sharoiti va 2030 kun tartibi.",
+    "exploreChapter": "Bo‘limni ochish",
     "sidebarLabel": "Why Uzbekistan",
     "overview": "Overview",
     "sidebarNote": "Economy-wide topics beyond the digital sector live on <link>invest.gov.uz</link>.",
     "keyIndicators": "Key economic indicators 2025",
-    "pointsEyebrow": "Key points",
-    "pointsTitle": "What investors should know.",
+    "pointsEyebrow": "Investor uchun muhim",
+    "pointsTitle": "Eslab qolinadigan narsalar.",
     "goalsEyebrow": "2030 goals",
-    "goalsTitle": "Targets on the national agenda."
+    "goalsTitle": "Targets on the national agenda.",
+    "chartsEyebrow": "IT Park raqamlarda",
+    "chartsTitle": "IT mukammallikka yo‘l.",
+    "chartsIntro": "O‘sish va tarkibni ko‘ring. Raqam uchun ustun yoki segment ustiga boring yoki bosing; bosib ushlab qolishingiz mumkin.",
+    "chartHint": "Raqamlarni ko‘rish uchun yil ustiga boring yoki bosing. Bosib ushlab qolishingiz mumkin.",
+    "chartSegmentHint": "Ajratib ko‘rsatish uchun segment ustiga boring yoki bosing. Bosib ushlab qolishingiz mumkin.",
+    "chartIndicatorHint": "Ko‘rsatkichni tanlang yoki strelkalar bilan varaqlang.",
+    "chartTapHint": "O‘zgarishni ko‘rish uchun bosing",
+    "chartTotal": "Jami",
+    "chartPrev": "Oldingi ko‘rsatkichlar",
+    "chartNext": "Keyingi ko‘rsatkichlar",
+    "chartPage": "Sahifa",
+    "chartDownBy": "{value} punktga kamaydi",
+    "chartUpBy": "{value} punktga oshdi",
+    "mosaicHint": "STEM va kampus fotolari. Izohni ko‘rish uchun ustiga boring yoki bosing.",
+    "universitiesEyebrow": "Kampuslar",
+    "uniPrev": "Oldingi universitetlar",
+    "uniNext": "Keyingi universitetlar"
   },
   "investorsPage": {
     "metaTitle": "For investors",
@@ -947,16 +960,15 @@
     "badges": "Badges"
   },
   "regionsPage": {
-    "metaTitle": "Regions",
-    "eyebrow": "Opportunities",
-    "title": "Uzbekistan's Digital Economy — Region by Region",
-    "subtitle": "Explore how digital investment, talent and infrastructure opportunities take shape across the country's fourteen regions.",
-    "mapHint": "Xaritadan yoki ro‘yxatdan hududni tanlang.",
-    "mapAria": "Interactive map of Uzbekistan regions",
-    "keyFacts": "Key facts",
+    "metaTitle": "Hududlar",
+    "eyebrow": "Imkoniyatlar",
+    "title": "Raqamli imkoniyatlar hududlar bo‘yicha.",
+    "subtitle": "O‘n to‘rt hudud. Raqamli briflar, bozor konteksti va ofis bilan suhbatga to‘g‘ridan-to‘g‘ri yo‘l.",
+    "listLabel": "Hududlar",
+    "detailEyebrow": "Hudud brifi",
+    "keyFacts": "Asosiy faktlar",
     "downloadBrief": "PDF brif",
-    "bookIntro": "Book an introduction",
-    "close": "Close",
+    "bookIntro": "Tanishuv uchrashuviga yozilish",
     "statLabels": {
       "population": "Aholi",
       "projects": "Investitsiya loyihalari",
@@ -964,9 +976,6 @@
       "trade": "Tashqi savdo",
       "area": "Kv/km"
     },
-    "panelEmptyEyebrow": "Select a region",
-    "panelEmptyTitle": "Click the map to explore.",
-    "panelEmptyBody": "Each region has a short digital-economy overview, key facts and a path to speak with the office.",
     "items": {
       "karakalpakstan": {
         "name": "Qoraqalpog‘iston Respublikasi",
@@ -1094,6 +1103,9 @@
           "Mintaqaviy IT ta’limiga investitsiya uchun kuchli asos"
         ]
       }
-    }
+    },
+    "mapHint": "Xaritadan yoki ro‘yxatdan hududni tanlang.",
+    "mapAria": "Interactive map of Uzbekistan regions",
+    "close": "Close"
   }
 }

@@ -102,7 +102,7 @@ export default async function NewsArticle({
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_16rem]">
           <div className="min-w-0">
             {item.excerpt ? (
-              <p className="max-w-[40rem] text-[0.9375rem] font-normal leading-[1.6] text-ink [font-family:var(--font-article)]">
+              <p className="max-w-[40rem] text-base font-normal leading-[1.65] text-ink [font-family:var(--font-article)]">
                 {item.excerpt}
               </p>
             ) : null}
